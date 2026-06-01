@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"\nimport subprocess, os\nrepo = '/Users/renatoascenso/claude code repository/my-app'\nresult = subprocess.run(['git', '-C', repo, 'status', '--porcelain'], capture_output=True, text=True)\nif result.stdout.strip():\n    subprocess.run(['git', '-C', repo, 'add', '-A'])\n    msg = subprocess.run(['git', '-C', repo, 'log', '-1', '--pretty=%s'], capture_output=True, text=True)\n    subprocess.run(['git', '-C', repo, 'commit', '-m', 'auto-deploy: claude code changes'])\n    subprocess.run(['git', '-C', repo, 'push'])\n\" 2>/dev/null || true",
+            "statusMessage": "Pushing changes to GitHub..."
+          }
+        ]
+      }
+    ]
+  }
+}
