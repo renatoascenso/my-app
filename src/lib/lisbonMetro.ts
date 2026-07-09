@@ -34,24 +34,13 @@ export type Bairro = {
   lng: number;
 };
 
-export type Listing = {
-  id: string;
-  title: string;
-  rent: number;
-  type: string;
-  source: string;
-  featured?: boolean;
-  riskNote?: string;
-  lat: number;
-  lng: number;
-  description: string;
-  rooms: number;
-  sizeSqm: number;
-  availableFrom: string;
-  amenities: string[];
-  sourceUrl?: string;
-  homeUniversityFriendly?: boolean;
-};
+export type { Listing, ListingFilters } from "./listings";
+export {
+  getListingFilterOptions,
+  getDefaultListingFilters,
+  filterListings,
+} from "./listings";
+import type { Listing } from "./listings";
 
 export const municipalities: Municipality[] = [
   { slug: "lisboa", name: "Lisbon", lat: 38.70775, lng: -9.13659, bank: "north", rent: "€650–€1,300/mo", studentFit: 8.0, hasDetail: true },
@@ -474,11 +463,15 @@ export const avenidasNovasBairros: Bairro[] = [
   { slug: "sao-sebastiao-da-pedreira", name: "São Sebastião da Pedreira", lat: 38.7340736, lng: -9.1538680 },
 ];
 
-export const avenidasNovasListings: Listing[] = [
+export type FreguesiaListing = Listing & { freguesiaSlug: string };
+
+export const lisbonListings: FreguesiaListing[] = [
   {
     id: "ha-gulbenkian-room",
+    freguesiaSlug: "avenidas-novas",
     title: "Bright room near Gulbenkian",
     rent: 820,
+    currency: "€",
     type: "Room",
     source: "HousingAtlas",
     featured: true,
@@ -493,8 +486,10 @@ export const avenidasNovasListings: Listing[] = [
   },
   {
     id: "uniplaces-saldanha-studio",
+    freguesiaSlug: "avenidas-novas",
     title: "Studio near Saldanha",
     rent: 1050,
+    currency: "€",
     type: "Studio",
     source: "Uniplaces",
     lat: 38.7347193,
@@ -509,8 +504,10 @@ export const avenidasNovasListings: Listing[] = [
   },
   {
     id: "housinganywhere-entrecampos-room",
+    freguesiaSlug: "avenidas-novas",
     title: "Shared apartment in Entrecampos",
     rent: 760,
+    currency: "€",
     type: "Room",
     source: "HousingAnywhere",
     lat: 38.7470462,
@@ -525,8 +522,10 @@ export const avenidasNovasListings: Listing[] = [
   },
   {
     id: "spotahome-picoas-room",
+    freguesiaSlug: "avenidas-novas",
     title: "Room near Picoas",
     rent: 690,
+    currency: "€",
     type: "Room",
     source: "Spotahome",
     riskNote: "Higher caution",
@@ -542,8 +541,10 @@ export const avenidasNovasListings: Listing[] = [
   },
   {
     id: "ha-campo-pequeno-room",
+    freguesiaSlug: "avenidas-novas",
     title: "Modern room near Campo Pequeno",
     rent: 875,
+    currency: "€",
     type: "Room",
     source: "HousingAtlas",
     homeUniversityFriendly: true,
@@ -556,6 +557,78 @@ export const avenidasNovasListings: Listing[] = [
     availableFrom: "1 Sep 2026",
     amenities: ["Furnished", "Wifi included", "Elevator", "Bills included"],
   },
+  {
+    id: "idealista-arroios-room",
+    freguesiaSlug: "arroios",
+    title: "Room in a multicultural Arroios flat",
+    rent: 780,
+    currency: "€",
+    type: "Room",
+    source: "Idealista",
+    lat: 38.7318,
+    lng: -9.1381,
+    description:
+      "A room in a lively shared flat near Arroios' food scene and metro station, popular with international and exchange students who want a bohemian, well-connected base.",
+    rooms: 1,
+    sizeSqm: 12,
+    availableFrom: "1 Sep 2026",
+    amenities: ["Furnished", "Wifi included", "Shared kitchen"],
+    sourceUrl: "https://www.idealista.pt",
+  },
+  {
+    id: "erasmusplay-alvalade-room",
+    freguesiaSlug: "alvalade",
+    title: "Room near Campo Grande",
+    rent: 820,
+    currency: "€",
+    type: "Room",
+    source: "Erasmus Play",
+    lat: 38.7478,
+    lng: -9.1389,
+    description:
+      "A room in a well-kept apartment near Campo Grande, a short walk from several university faculties — in a planned, orderly residential grid popular with exchange students.",
+    rooms: 1,
+    sizeSqm: 13,
+    availableFrom: "1 Oct 2026",
+    amenities: ["Furnished", "Wifi included", "Elevator"],
+    sourceUrl: "https://www.erasmusplay.com",
+  },
+  {
+    id: "facebook-areeiro-room",
+    freguesiaSlug: "areeiro",
+    title: "Budget room near Areeiro",
+    rent: 700,
+    currency: "€",
+    type: "Room",
+    source: "Facebook Groups",
+    riskNote: "Higher caution",
+    lat: 38.7408,
+    lng: -9.1328,
+    description:
+      "A budget sublet near Areeiro's two metro lines, listed informally with limited photos and no verified reviews yet — worth extra diligence before committing given the caution flag.",
+    rooms: 1,
+    sizeSqm: 11,
+    availableFrom: "Immediately",
+    amenities: ["Furnished"],
+  },
+  {
+    id: "uniplaces-campo-ourique-room",
+    freguesiaSlug: "campo-de-ourique",
+    title: "Calm room in Campo de Ourique",
+    rent: 750,
+    currency: "€",
+    type: "Room",
+    source: "Uniplaces",
+    lat: 38.7157,
+    lng: -9.1685,
+    description:
+      "A quiet room in a residential Campo de Ourique building, ideal for a student who prefers a calmer, local neighborhood feel over central nightlife.",
+    rooms: 1,
+    sizeSqm: 12,
+    availableFrom: "1 Sep 2026",
+    amenities: ["Furnished", "Wifi included"],
+    sourceUrl: "https://www.uniplaces.com",
+  },
 ];
 
 export function getMunicipalityBySlug(slug: string): Municipality | undefined {
@@ -566,56 +639,3 @@ export function getFreguesiaBySlug(slug: string): Freguesia | undefined {
   return lisbonFreguesias.find((f) => f.slug === slug);
 }
 
-export type ListingFilters = {
-  types: string[];
-  sources: string[];
-  amenities: string[];
-  minPrice: number;
-  maxPrice: number;
-  availableNow: boolean;
-  homeUniversityFriendly: boolean;
-};
-
-export function getListingFilterOptions(listings: Listing[]) {
-  const types = [...new Set(listings.map((l) => l.type))].sort();
-  const sources = [...new Set(listings.map((l) => l.source))].sort();
-  const amenities = [...new Set(listings.flatMap((l) => l.amenities))].sort();
-  const prices = listings.map((l) => l.rent);
-  const priceBounds = {
-    min: prices.length ? Math.min(...prices) : 0,
-    max: prices.length ? Math.max(...prices) : 0,
-  };
-  return { types, sources, amenities, priceBounds };
-}
-
-export function getDefaultListingFilters(listings: Listing[]): ListingFilters {
-  const { priceBounds } = getListingFilterOptions(listings);
-  return {
-    types: [],
-    sources: [],
-    amenities: [],
-    minPrice: priceBounds.min,
-    maxPrice: priceBounds.max,
-    availableNow: false,
-    homeUniversityFriendly: false,
-  };
-}
-
-export function filterListings(listings: Listing[], filters: ListingFilters): Listing[] {
-  return listings.filter((listing) => {
-    if (filters.types.length > 0 && !filters.types.includes(listing.type)) return false;
-    if (filters.sources.length > 0 && !filters.sources.includes(listing.source)) return false;
-    if (filters.amenities.length > 0 && !filters.amenities.every((a) => listing.amenities.includes(a))) {
-      return false;
-    }
-    if (listing.rent < filters.minPrice || listing.rent > filters.maxPrice) return false;
-    if (filters.availableNow && listing.availableFrom !== "Immediately") return false;
-    if (
-      filters.homeUniversityFriendly &&
-      !(listing.source === "HousingAtlas" && listing.homeUniversityFriendly)
-    ) {
-      return false;
-    }
-    return true;
-  });
-}

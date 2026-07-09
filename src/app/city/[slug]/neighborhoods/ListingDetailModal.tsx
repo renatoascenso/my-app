@@ -44,7 +44,7 @@ function SimpleListingBody({ listing }: { listing: Listing }) {
 
         <h3 className="mt-3 text-2xl font-bold text-slate-900">{listing.title}</h3>
         <p className="mt-1 text-2xl font-bold text-slate-900">
-          €{listing.rent}
+          {listing.currency}{listing.rent}
           <span className="text-sm font-normal text-slate-500">/mo</span>
         </p>
 

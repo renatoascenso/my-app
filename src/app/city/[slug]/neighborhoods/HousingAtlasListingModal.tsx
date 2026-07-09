@@ -172,7 +172,7 @@ export default function HousingAtlasListingModal({
 
         <h3 className="mt-3 text-2xl font-bold text-slate-900">{listing.title}</h3>
         <p className="mt-1 text-2xl font-bold text-slate-900">
-          €{listing.rent}
+          {listing.currency}{listing.rent}
           <span className="text-sm font-normal text-slate-500">/mo</span>
         </p>
 
@@ -246,28 +246,28 @@ export default function HousingAtlasListingModal({
           <div className="mt-3 space-y-2 text-sm">
             <div className="flex items-center justify-between">
               <span className="text-slate-600">Monthly rent</span>
-              <span className="font-semibold text-slate-900">€{priceBreakdown.monthlyRent}</span>
+              <span className="font-semibold text-slate-900">{listing.currency}{priceBreakdown.monthlyRent}</span>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-slate-600">Monthly bills</span>
-              <span className="font-semibold text-slate-900">€{priceBreakdown.monthlyBills}</span>
+              <span className="font-semibold text-slate-900">{listing.currency}{priceBreakdown.monthlyBills}</span>
             </div>
             <div className="flex items-center justify-between border-t border-blue-100 pt-2">
               <span className="font-medium text-slate-700">Total monthly cost</span>
-              <span className="font-bold text-slate-900">€{totalMonthly}</span>
+              <span className="font-bold text-slate-900">{listing.currency}{totalMonthly}</span>
             </div>
             <div className="flex items-center justify-between pt-2">
               <span className="text-slate-600">Security deposit</span>
-              <span className="font-semibold text-slate-900">€{priceBreakdown.securityDeposit}</span>
+              <span className="font-semibold text-slate-900">{listing.currency}{priceBreakdown.securityDeposit}</span>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-slate-600">Booking fee</span>
-              <span className="font-semibold text-slate-900">€{priceBreakdown.bookingFee}</span>
+              <span className="font-semibold text-slate-900">{listing.currency}{priceBreakdown.bookingFee}</span>
             </div>
             {priceBreakdown.cleaningFee !== undefined && (
               <div className="flex items-center justify-between">
                 <span className="text-slate-600">Cleaning fee</span>
-                <span className="font-semibold text-slate-900">€{priceBreakdown.cleaningFee}</span>
+                <span className="font-semibold text-slate-900">{listing.currency}{priceBreakdown.cleaningFee}</span>
               </div>
             )}
           </div>
@@ -594,7 +594,7 @@ export default function HousingAtlasListingModal({
                     {similar.title}
                   </p>
                   <p className="mt-1 text-base font-bold text-slate-900">
-                    €{similar.rent}
+                    {similar.currency}{similar.rent}
                     <span className="text-xs font-normal text-slate-500">/mo</span>
                   </p>
                   <p className="mt-1 text-xs text-slate-500">

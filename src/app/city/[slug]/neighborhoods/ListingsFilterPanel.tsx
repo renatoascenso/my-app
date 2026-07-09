@@ -58,6 +58,7 @@ export default function ListingsFilterPanel({
   onChange: (filters: ListingFilters) => void;
 }) {
   const { types, sources, amenities, priceBounds } = getListingFilterOptions(allListings);
+  const currency = allListings[0]?.currency ?? "€";
 
   function toggleValue(key: "types" | "sources" | "amenities", value: string) {
     const current = filters[key];
@@ -84,7 +85,7 @@ export default function ListingsFilterPanel({
         <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wide text-slate-500">
           <span>Price range</span>
           <span className="font-semibold text-slate-900">
-            €{filters.minPrice} – €{filters.maxPrice}
+            {currency}{filters.minPrice} – {currency}{filters.maxPrice}
           </span>
         </div>
         <div className="mt-3 space-y-2">

@@ -10,7 +10,7 @@ import {
   municipalities,
   lisbonFreguesias,
   avenidasNovasBairros,
-  avenidasNovasListings,
+  lisbonListings,
   type Listing,
   type ListingFilters,
 } from "@/lib/lisbonMetro";
@@ -60,7 +60,8 @@ const levelCopy: Record<Level, { title: string; subtitle: string }> = {
 };
 
 function getListingsForFreguesiaSlug(slug: string | null): Listing[] {
-  return slug === "avenidas-novas" ? avenidasNovasListings : [];
+  if (!slug) return [];
+  return lisbonListings.filter((l) => l.freguesiaSlug === slug);
 }
 
 export default function MetroExplorer() {
@@ -68,9 +69,10 @@ export default function MetroExplorer() {
   const [selectedMunicipalitySlug, setSelectedMunicipalitySlug] = useState<string | null>(null);
   const [selectedFreguesiaSlug, setSelectedFreguesiaSlug] = useState<string | null>(null);
   const [showListings, setShowListings] = useState(false);
+  const [showAllListings, setShowAllListings] = useState(false);
   const [selectedListingId, setSelectedListingId] = useState<string | null>(null);
   const [filters, setFilters] = useState<ListingFilters>(() =>
-    getDefaultListingFilters(avenidasNovasListings)
+    getDefaultListingFilters(lisbonListings)
   );
 
   const selectedMunicipality = selectedMunicipalitySlug
@@ -93,6 +95,7 @@ export default function MetroExplorer() {
   function handleSelectFreguesia(slug: string) {
     setSelectedFreguesiaSlug(slug);
     setShowListings(false);
+    setShowAllListings(false);
     setSelectedListingId(null);
     setFilters(getDefaultListingFilters(getListingsForFreguesiaSlug(slug)));
     const freguesia = getFreguesiaBySlug(slug);
@@ -109,12 +112,22 @@ export default function MetroExplorer() {
     if (!selectedFreguesia) return;
     const nextShowListings = !showListings;
     setShowListings(nextShowListings);
+    setShowAllListings(false);
+    setFilters(getDefaultListingFilters(getListingsForFreguesiaSlug(selectedFreguesiaSlug)));
     if (nextShowListings && selectedFreguesia.hasBairroZoom) {
       setLevel("avenidas-zoom");
     }
     if (!nextShowListings) {
       setSelectedListingId(null);
     }
+  }
+
+  function handleShowAllListings() {
+    const next = !showAllListings;
+    setShowAllListings(next);
+    setShowListings(false);
+    setFilters(getDefaultListingFilters(lisbonListings));
+    if (!next) setSelectedListingId(null);
   }
 
   function handleBack() {
@@ -124,15 +137,20 @@ export default function MetroExplorer() {
       setLevel("metro");
     }
     setShowListings(false);
+    setShowAllListings(false);
     setSelectedListingId(null);
   }
 
   const copy = levelCopy[level];
-  const listingsForArea = getListingsForFreguesiaSlug(selectedFreguesiaSlug ?? null);
+  const listingsForArea = showAllListings
+    ? lisbonListings
+    : getListingsForFreguesiaSlug(selectedFreguesiaSlug ?? null);
   const filteredListings = filterListings(listingsForArea, filters);
   const openListing = selectedListingId
-    ? avenidasNovasListings.find((l) => l.id === selectedListingId)
+    ? lisbonListings.find((l) => l.id === selectedListingId)
     : undefined;
+  const drawerVisible = showAllListings || (showListings && !!selectedFreguesia);
+  const drawerAreaName = showAllListings ? "Lisbon" : selectedFreguesia?.name ?? "";
 
   const metroZones: ZoneShape[] = municipalities
     .filter((m) => municipalityGeo[m.slug])
@@ -162,12 +180,12 @@ export default function MetroExplorer() {
       approximate: true,
     }));
 
-  const listingPins: ListingPin[] | undefined = showListings
+  const listingPins: ListingPin[] | undefined = drawerVisible
     ? filteredListings.map((l) => ({
         id: l.id,
         lat: l.lat,
         lng: l.lng,
-        label: l.source === "HousingAtlas" ? `HA €${l.rent}` : `€${l.rent}`,
+        label: l.source === "HousingAtlas" ? `HA ${l.currency}${l.rent}` : `${l.currency}${l.rent}`,
         featured: l.source === "HousingAtlas",
         selected: l.id === selectedListingId,
       }))
@@ -192,6 +210,7 @@ export default function MetroExplorer() {
             onClick={() => {
               setLevel("metro");
               setShowListings(false);
+              setShowAllListings(false);
               setSelectedListingId(null);
             }}
             className={`hover:text-blue-600 ${level === "metro" ? "font-semibold text-slate-900" : ""}`}
@@ -206,6 +225,7 @@ export default function MetroExplorer() {
                 onClick={() => {
                   setLevel("lisbon");
                   setShowListings(false);
+                  setShowAllListings(false);
                   setSelectedListingId(null);
                 }}
                 className={`hover:text-blue-600 ${level === "lisbon" ? "font-semibold text-slate-900" : ""}`}
@@ -230,6 +250,22 @@ export default function MetroExplorer() {
       </h2>
       <p className="mt-2 max-w-2xl text-base text-slate-600">{copy.subtitle}</p>
 
+      {level === "lisbon" && (
+        <button
+          type="button"
+          onClick={handleShowAllListings}
+          className={`mt-6 rounded-full border px-4 py-2 text-sm font-semibold transition ${
+            showAllListings
+              ? "border-blue-600 bg-blue-600 text-white"
+              : "border-blue-200 text-blue-700 hover:bg-blue-50"
+          }`}
+        >
+          {showAllListings
+            ? "Hide all listings"
+            : `Show all listings in Lisbon (${lisbonListings.length})`}
+        </button>
+      )}
+
       <div className="mt-8 grid gap-8 lg:grid-cols-[65fr_35fr]">
         <div>
           {level === "metro" && (
@@ -248,6 +284,8 @@ export default function MetroExplorer() {
               zones={freguesiaZones}
               selectedSlug={selectedFreguesiaSlug}
               onSelect={handleSelectFreguesia}
+              pins={listingPins}
+              onSelectPin={setSelectedListingId}
             />
           )}
           {level === "avenidas-zoom" && (
@@ -267,16 +305,16 @@ export default function MetroExplorer() {
               " Bairro boundaries are illustrative (not officially surveyed) and listing pin positions are approximate."}
           </p>
 
-          {showListings && selectedFreguesia && (
+          {drawerVisible && (
             <ListingsDrawer
-              freguesiaName={selectedFreguesia.name}
+              freguesiaName={drawerAreaName}
               allListings={listingsForArea}
               filteredListings={filteredListings}
               filters={filters}
               onChangeFilters={setFilters}
               selectedListingId={selectedListingId}
               onSelectListing={setSelectedListingId}
-              onClose={handleShowListings}
+              onClose={showAllListings ? handleShowAllListings : handleShowListings}
             />
           )}
         </div>

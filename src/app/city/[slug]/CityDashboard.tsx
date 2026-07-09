@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { CityDashboard as CityDashboardData } from "@/lib/cities";
+import PlatformCard from "./PlatformCard";
 
 function Icon({
   children,
@@ -319,55 +320,7 @@ export default function CityDashboard({
         />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {dashboard.platforms.map((platform) => (
-            <div
-              key={platform.name}
-              className={`relative flex flex-col rounded-2xl border p-6 shadow-sm transition hover:shadow-md ${
-                platform.featured
-                  ? "border-blue-600 bg-blue-50/40 ring-1 ring-blue-600"
-                  : "border-slate-200 bg-white"
-              }`}
-            >
-              {platform.featured && (
-                <span className="absolute -top-3 left-6 rounded-full bg-blue-600 px-3 py-1 text-xs font-semibold text-white shadow-sm">
-                  Recommended
-                </span>
-              )}
-              <div className="flex items-start justify-between gap-3">
-                <h3 className="text-base font-semibold text-slate-900">
-                  {platform.name}
-                </h3>
-                <span className="shrink-0 rounded-full bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700">
-                  {platform.trustScore.toFixed(1)}/5
-                </span>
-              </div>
-
-              <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
-                <div
-                  className="h-full rounded-full bg-blue-600"
-                  style={{ width: `${(platform.trustScore / 5) * 100}%` }}
-                />
-              </div>
-
-              <p className="mt-4 text-xs font-medium uppercase tracking-wide text-slate-500">
-                Best for
-              </p>
-              <p className="mt-1 text-sm text-slate-700">{platform.audience}</p>
-
-              <div className="mt-4 space-y-1.5">
-                {platform.pros.map((pro) => (
-                  <p key={pro} className="flex items-start gap-2 text-sm text-slate-600">
-                    <span className="mt-0.5 text-emerald-600">+</span>
-                    {pro}
-                  </p>
-                ))}
-                {platform.cons.map((con) => (
-                  <p key={con} className="flex items-start gap-2 text-sm text-slate-600">
-                    <span className="mt-0.5 text-rose-500">–</span>
-                    {con}
-                  </p>
-                ))}
-              </div>
-            </div>
+            <PlatformCard key={platform.name} platform={platform} />
           ))}
         </div>
       </section>

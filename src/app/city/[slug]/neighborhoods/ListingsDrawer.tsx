@@ -112,7 +112,7 @@ export default function ListingsDrawer({
                       {listing.title}
                     </p>
                     <p className="mt-1 text-lg font-bold text-slate-900">
-                      €{listing.rent}
+                      {listing.currency}{listing.rent}
                       <span className="text-xs font-normal text-slate-500">/mo</span>
                     </p>
                     <div className="mt-2 flex items-center gap-2">

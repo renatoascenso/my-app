@@ -1,6 +1,32 @@
 import Link from "next/link";
 import { getCityBySlug } from "@/lib/cities";
 import MetroExplorer from "./MetroExplorer";
+import StGallenExplorer from "./StGallenExplorer";
+import CopenhagenExplorer from "./CopenhagenExplorer";
+
+const explorerCopy: Record<string, { heading: string; subtitle: string }> = {
+  lisbon: {
+    heading: "Explore the Lisbon Metropolitan Area",
+    subtitle:
+      "Drill down from the metro area, into Lisbon's freguesias, and preview bairros before comparing listings.",
+  },
+  "st-gallen": {
+    heading: "Explore St.Gallen's quarters",
+    subtitle:
+      "Compare St.Gallen's 31 official statistical quarters by rent, safety, and commute time to HSG before comparing listings.",
+  },
+  copenhagen: {
+    heading: "Explore Copenhagen's districts",
+    subtitle:
+      "Compare Copenhagen's bydele plus Frederiksberg — home to the CBS campus — by rent, safety, and commute time to CBS before comparing listings.",
+  },
+};
+
+const explorersBySlug: Record<string, () => React.ReactNode> = {
+  lisbon: () => <MetroExplorer />,
+  "st-gallen": () => <StGallenExplorer />,
+  copenhagen: () => <CopenhagenExplorer />,
+};
 
 export default async function NeighborhoodsPage({
   params,
@@ -9,9 +35,9 @@ export default async function NeighborhoodsPage({
 }) {
   const { slug } = await params;
   const city = getCityBySlug(slug);
-  const hasMetroExplorer = city?.slug === "lisbon";
+  const hasExplorer = city ? city.slug in explorersBySlug : false;
 
-  if (!city || !hasMetroExplorer) {
+  if (!city || !hasExplorer) {
     return (
       <div className="flex flex-1 flex-col items-center justify-center bg-white px-6 py-24 text-center">
         <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-blue-700">
@@ -34,6 +60,8 @@ export default async function NeighborhoodsPage({
       </div>
     );
   }
+
+  const copy = explorerCopy[city.slug];
 
   return (
     <div className="flex-1 bg-white text-slate-900">
@@ -62,17 +90,16 @@ export default async function NeighborhoodsPage({
             Neighborhood explorer
           </span>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
-            Explore the Lisbon Metropolitan Area
+            {copy.heading}
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">
-            Drill down from the metro area, into Lisbon&apos;s freguesias, and
-            preview bairros before comparing listings.
+            {copy.subtitle}
           </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-12 sm:py-16">
-        <MetroExplorer />
+        {explorersBySlug[city.slug]()}
       </section>
 
       <section className="bg-blue-600">

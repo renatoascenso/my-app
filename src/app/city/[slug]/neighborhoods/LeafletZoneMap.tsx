@@ -88,7 +88,7 @@ export default function LeafletZoneMap({
   onSelectPin?: (id: string | null) => void;
 }) {
   return (
-    <div className="overflow-hidden rounded-3xl border border-blue-100 shadow-sm">
+    <div className="relative z-0 isolate overflow-hidden rounded-3xl border border-blue-100 shadow-sm">
       <MapContainer
         center={center}
         zoom={zoom}
