@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { CityDashboard as CityDashboardData } from "@/lib/cities";
 
@@ -158,35 +159,96 @@ export default function CityDashboard({
     { label: "Safety score", value: dashboard.quickFacts.safetyScore, icon: icons.safety },
   ];
 
+  const hasHeroImage = Boolean(dashboard.heroImage);
+
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-blue-50 to-white">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
-          <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-blue-700">
+      <section
+        className={`relative overflow-hidden ${
+          hasHeroImage ? "" : "bg-gradient-to-b from-blue-50 to-white"
+        }`}
+      >
+        {dashboard.heroImage && (
+          <>
+            <Image
+              src={dashboard.heroImage}
+              alt={`${name} skyline`}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/85 via-slate-900/50 to-slate-900/20" />
+          </>
+        )}
+        <div className="relative mx-auto max-w-6xl px-6 py-20 sm:py-28">
+          <span
+            className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide ${
+              hasHeroImage
+                ? "bg-white/15 text-white ring-1 ring-white/30"
+                : "bg-blue-100 text-blue-700"
+            }`}
+          >
             {country}
           </span>
-          <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+          <h1
+            className={`mt-4 text-4xl font-bold tracking-tight sm:text-5xl ${
+              hasHeroImage ? "text-white" : "text-slate-900"
+            }`}
+          >
             {name}
           </h1>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">
+          <p
+            className={`mt-4 max-w-2xl text-lg leading-relaxed ${
+              hasHeroImage ? "text-slate-100" : "text-slate-600"
+            }`}
+          >
             {dashboard.description}
           </p>
 
           <div className="mt-8 grid gap-4 sm:max-w-xl sm:grid-cols-2">
-            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-              <p className="text-xs font-medium uppercase tracking-wide text-slate-500">
+            <div
+              className={`rounded-2xl p-5 shadow-sm ${
+                hasHeroImage
+                  ? "border border-white/20 bg-white/10 backdrop-blur-sm"
+                  : "border border-slate-200 bg-white"
+              }`}
+            >
+              <p
+                className={`text-xs font-medium uppercase tracking-wide ${
+                  hasHeroImage ? "text-slate-200" : "text-slate-500"
+                }`}
+              >
                 Average monthly rent
               </p>
-              <p className="mt-1 text-xl font-semibold text-slate-900">
+              <p
+                className={`mt-1 text-xl font-semibold ${
+                  hasHeroImage ? "text-white" : "text-slate-900"
+                }`}
+              >
                 {dashboard.quickFacts.averageRent}
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-              <p className="text-xs font-medium uppercase tracking-wide text-slate-500">
+            <div
+              className={`rounded-2xl p-5 shadow-sm ${
+                hasHeroImage
+                  ? "border border-white/20 bg-white/10 backdrop-blur-sm"
+                  : "border border-slate-200 bg-white"
+              }`}
+            >
+              <p
+                className={`text-xs font-medium uppercase tracking-wide ${
+                  hasHeroImage ? "text-slate-200" : "text-slate-500"
+                }`}
+              >
                 Cost of living
               </p>
-              <p className="mt-1 text-xl font-semibold text-slate-900">
+              <p
+                className={`mt-1 text-xl font-semibold ${
+                  hasHeroImage ? "text-white" : "text-slate-900"
+                }`}
+              >
                 {dashboard.costOfLiving}
               </p>
             </div>

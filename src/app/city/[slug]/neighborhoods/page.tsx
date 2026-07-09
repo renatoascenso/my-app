@@ -1,22 +1,6 @@
 import Link from "next/link";
-import { averageFromRange, getCityBySlug, type Neighborhood } from "@/lib/cities";
-import NeighborhoodMap from "./NeighborhoodMap";
-
-function pickBest(
-  neighborhoods: Neighborhood[],
-  metric: (n: Neighborhood) => number,
-  direction: "max" | "min" = "max"
-): Neighborhood {
-  return neighborhoods.reduce((best, n) =>
-    direction === "max"
-      ? metric(n) > metric(best)
-        ? n
-        : best
-      : metric(n) < metric(best)
-        ? n
-        : best
-  );
-}
+import { getCityBySlug } from "@/lib/cities";
+import MetroExplorer from "./MetroExplorer";
 
 export default async function NeighborhoodsPage({
   params,
@@ -25,9 +9,9 @@ export default async function NeighborhoodsPage({
 }) {
   const { slug } = await params;
   const city = getCityBySlug(slug);
-  const neighborhoods = city?.neighborhoods;
+  const hasMetroExplorer = city?.slug === "lisbon";
 
-  if (!city || !neighborhoods) {
+  if (!city || !hasMetroExplorer) {
     return (
       <div className="flex flex-1 flex-col items-center justify-center bg-white px-6 py-24 text-center">
         <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-blue-700">
@@ -50,39 +34,6 @@ export default async function NeighborhoodsPage({
       </div>
     );
   }
-
-  const comparisons = [
-    {
-      label: "Best student fit",
-      winner: pickBest(neighborhoods, (n) => n.studentFit),
-      detail: (n: Neighborhood) => `${n.studentFit.toFixed(1)}/10 student fit`,
-    },
-    {
-      label: "Best transport",
-      winner: pickBest(neighborhoods, (n) => n.transport),
-      detail: (n: Neighborhood) => `${n.transport.toFixed(1)}/10 transport`,
-    },
-    {
-      label: "Best nightlife",
-      winner: pickBest(neighborhoods, (n) => n.nightlife),
-      detail: (n: Neighborhood) => `${n.nightlife.toFixed(1)}/10 nightlife`,
-    },
-    {
-      label: "Best calm area",
-      winner: pickBest(neighborhoods, (n) => n.nightlife, "min"),
-      detail: (n: Neighborhood) => `${n.nightlife.toFixed(1)}/10 nightlife (quietest)`,
-    },
-    {
-      label: "Most premium",
-      winner: pickBest(neighborhoods, (n) => averageFromRange(n.rent)),
-      detail: (n: Neighborhood) => `~€${Math.round(averageFromRange(n.rent))}/mo avg rent`,
-    },
-    {
-      label: "Most central",
-      winner: pickBest(neighborhoods, (n) => averageFromRange(n.commute), "min"),
-      detail: (n: Neighborhood) => `~${Math.round(averageFromRange(n.commute))} min avg commute`,
-    },
-  ];
 
   return (
     <div className="flex-1 bg-white text-slate-900">
@@ -108,46 +59,20 @@ export default async function NeighborhoodsPage({
       <section className="bg-gradient-to-b from-blue-50 to-white">
         <div className="mx-auto max-w-6xl px-6 py-14 sm:py-16">
           <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-blue-700">
-            Neighborhood map
+            Neighborhood explorer
           </span>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
-            Explore {city.name} neighborhoods
+            Explore the Lisbon Metropolitan Area
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">
-            Compare rent, safety, commute, lifestyle, and student fit before
-            choosing where to live.
+            Drill down from the metro area, into Lisbon&apos;s freguesias, and
+            preview bairros before comparing listings.
           </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-12 sm:py-16">
-        <NeighborhoodMap neighborhoods={neighborhoods} />
-      </section>
-
-      <section className="bg-slate-50 py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
-            At a glance
-          </h2>
-          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-            {comparisons.map((c) => (
-              <div
-                key={c.label}
-                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md"
-              >
-                <p className="text-xs font-medium uppercase tracking-wide text-slate-500">
-                  {c.label}
-                </p>
-                <p className="mt-2 text-base font-semibold text-slate-900">
-                  {c.winner.name}
-                </p>
-                <p className="mt-1 text-xs text-slate-600">
-                  {c.detail(c.winner)}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+        <MetroExplorer />
       </section>
 
       <section className="bg-blue-600">

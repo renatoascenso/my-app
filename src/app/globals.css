@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
 
 :root {
   --background: #ffffff;
@@ -23,4 +24,30 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes zoom-in-fade {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-zoom-in-fade {
+  animation: zoom-in-fade 0.25s ease-out;
+}
+
+.ha-marker-pill {
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
+}
+
+.ha-marker-pill:hover {
+  background-color: #3b82f6 !important;
+  color: #ffffff !important;
+  border-color: #3b82f6 !important;
 }

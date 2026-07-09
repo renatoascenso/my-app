@@ -6,22 +6,6 @@ export type City = {
   risk: string;
   bestFor: string;
   dashboard?: CityDashboard;
-  neighborhoods?: Neighborhood[];
-};
-
-export type Neighborhood = {
-  slug: string;
-  name: string;
-  gridArea: string;
-  rent: string;
-  safety: number;
-  transport: number;
-  nightlife: number;
-  studentFit: number;
-  commute: string;
-  bestFor: string;
-  caution: string;
-  description: string;
 };
 
 export type PlatformCard = {
@@ -46,6 +30,7 @@ export type StudentQuote = {
 export type CityDashboard = {
   description: string;
   costOfLiving: string;
+  heroImage?: string;
   quickFacts: {
     population: string;
     averageRent: string;
@@ -74,6 +59,7 @@ export const cities: City[] = [
       description:
         "Portugal's sunny capital blends historic, tiled neighborhoods with a fast-growing student and international community. Expect a mild climate year-round, steep cobblestone streets, and a rental market that moves quickly during peak season.",
       costOfLiving: "€900–€1,300/month (rent, food, transport, essentials)",
+      heroImage: "/cities/lisbon-hero.jpg",
       quickFacts: {
         population: "545,000 (metro: 2.9M)",
         averageRent: "€650–€950/mo",
@@ -204,98 +190,6 @@ export const cities: City[] = [
         },
       ],
     },
-    neighborhoods: [
-      {
-        slug: "alfama",
-        name: "Alfama",
-        gridArea: "alfama",
-        rent: "€700–€1,000/mo",
-        safety: 7.8,
-        transport: 7.2,
-        nightlife: 8.0,
-        studentFit: 7.5,
-        commute: "25–35 min to major universities",
-        bestFor: "Historic atmosphere, nightlife, short stays",
-        caution: "Steep streets and tourist pressure",
-        description:
-          "Historic, scenic and central, but tourist-heavy and less practical for daily commuting.",
-      },
-      {
-        slug: "baixa",
-        name: "Baixa",
-        gridArea: "baixa",
-        rent: "€800–€1,200/mo",
-        safety: 8.0,
-        transport: 9.0,
-        nightlife: 8.5,
-        studentFit: 7.8,
-        commute: "20–30 min to major universities",
-        bestFor: "Central access, first-time arrivals, city life",
-        caution: "Higher rents and tourist-heavy listings",
-        description:
-          "Very central and well connected, ideal for orientation but usually more expensive.",
-      },
-      {
-        slug: "santos",
-        name: "Santos",
-        gridArea: "santos",
-        rent: "€750–€1,100/mo",
-        safety: 8.1,
-        transport: 8.0,
-        nightlife: 8.8,
-        studentFit: 8.6,
-        commute: "20–35 min to major universities",
-        bestFor: "Students, nightlife, international community",
-        caution: "Noise and fast-moving listings",
-        description:
-          "Popular with international students and young professionals, with strong nightlife and good river access.",
-      },
-      {
-        slug: "campo-de-ourique",
-        name: "Campo de Ourique",
-        gridArea: "campo",
-        rent: "€700–€1,000/mo",
-        safety: 8.6,
-        transport: 7.5,
-        nightlife: 6.5,
-        studentFit: 8.0,
-        commute: "25–40 min to major universities",
-        bestFor: "Calmer lifestyle, safety, local feel",
-        caution: "Fewer student-focused listings",
-        description:
-          "Residential, safe and local, good for people who prefer calm over nightlife.",
-      },
-      {
-        slug: "avenidas-novas",
-        name: "Avenidas Novas",
-        gridArea: "avenidas",
-        rent: "€750–€1,100/mo",
-        safety: 8.5,
-        transport: 8.8,
-        nightlife: 7.0,
-        studentFit: 8.7,
-        commute: "10–25 min to major universities",
-        bestFor: "University access, transport, balanced lifestyle",
-        caution: "Competitive demand during semester start",
-        description:
-          "Practical, central-north area with strong transport and good access to universities.",
-      },
-      {
-        slug: "parque-das-nacoes",
-        name: "Parque das Nações",
-        gridArea: "parque",
-        rent: "€850–€1,300/mo",
-        safety: 8.8,
-        transport: 8.4,
-        nightlife: 6.8,
-        studentFit: 7.2,
-        commute: "30–45 min to major universities",
-        bestFor: "Modern apartments, safety, riverfront lifestyle",
-        caution: "Expensive and further from traditional student areas",
-        description:
-          "Modern, safe and clean, but usually more expensive and less student-centered.",
-      },
-    ],
   },
   {
     slug: "st-gallen",
@@ -323,11 +217,4 @@ export function slugify(text: string): string {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
-}
-
-export function averageFromRange(text: string): number {
-  const numbers = text.replace(/,/g, "").match(/\d+(\.\d+)?/g);
-  if (!numbers || numbers.length === 0) return 0;
-  const values = numbers.map(Number);
-  return values.reduce((sum, value) => sum + value, 0) / values.length;
 }
