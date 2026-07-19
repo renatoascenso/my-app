@@ -1,6 +1,19 @@
 import Link from "next/link";
 import { getCityBySlug } from "@/lib/cities";
 import CityDashboard from "./CityDashboard";
+import ExchangeReportsQA from "./ExchangeReportsQA";
+import { lisbonExchangeReports } from "@/lib/lisbonExchangeReports";
+import { copenhagenExchangeReports } from "@/lib/copenhagenExchangeReports";
+import type { ExchangeReportsData } from "@/lib/exchangeReports";
+import {
+  neighborhoodExplorerCopy,
+  neighborhoodExplorersBySlug,
+} from "./neighborhoodExplorers";
+
+const exchangeReportsBySlug: Record<string, ExchangeReportsData> = {
+  lisbon: lisbonExchangeReports,
+  copenhagen: copenhagenExchangeReports,
+};
 
 export default async function CityPage({
   params,
@@ -55,12 +68,19 @@ export default async function CityPage({
       </header>
 
       {city.dashboard ? (
-        <CityDashboard
-          name={city.name}
-          country={city.country}
-          slug={city.slug}
-          dashboard={city.dashboard}
-        />
+        <>
+          <CityDashboard
+            name={city.name}
+            country={city.country}
+            slug={city.slug}
+            dashboard={city.dashboard}
+            neighborhoodExplorer={neighborhoodExplorersBySlug[city.slug]?.()}
+            neighborhoodExplorerCopy={neighborhoodExplorerCopy[city.slug]}
+          />
+          {exchangeReportsBySlug[city.slug] && (
+            <ExchangeReportsQA data={exchangeReportsBySlug[city.slug]} />
+          )}
+        </>
       ) : (
         <>
           <section className="bg-gradient-to-b from-blue-50 to-white">

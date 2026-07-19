@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { CityDashboard as CityDashboardData } from "@/lib/cities";
 import PlatformCard from "./PlatformCard";
 
@@ -142,11 +141,15 @@ export default function CityDashboard({
   country,
   slug,
   dashboard,
+  neighborhoodExplorer,
+  neighborhoodExplorerCopy,
 }: {
   name: string;
   country: string;
   slug: string;
   dashboard: CityDashboardData;
+  neighborhoodExplorer?: React.ReactNode;
+  neighborhoodExplorerCopy?: { heading: string; subtitle: string };
 }) {
   const quickFacts = [
     { label: "Population", value: dashboard.quickFacts.population, icon: icons.population },
@@ -311,6 +314,22 @@ export default function CityDashboard({
         </div>
       </section>
 
+      {/* Neighborhood explorer */}
+      {neighborhoodExplorer && (
+        <section className="py-16">
+          <div className="mx-auto max-w-6xl px-6">
+            <span className="text-xs font-semibold uppercase tracking-wide text-blue-600">
+              Neighborhood explorer
+            </span>
+            <p className="mt-2 mb-8 max-w-2xl text-base text-slate-600">
+              {neighborhoodExplorerCopy?.subtitle ??
+                "See how rent, safety, and commute times vary block by block before you choose where to live."}
+            </p>
+            {neighborhoodExplorer}
+          </div>
+        </section>
+      )}
+
       {/* Main housing channels */}
       <section id="platforms" className="mx-auto max-w-6xl px-6 py-16">
         <SectionHeading
@@ -378,25 +397,6 @@ export default function CityDashboard({
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-blue-600">
-        <div className="mx-auto max-w-6xl px-6 py-16 text-center">
-          <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
-            Explore {name}&apos;s neighborhoods
-          </h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm text-blue-100">
-            See how rent, safety, and commute times vary block by block before
-            you choose where to live.
-          </p>
-          <Link
-            href={`/city/${slug}/neighborhoods`}
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-blue-700 shadow-sm transition hover:bg-blue-50"
-          >
-            Open neighborhood map →
-          </Link>
         </div>
       </section>
     </div>

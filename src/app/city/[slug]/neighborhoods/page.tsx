@@ -1,32 +1,9 @@
 import Link from "next/link";
 import { getCityBySlug } from "@/lib/cities";
-import MetroExplorer from "./MetroExplorer";
-import StGallenExplorer from "./StGallenExplorer";
-import CopenhagenExplorer from "./CopenhagenExplorer";
-
-const explorerCopy: Record<string, { heading: string; subtitle: string }> = {
-  lisbon: {
-    heading: "Explore the Lisbon Metropolitan Area",
-    subtitle:
-      "Drill down from the metro area, into Lisbon's freguesias, and preview bairros before comparing listings.",
-  },
-  "st-gallen": {
-    heading: "Explore St.Gallen's quarters",
-    subtitle:
-      "Compare St.Gallen's 31 official statistical quarters by rent, safety, and commute time to HSG before comparing listings.",
-  },
-  copenhagen: {
-    heading: "Explore Copenhagen's districts",
-    subtitle:
-      "Compare Copenhagen's bydele plus Frederiksberg — home to the CBS campus — by rent, safety, and commute time to CBS before comparing listings.",
-  },
-};
-
-const explorersBySlug: Record<string, () => React.ReactNode> = {
-  lisbon: () => <MetroExplorer />,
-  "st-gallen": () => <StGallenExplorer />,
-  copenhagen: () => <CopenhagenExplorer />,
-};
+import {
+  neighborhoodExplorerCopy as explorerCopy,
+  neighborhoodExplorersBySlug as explorersBySlug,
+} from "../neighborhoodExplorers";
 
 export default async function NeighborhoodsPage({
   params,
