@@ -258,6 +258,16 @@ export default function CityDashboard({
             </div>
           </div>
         </div>
+        {dashboard.heroCredit && (
+          <a
+            href={dashboard.heroCredit.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-2 right-3 text-[10px] text-white/70 hover:text-white"
+          >
+            Photo: {dashboard.heroCredit.text}
+          </a>
+        )}
       </section>
 
       {/* Quick facts */}
@@ -373,7 +383,8 @@ export default function CityDashboard({
         </div>
       </section>
 
-      {/* Student experiences */}
+      {/* Student experiences — only real quotes; hidden until a city has some */}
+      {dashboard.studentQuotes.length > 0 && (
       <section className="mx-auto max-w-6xl px-6 py-16">
         <SectionHeading
           eyebrow="Real experiences"
@@ -399,6 +410,7 @@ export default function CityDashboard({
           ))}
         </div>
       </section>
+      )}
     </div>
   );
 }

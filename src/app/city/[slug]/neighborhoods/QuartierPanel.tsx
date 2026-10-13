@@ -2,6 +2,9 @@
 
 import type { Quartier } from "@/lib/stGallenNeighborhoods";
 
+/** Fields the panel shows; shared by St.Gallen and Zurich quarters. */
+export type QuarterDetails = Omit<Quartier, "kreis" | "group">;
+
 const statBars: { key: "safety" | "transport" | "nightlife" | "studentFit"; label: string }[] = [
   { key: "safety", label: "Safety" },
   { key: "transport", label: "Public transport" },
@@ -26,29 +29,35 @@ function StatBar({ label, value }: { label: string; value: number }) {
   );
 }
 
-export function QuartierEmptyPanel() {
+export function QuartierEmptyPanel({
+  text = "Hover or click a quarter to see quick stats. Rosenberg-Kreubleiche, Hölzli-Joosrüti, Altstadt, St.Leonhard-Ost, and Linsenbühl-Dreilinden have sample listings you can browse.",
+}: {
+  text?: string;
+}) {
   return (
     <div className="rounded-2xl border border-dashed border-slate-200 bg-white p-6 text-sm text-slate-500 sm:p-8">
-      Hover or click a quarter to see quick stats. Rosenberg-Kreubleiche,
-      Hölzli-Joosrüti, Altstadt, St.Leonhard-Ost, and Linsenbühl-Dreilinden
-      have sample listings you can browse.
+      {text}
     </div>
   );
 }
 
 export default function QuartierPanel({
   quartier,
+  badge,
+  commuteLabel = "Commute to HSG",
   showListings,
   onShowListings,
 }: {
-  quartier: Quartier;
+  quartier: QuarterDetails;
+  badge: string;
+  commuteLabel?: string;
   showListings: boolean;
   onShowListings: () => void;
 }) {
   return (
     <div className="animate-zoom-in-fade rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
       <span className="inline-flex items-center rounded-full bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700">
-        Kreis {quartier.kreis}
+        {badge}
       </span>
       <h3 className="mt-3 text-2xl font-bold text-slate-900">{quartier.name}</h3>
       <p className="mt-2 text-sm leading-relaxed text-slate-600">
@@ -66,7 +75,7 @@ export default function QuartierPanel({
         </div>
         <div>
           <p className="text-xs font-medium uppercase tracking-wide text-slate-500">
-            Commute to HSG
+            {commuteLabel}
           </p>
           <p className="mt-1 text-base font-semibold text-slate-900">
             {quartier.commute}

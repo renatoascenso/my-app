@@ -116,7 +116,7 @@ export default function Home() {
                   onChange={(e) => setQuery(e.target.value)}
                   onFocus={() => setShowSuggestions(true)}
                   onBlur={() => setTimeout(() => setShowSuggestions(false), 100)}
-                  placeholder="Search St. Gallen, Lisbon, Copenhagen..."
+                  placeholder="Search Zurich, St. Gallen, Lisbon..."
                   className="w-full bg-transparent text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none"
                 />
               </div>

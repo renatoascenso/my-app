@@ -40,6 +40,7 @@ export type CityDashboard = {
   description: string;
   costOfLiving: string;
   heroImage?: string;
+  heroCredit?: { text: string; url: string }; // required by the photo's license (e.g. CC BY-SA)
   quickFacts: {
     population: string;
     averageRent: string;
@@ -393,6 +394,148 @@ export const cities: City[] = [
           author: "Priya, exchange student from the UK",
         },
       ],
+    },
+  },
+  {
+    slug: "zurich",
+    name: "Zurich",
+    country: "Switzerland",
+    aliases: ["Zürich", "Zuerich", "Zurigo", "Zurique"],
+    rent: "CHF 900–1,400",
+    risk: "Extremely low vacancy",
+    bestFor: "ETH & UZH students, career networking, lake and nature",
+    dashboard: {
+      description:
+        "Switzerland's largest city and financial center, home to ETH Zurich and the University of Zurich — together more than 55,000 students. Expect excellent public transport, the lake and forest within minutes, and one of the tightest rental markets in Europe: only about 1 in 1,000 flats in the city stands empty.",
+      costOfLiving: "CHF 2,000–2,700/month (rent, food, transport, insurance)",
+      heroImage: "/cities/zurich-hero.jpg",
+      heroCredit: {
+        text: "Thomas Wolf, www.foto-tw.de · CC BY-SA 3.0 DE",
+        url: "https://commons.wikimedia.org/wiki/File:Altstadt_Z%C3%BCrich_2015.jpg",
+      },
+      quickFacts: {
+        population: "452,000 (end of 2025; metro area ~1.5M)",
+        averageRent: "CHF 900–1,400/mo for a room in a shared flat",
+        languages: "German (Swiss German dialect), English widely used at ETH and in business",
+        transportScore: "9.5/10",
+        safetyScore: "8.7/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "July through mid-September and again in January, ahead of ETH and UZH semester starts. Affordable rooms near the main campuses or in Kreis 4, 5 and 6 typically receive dozens of messages within hours of being posted.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "The city's vacancy rate was just 0.10% in June 2025. Landlords pick from many applicants and expect a complete dossier — ID or permit, proof of income or a guarantor, and often a Swiss debt-collection extract (Betreibungsauszug) — which is hard to provide when you're just arriving.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "WOKO",
+          trustScore: 4.6,
+          audience: "Students of ETH, UZH and other Zurich universities",
+          pros: [
+            "Non-profit student housing foundation",
+            "Rooms well below market rent",
+            "Furnished options and short-term sublets",
+          ],
+          cons: ["Very high demand — apply the day you're admitted", "Limited availability at semester start"],
+        },
+        {
+          name: "UZH & ETH Housing Office",
+          trustScore: 4.4,
+          audience: "Students and researchers of UZH and ETH",
+          pros: [
+            "Run by the universities themselves",
+            "Private rooms offered specifically to students",
+            "Advice on contracts and scams",
+          ],
+          cons: ["You need to register with your admission or contract", "Rooms are limited and not guaranteed"],
+        },
+        {
+          name: "WG-Zimmer.ch",
+          trustScore: 4.0,
+          audience: "Students looking for shared flats (WGs)",
+          pros: [
+            "Largest shared-flat listing site in German-speaking Switzerland",
+            "Direct contact with flatmates",
+            "Many short-term and sublet offers",
+          ],
+          cons: ["Fierce competition in Zurich", "Mostly German-language"],
+        },
+        {
+          name: "Flatfox",
+          trustScore: 4.1,
+          audience: "Students & young professionals",
+          pros: [
+            "Clean, modern search interface",
+            "Many listings from Zurich property managers",
+            "Direct online applications",
+          ],
+          cons: ["Few furnished rooms", "Popular listings fill within hours"],
+        },
+        {
+          name: "Homegate",
+          trustScore: 3.8,
+          audience: "Long-term renters & locals",
+          pros: [
+            "Largest overall listing volume in Switzerland",
+            "Detailed search filters",
+            "Direct landlord/agency contact",
+          ],
+          cons: [
+            "Mostly unfurnished, long-term flats",
+            "Requires a full Swiss application dossier",
+          ],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "Incoming students and expats",
+          pros: [
+            "Free to use",
+            "Sublets and short-term rooms from other students",
+            "Some English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Rental scams",
+          text: "ETH warns about very cheap listings in great locations where the 'landlord' is abroad and can't show the flat, but asks for a deposit or first rent to send the keys. Never transfer money before you've seen the room (in person or via a live video call) and verified who you're dealing with.",
+        },
+        {
+          title: "Application dossier",
+          text: "For regular flats, landlords expect a Betreibungsauszug (debt-collection extract), copies of ID or permit, and proof of income or a guarantor. As a new arrival you often can't provide all of this — student housing, WGs and sublets are much more realistic for your first months.",
+        },
+        {
+          title: "Deposits and blocked accounts",
+          text: "Swiss law caps the rental deposit at 3 months' rent, held in a blocked account in the tenant's name (Mietkautionskonto). Paying a deposit in cash or to a private account is a red flag; deposit insurance providers are an alternative if you can't open a Swiss bank account yet.",
+        },
+        {
+          title: "Registration and sublet rules",
+          text: "Coming from abroad, you must register at the city's Personenmeldeamt within 14 days of arriving — by appointment only, and with your rental contract, ID and health insurance proof. Many rooms are sublets (Untermiete) — ask for written proof that the main tenant is allowed to sublet, or you risk losing the room at short notice.",
+        },
+      ],
+      studentQuotes: [],
     },
   },
   {
