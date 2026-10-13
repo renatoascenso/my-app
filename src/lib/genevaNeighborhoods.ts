@@ -1,0 +1,472 @@
+import type { Listing } from "./listings";
+
+// The City of Geneva's 16 statistical sectors, grouped by the four historic districts.
+// Boundaries: Portail des données SITG (État de Genève), "Secteurs statistiques"
+// (open access, commercial use allowed; source must be credited — see GenevaExplorer).
+// Rents are estimated ranges for a room in a shared flat; scores are editorial judgments.
+
+export type GenevaDistrict = "Cité" | "Plainpalais" | "Eaux-Vives" | "Petit-Saconnex";
+
+export type GenevaSecteur = {
+  slug: string;
+  name: string;
+  district: GenevaDistrict;
+  lat: number;
+  lng: number;
+  description: string;
+  rent: string;
+  safety: number;
+  transport: number;
+  nightlife: number;
+  studentFit: number;
+  commute: string;
+  bestFor: string;
+  caution: string;
+  landmarks: string[];
+};
+
+export const genevaDistricts: GenevaDistrict[] = ["Cité", "Plainpalais", "Eaux-Vives", "Petit-Saconnex"];
+
+export const genevaSecteurs: GenevaSecteur[] = [
+  // ─── Cité ───
+  {
+    slug: "cite-centre",
+    name: "Cité-Centre",
+    district: "Cité",
+    lat: 46.20107,
+    lng: 6.14804,
+    description:
+      "Geneva's old town on the hill around St-Pierre Cathedral, plus the shopping streets and lakefront below it. UNIGE's historic Uni Bastions building sits in the Parc des Bastions.",
+    rent: "CHF 1,100–1,600/mo",
+    safety: 8.4,
+    transport: 9.4,
+    nightlife: 7.5,
+    studentFit: 7.5,
+    commute: "10–15 min walk to Uni Mail; Uni Bastions on site",
+    bestFor: "Old-town charm, humanities students at Uni Bastions",
+    caution: "Few rooms on the market and high prices",
+    landmarks: ["St-Pierre Cathedral", "Parc des Bastions (Uni Bastions)", "Place du Bourg-de-Four", "Place du Molard", "Jardin Anglais"],
+  },
+  {
+    slug: "saint-gervais-chantepoulet",
+    name: "Saint-Gervais-Chantepoulet",
+    district: "Cité",
+    lat: 46.20709,
+    lng: 6.14198,
+    description:
+      "The busy right-bank center between Cornavin station and the Rhône, full of shops, hotels and offices. Unbeatable connections, but more commercial than residential.",
+    rent: "CHF 1,000–1,450/mo",
+    safety: 7.6,
+    transport: 10,
+    nightlife: 7.0,
+    studentFit: 7.0,
+    commute: "10–15 min to Uni Mail by tram",
+    bestFor: "Train connections from Cornavin, central location",
+    caution: "Noisy and touristy; few residential flats",
+    landmarks: ["Gare Cornavin"],
+  },
+  {
+    slug: "delices-grottes",
+    name: "Délices-Grottes",
+    district: "Cité",
+    lat: 46.21122,
+    lng: 6.13854,
+    description:
+      "A lively residential area just behind Cornavin station, with the alternative Grottes neighborhood, small cafés and the Parc des Cropettes. Popular with students and young people.",
+    rent: "CHF 950–1,350/mo",
+    safety: 7.8,
+    transport: 9.2,
+    nightlife: 7.5,
+    studentFit: 8.6,
+    commute: "15 min to Uni Mail by tram",
+    bestFor: "Student vibe close to Cornavin",
+    caution: "Competitive for affordable rooms",
+    landmarks: ["Les Grottes", "Parc des Cropettes", "Délices"],
+  },
+  {
+    slug: "paquis-navigation",
+    name: "Pâquis-Navigation",
+    district: "Cité",
+    lat: 46.21189,
+    lng: 6.14892,
+    description:
+      "Geneva's most diverse district between Cornavin and the lake, with international restaurants, bars and the famous Bains des Pâquis just offshore. Lively day and night.",
+    rent: "CHF 950–1,400/mo",
+    safety: 6.8,
+    transport: 9.4,
+    nightlife: 9.0,
+    studentFit: 8.0,
+    commute: "15–20 min to Uni Mail by tram",
+    bestFor: "Food, nightlife and lake swims at the Bains des Pâquis",
+    caution: "Noisy at night; some street drug and sex-work activity",
+    landmarks: ["Pâquis", "Rue de Berne"],
+  },
+  // ─── Plainpalais ───
+  {
+    slug: "champel-roseraie",
+    name: "Champel-Roseraie",
+    district: "Plainpalais",
+    lat: 46.18856,
+    lng: 6.15536,
+    description:
+      "A calm, upmarket residential district home to the University Hospitals (HUG) and UNIGE's medical faculty at the CMU. Green, safe and well connected by the Léman Express.",
+    rent: "CHF 1,050–1,500/mo",
+    safety: 9.0,
+    transport: 8.8,
+    nightlife: 3.5,
+    studentFit: 7.8,
+    commute: "10–15 min to Uni Mail; CMU and HUG on site",
+    bestFor: "Medicine students, quiet and green streets",
+    caution: "Pricey; little nightlife",
+    landmarks: ["HUG University Hospitals", "CMU (Faculty of Medicine)", "Parc Bertrand"],
+  },
+  {
+    slug: "la-cluse-philosophes",
+    name: "La Cluse-Philosophes",
+    district: "Plainpalais",
+    lat: 46.19297,
+    lng: 6.14384,
+    description:
+      "A small, dense residential sector right next to Uni Mail and the Plaine de Plainpalais, with older apartment buildings and lots of students.",
+    rent: "CHF 1,000–1,450/mo",
+    safety: 8.2,
+    transport: 9.0,
+    nightlife: 7.0,
+    studentFit: 9.0,
+    commute: "5–10 min walk to Uni Mail",
+    bestFor: "Walking to Uni Mail",
+    caution: "Small sector — rooms are rare and go fast",
+    landmarks: ["Boulevard des Philosophes", "La Cluse"],
+  },
+  {
+    slug: "jonction-plainpalais",
+    name: "Jonction-Plainpalais",
+    district: "Plainpalais",
+    lat: 46.19976,
+    lng: 6.13459,
+    description:
+      "The heart of student Geneva: Uni Mail, the huge Plaine de Plainpalais with its flea market, bars along the Rhône and the meeting point of the Rhône and Arve rivers at the Jonction.",
+    rent: "CHF 1,000–1,400/mo",
+    safety: 7.8,
+    transport: 9.3,
+    nightlife: 9.0,
+    studentFit: 9.5,
+    commute: "0–10 min walk to Uni Mail",
+    bestFor: "Living on campus, bars and river swims",
+    caution: "The most sought-after area for students — expect many applicants",
+    landmarks: ["Uni Mail", "Plaine de Plainpalais", "Bâtiment des Forces Motrices", "Pointe de la Jonction"],
+  },
+  {
+    slug: "batie-acacias",
+    name: "Bâtie-Acacias",
+    district: "Plainpalais",
+    lat: 46.19569,
+    lng: 6.12673,
+    description:
+      "A former industrial area along the Arve that is turning into a new urban district, including new housing in Les Vernets. Close to Uni Mail and Carouge at somewhat lower prices.",
+    rent: "CHF 900–1,300/mo",
+    safety: 7.9,
+    transport: 8.6,
+    nightlife: 6.0,
+    studentFit: 8.2,
+    commute: "10–15 min to Uni Mail by tram or on foot",
+    bestFor: "New student housing, value close to Uni Mail",
+    caution: "Construction sites and industrial pockets",
+    landmarks: ["Acacias", "Les Vernets"],
+  },
+  // ─── Eaux-Vives ───
+  {
+    slug: "eaux-vives-lac",
+    name: "Eaux-Vives-Lac",
+    district: "Eaux-Vives",
+    lat: 46.2049,
+    lng: 6.16592,
+    description:
+      "A lively left-bank district between the old town and the lake parks, with cafés, bars and the Léman Express station at Gare des Eaux-Vives. Summer evenings in Parc La Grange and along the lake.",
+    rent: "CHF 1,050–1,500/mo",
+    safety: 8.3,
+    transport: 9.0,
+    nightlife: 8.0,
+    studentFit: 8.0,
+    commute: "15–20 min to Uni Mail by tram",
+    bestFor: "Lake parks, cafés and nightlife",
+    caution: "Higher rents near the lake",
+    landmarks: ["Parc La Grange", "Parc des Eaux-Vives", "Gare des Eaux-Vives"],
+  },
+  {
+    slug: "florissant-malagnou",
+    name: "Florissant-Malagnou",
+    district: "Eaux-Vives",
+    lat: 46.19599,
+    lng: 6.165,
+    description:
+      "An elegant residential district of 19th-century buildings, villas and embassies between the old town and Champel. Calm and leafy, close to museums.",
+    rent: "CHF 1,050–1,500/mo",
+    safety: 9.0,
+    transport: 8.2,
+    nightlife: 4.0,
+    studentFit: 7.0,
+    commute: "15–20 min to Uni Mail by bus",
+    bestFor: "Quiet, elegant surroundings",
+    caution: "Expensive and few shared flats",
+    landmarks: ["Florissant", "Route de Malagnou"],
+  },
+  // ─── Petit-Saconnex ───
+  {
+    slug: "secheron-prieure",
+    name: "Sécheron-Prieuré",
+    district: "Petit-Saconnex",
+    lat: 46.22091,
+    lng: 6.14832,
+    description:
+      "A green lakeside sector north of the Pâquis with the Botanical Garden, Parc Mon Repos and Perle du Lac. Close to the international organizations.",
+    rent: "CHF 1,050–1,500/mo",
+    safety: 8.8,
+    transport: 8.4,
+    nightlife: 4.0,
+    studentFit: 7.2,
+    commute: "20–25 min to Uni Mail by tram or train",
+    bestFor: "Lake parks and international organizations nearby",
+    caution: "Higher rents; quiet evenings",
+    landmarks: ["Botanical Garden", "Parc Mon Repos", "Perle du Lac"],
+  },
+  {
+    slug: "onu-rigot",
+    name: "ONU-Rigot",
+    district: "Petit-Saconnex",
+    lat: 46.22561,
+    lng: 6.13873,
+    description:
+      "International Geneva: the Palais des Nations, Place des Nations and the Graduate Institute's Maison de la paix campus, alongside residential streets.",
+    rent: "CHF 1,000–1,450/mo",
+    safety: 8.8,
+    transport: 8.6,
+    nightlife: 3.5,
+    studentFit: 7.8,
+    commute: "Graduate Institute on site; 20–25 min to Uni Mail",
+    bestFor: "Graduate Institute students, UN interns",
+    caution: "Lots of short-term demand from interns pushes prices up",
+    landmarks: ["Palais des Nations", "Place des Nations", "Maison de la paix (Graduate Institute)"],
+  },
+  {
+    slug: "grand-pre-vermont",
+    name: "Grand-Pré-Vermont",
+    district: "Petit-Saconnex",
+    lat: 46.21646,
+    lng: 6.1361,
+    description:
+      "A residential sector north of the Servette with apartment blocks and schools, a short ride from Cornavin and the international organizations.",
+    rent: "CHF 950–1,350/mo",
+    safety: 8.4,
+    transport: 8.6,
+    nightlife: 4.0,
+    studentFit: 7.6,
+    commute: "15–20 min to Uni Mail by tram or bus",
+    bestFor: "Good value between Cornavin and the UN district",
+    caution: "Busy main roads",
+    landmarks: ["Grand-Pré"],
+  },
+  {
+    slug: "bouchet-moillebeau",
+    name: "Bouchet-Moillebeau",
+    district: "Petit-Saconnex",
+    lat: 46.22078,
+    lng: 6.12612,
+    description:
+      "A quiet residential sector in the north-west of the city, with housing estates, small parks and direct trams into the center.",
+    rent: "CHF 900–1,300/mo",
+    safety: 8.5,
+    transport: 8.2,
+    nightlife: 2.5,
+    studentFit: 7.0,
+    commute: "20–25 min to Uni Mail by tram",
+    bestFor: "Lower rents, calm streets",
+    caution: "Little going on in the evenings",
+    landmarks: ["Bouchet", "Moillebeau"],
+  },
+  {
+    slug: "charmilles-chatelaine",
+    name: "Charmilles-Châtelaine",
+    district: "Petit-Saconnex",
+    lat: 46.21083,
+    lng: 6.12401,
+    description:
+      "A working- and middle-class residential area in the west of the city, with former industrial sites turned into housing and parks, and tram lines to the center.",
+    rent: "CHF 900–1,300/mo",
+    safety: 8.0,
+    transport: 8.6,
+    nightlife: 4.0,
+    studentFit: 7.6,
+    commute: "15–20 min to Uni Mail by tram",
+    bestFor: "Good value with direct trams",
+    caution: "Some busy roads and older buildings",
+    landmarks: ["Charmilles"],
+  },
+  {
+    slug: "saint-jean-aire",
+    name: "Saint-Jean-Aire",
+    district: "Petit-Saconnex",
+    lat: 46.20479,
+    lng: 6.11997,
+    description:
+      "A residential sector above the Rhône in the west of the city, with river walks, cooperatives and quiet streets.",
+    rent: "CHF 900–1,300/mo",
+    safety: 8.4,
+    transport: 8.0,
+    nightlife: 3.5,
+    studentFit: 7.4,
+    commute: "20–25 min to Uni Mail by bus and tram",
+    bestFor: "River walks and calm",
+    caution: "Fewer direct connections to Uni Mail",
+    landmarks: ["Aïre", "Rhône riverside"],
+  },
+];
+
+export type GenevaSecteurListing = Listing & { secteurSlug: string };
+
+// Sample listings to demonstrate the map — not real offers.
+export const SAMPLE_SOURCE = "Sample listing";
+
+export const genevaListings: GenevaSecteurListing[] = [
+  {
+    id: "ge-sample-plainpalais-room",
+    secteurSlug: "jonction-plainpalais",
+    title: "Room 5 minutes from Uni Mail",
+    rent: 1050,
+    currency: "CHF ",
+    type: "Room",
+    source: SAMPLE_SOURCE,
+    homeUniversityFriendly: true,
+    lat: 46.1985,
+    lng: 6.1385,
+    description:
+      "Furnished room in a 4-person colocation near the Plaine de Plainpalais, a short walk to Uni Mail.",
+    rooms: 1,
+    sizeSqm: 14,
+    availableFrom: "1 Sep 2026",
+    amenities: ["Furnished", "Wifi included", "Washing machine"],
+  },
+  {
+    id: "ge-sample-cluse-room",
+    secteurSlug: "la-cluse-philosophes",
+    title: "Room on Boulevard des Philosophes",
+    rent: 1100,
+    currency: "CHF ",
+    type: "Room",
+    source: SAMPLE_SOURCE,
+    lat: 46.1945,
+    lng: 6.1470,
+    description: "Room in an older apartment shared with two students, minutes from Uni Mail.",
+    rooms: 1,
+    sizeSqm: 15,
+    availableFrom: "15 Sep 2026",
+    amenities: ["Furnished", "Bills included"],
+  },
+  {
+    id: "ge-sample-grottes-room",
+    secteurSlug: "delices-grottes",
+    title: "Room in Les Grottes",
+    rent: 980,
+    currency: "CHF ",
+    type: "Room",
+    source: SAMPLE_SOURCE,
+    lat: 46.2120,
+    lng: 6.1415,
+    description: "Room in a friendly 3-person flat behind Cornavin station, with direct trams to Uni Mail.",
+    rooms: 1,
+    sizeSqm: 13,
+    availableFrom: "1 Oct 2026",
+    amenities: ["Furnished", "Wifi included"],
+  },
+  {
+    id: "ge-sample-paquis-studio",
+    secteurSlug: "paquis-navigation",
+    title: "Small studio in the Pâquis",
+    rent: 1450,
+    currency: "CHF ",
+    type: "Studio",
+    source: SAMPLE_SOURCE,
+    lat: 46.2110,
+    lng: 6.1455,
+    description: "Compact studio with kitchenette, five minutes from the lake and Cornavin.",
+    rooms: 1,
+    sizeSqm: 22,
+    availableFrom: "1 Sep 2026",
+    amenities: ["Private bathroom", "Kitchenette"],
+    riskNote: "Higher caution",
+  },
+  {
+    id: "ge-sample-acacias-room",
+    secteurSlug: "batie-acacias",
+    title: "Room in a new building, Acacias",
+    rent: 950,
+    currency: "CHF ",
+    type: "Room",
+    source: SAMPLE_SOURCE,
+    homeUniversityFriendly: true,
+    lat: 46.1915,
+    lng: 6.1340,
+    description: "Room in a modern shared flat in the Acacias area, 10 minutes from Uni Mail.",
+    rooms: 1,
+    sizeSqm: 14,
+    availableFrom: "1 Nov 2026",
+    amenities: ["Furnished", "Elevator", "Washing machine"],
+  },
+  {
+    id: "ge-sample-champel-room",
+    secteurSlug: "champel-roseraie",
+    title: "Room near the CMU",
+    rent: 1150,
+    currency: "CHF ",
+    type: "Room",
+    source: SAMPLE_SOURCE,
+    lat: 46.1915,
+    lng: 6.1520,
+    description: "Quiet room in a colocation of medicine students, close to the CMU and the HUG.",
+    rooms: 1,
+    sizeSqm: 15,
+    availableFrom: "1 Sep 2026",
+    amenities: ["Furnished", "Balcony"],
+  },
+  {
+    id: "ge-sample-eaux-vives-room",
+    secteurSlug: "eaux-vives-lac",
+    title: "Room near Gare des Eaux-Vives",
+    rent: 1120,
+    currency: "CHF ",
+    type: "Room",
+    source: SAMPLE_SOURCE,
+    lat: 46.2030,
+    lng: 6.1600,
+    description: "Room in a 3-person flat close to the lake parks and the Léman Express.",
+    rooms: 1,
+    sizeSqm: 14,
+    availableFrom: "15 Oct 2026",
+    amenities: ["Furnished", "Wifi included"],
+  },
+  {
+    id: "ge-sample-charmilles-room",
+    secteurSlug: "charmilles-chatelaine",
+    title: "Budget room in Charmilles",
+    rent: 900,
+    currency: "CHF ",
+    type: "Room",
+    source: SAMPLE_SOURCE,
+    lat: 46.2110,
+    lng: 6.1225,
+    description: "Simple room in a 2-person flat with a direct tram to the center.",
+    rooms: 1,
+    sizeSqm: 12,
+    availableFrom: "1 Sep 2026",
+    amenities: ["Furnished", "Bills included"],
+  },
+];
+
+export function getGenevaSecteurBySlug(slug: string): GenevaSecteur | undefined {
+  return genevaSecteurs.find((s) => s.slug === slug);
+}
+
+export function getGenevaListingsForSecteur(slug: string | null): GenevaSecteurListing[] {
+  if (!slug) return [];
+  return genevaListings.filter((l) => l.secteurSlug === slug);
+}
