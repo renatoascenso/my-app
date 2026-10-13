@@ -1043,6 +1043,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "lyon",
+    name: "Lyon",
+    country: "France",
+    aliases: ["Lione", "Lyons"],
+    rent: "€500–€650",
+    risk: "Tight market and rents above the legal cap",
+    bestFor: "Lyon 1, 2 & 3, ENS, INSA and emlyon students, food and culture",
+    dashboard: {
+      description:
+        "France's second student hub, with about 190,000 students across the metropolitan area. Lyon combines a UNESCO-listed old town, two rivers and a famous food scene with a manageable size. Universities sit along the Rhône in the 7th and 8th, while the big La Doua campus (Lyon 1, INSA) is just across the border in Villeurbanne.",
+      costOfLiving: "€1,000–€1,400/month (rent, food, transport, essentials)",
+      heroImage: "/cities/lyon-hero.jpg",
+      heroCredit: {
+        text: "Tournasol7 · CC BY 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:View_of_Lyon_(4).jpg",
+      },
+      quickFacts: {
+        population: "521,000 in the city (metropolitan area: 1.4M)",
+        averageRent: "€505/mo for a room in a shared flat; €650/mo for a studio",
+        languages: "French; English common at universities, less so with landlords",
+        transportScore: "8.8/10",
+        safetyScore: "7.6/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "June to September, ahead of the academic year — around nine applicants compete for each student listing. CROUS applications open in spring through the national student portal.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Average student rents reached €650/month for a studio and €505 for a room in a shared flat in 2025 (Studapart). Rent control applies in Lyon and Villeurbanne, but 24% of listings still exceeded the cap in 2025.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "CROUS residences",
+          trustScore: 4.5,
+          audience: "Students enrolled in French higher education",
+          pros: [
+            "Public student housing at the lowest prices",
+            "Eligible for housing aid (APL)",
+            "Residences near the main campuses",
+          ],
+          cons: ["Priority for scholarship students", "Demand exceeds supply"],
+        },
+        {
+          name: "Studapart",
+          trustScore: 4.0,
+          audience: "Students of partner schools and universities",
+          pros: [
+            "Student-focused housing platform",
+            "Partnered with many Lyon schools",
+            "Online booking with guarantee options",
+          ],
+          cons: ["Service fees", "Prices at market level"],
+        },
+        {
+          name: "Leboncoin & PAP",
+          trustScore: 3.5,
+          audience: "Students comfortable searching in French",
+          pros: [
+            "Largest number of private listings",
+            "Direct contact with owners (PAP: no agency fees)",
+            "Rooms, studios and sublets",
+          ],
+          cons: ["Fake listings and scams", "Fast-moving market"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "Erasmus and international students",
+          pros: [
+            "Free to use",
+            "Sublets from students on exchange",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Rent above the legal cap",
+          text: "Rent control (encadrement des loyers) applies in Lyon and Villeurbanne to unfurnished and furnished main residences. Check any offer with the Métropole de Lyon's online simulator — about a quarter of listings exceed the cap.",
+        },
+        {
+          title: "Guarantor requirements",
+          text: "Most landlords ask for a guarantor with French income. Visale, the free state guarantee from Action Logement, covers students under 30 — including international students once their visa is valid.",
+        },
+        {
+          title: "Deposits and scams",
+          text: "By law the deposit is at most one month's rent (unfurnished) or two months' (furnished). Never pay a deposit or 'reservation fee' before visiting and signing a lease.",
+        },
+        {
+          title: "Paperwork after arrival",
+          text: "Non-EU students must validate their long-stay student visa (VLS-TS) online within 3 months of arrival. With a valid lease you can apply for CAF housing aid (APL).",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
