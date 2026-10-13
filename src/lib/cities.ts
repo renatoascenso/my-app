@@ -1160,6 +1160,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "munich",
+    name: "Munich",
+    country: "Germany",
+    aliases: ["München", "Muenchen", "Monaco di Baviera", "Munique"],
+    rent: "€750–€950",
+    risk: "Germany's highest rents and long dorm waiting lists",
+    bestFor: "LMU, TUM & Hochschule München students, Alps and lakes, career",
+    dashboard: {
+      description:
+        "Bavaria's capital and one of Europe's top university cities: LMU and TUM alone have more than 100,000 students, plus Hochschule München and many smaller schools. Munich is safe, green and close to the Alps — and the most expensive student city in Germany, with WG rooms around €850.",
+      costOfLiving: "€1,300–€1,700/month (rent, food, transport, insurance)",
+      heroImage: "/cities/munich-hero.jpg",
+      heroCredit: {
+        text: "Martin Falbisoner · CC BY-SA 3.0",
+        url: "https://commons.wikimedia.org/wiki/File:Frauenkirche_and_Neues_Rathaus_Munich_March_2013.JPG",
+      },
+      quickFacts: {
+        population: "1.61 million (end of 2025)",
+        averageRent: "€850/mo median for a WG room (winter 2025/26)",
+        languages: "German (Bavarian accent); English widely used at TUM and LMU",
+        transportScore: "9.2/10",
+        safetyScore: "9.0/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "August to October and again in March–April, ahead of the winter and summer semesters. At the start of winter semester 2025/26, about 8,700 students were on the Studierendenwerk's waiting list.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "WG rooms in Munich had a median asking rent of €850 in winter 2025/26 — the highest in Germany (WG-Gesucht/MMI). Regular flats are scarce and landlords pick applicants with German income, SCHUFA and guarantors.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "Studierendenwerk München Oberbayern",
+          trustScore: 4.5,
+          audience: "Students enrolled at Munich universities",
+          pros: [
+            "About 9,200 places incl. the Studentenstadt and Olympic Village",
+            "Far below market rents",
+            "Registration (Anmeldung) always possible",
+          ],
+          cons: ["Thousands on the waiting list", "Apply as soon as you're admitted"],
+        },
+        {
+          name: "WG-Gesucht",
+          trustScore: 4.1,
+          audience: "Students looking for shared flats (WGs)",
+          pros: [
+            "Germany's largest WG platform",
+            "Many sublets during semester breaks",
+            "Direct contact with flatmates",
+          ],
+          cons: ["Very competitive in Munich", "Scam listings slip through"],
+        },
+        {
+          name: "ImmoScout24",
+          trustScore: 3.8,
+          audience: "Long-term renters",
+          pros: [
+            "Largest flat listing portal in Germany",
+            "Many unfurnished apartments",
+            "Detailed filters",
+          ],
+          cons: ["Requires SCHUFA, income proof and German documents", "Expensive and heavily contested"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "Incoming and international students",
+          pros: [
+            "Free to use",
+            "Short-term sublets from exchange students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "High prices make Munich a target for fake listings: a surprisingly cheap flat, an owner 'abroad', and a request to pay through a fake booking or key-delivery service. Never pay before a viewing and a signed contract.",
+        },
+        {
+          title: "Registration (Anmeldung)",
+          text: "You must register your address within 14 days of moving in, with a confirmation from the landlord (Wohnungsgeberbestätigung). Make sure sublets allow registration — you'll need it for a tax ID, bank account and residence permit.",
+        },
+        {
+          title: "Deposits and rent caps",
+          text: "The deposit (Kaution) may be at most three months' net cold rent and can be paid in three installments. The rent brake (Mietpreisbremse) applies in Munich, but furnished and temporary lets are often far above it.",
+        },
+        {
+          title: "Apply for dorms early",
+          text: "Apply to the Studierendenwerk as soon as you have your admission — waiting lists are long at semester start. Until then, temporary sublets and WG rooms in outer districts are the realistic options.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
@@ -1353,6 +1470,7 @@ export const countryFlags: Record<string, string> = {
   Portugal: "🇵🇹",
   Denmark: "🇩🇰",
   France: "🇫🇷",
+  Germany: "🇩🇪",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
