@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { cities, findCityByQuery, slugify } from "@/lib/cities";
+import { citiesByCountry, countryFlags, findCityByQuery, searchCities, slugify } from "@/lib/cities";
 
 const valueProps = [
   {
@@ -31,13 +31,13 @@ export default function Home() {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const countries = citiesByCountry();
+  const [selectedCountry, setSelectedCountry] = useState(
+    countries.find((c) => c.country === "Switzerland")?.country ?? countries[0]?.country
+  );
+  const visibleCities = countries.find((c) => c.country === selectedCountry)?.cities ?? [];
 
-  const suggestions =
-    query.trim().length > 0
-      ? cities.filter((city) =>
-          city.name.toLowerCase().includes(query.trim().toLowerCase())
-        )
-      : [];
+  const suggestions = searchCities(query);
 
   return (
     <div className="flex-1 bg-white text-slate-900">
@@ -116,7 +116,7 @@ export default function Home() {
                   onChange={(e) => setQuery(e.target.value)}
                   onFocus={() => setShowSuggestions(true)}
                   onBlur={() => setTimeout(() => setShowSuggestions(false), 100)}
-                  placeholder="Search Lisbon, St. Gallen, Milan..."
+                  placeholder="Search St. Gallen, Lisbon, Copenhagen..."
                   className="w-full bg-transparent text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none"
                 />
               </div>
@@ -124,12 +124,14 @@ export default function Home() {
               {showSuggestions && suggestions.length > 0 && (
                 <ul className="absolute left-0 right-0 top-full z-10 mt-2 overflow-hidden rounded-xl border border-slate-200 bg-white text-left shadow-lg">
                   {suggestions.map((city) => (
-                    <li key={city.name}>
+                    <li key={city.slug}>
                       <button
                         type="button"
+                        onMouseDown={(e) => e.preventDefault()}
                         onClick={() => {
                           setQuery(city.name);
                           setShowSuggestions(false);
+                          router.push(`/city/${city.slug}`);
                         }}
                         className="flex w-full items-center justify-between px-4 py-3 text-sm hover:bg-blue-50"
                       >
@@ -164,10 +166,44 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2">
-          {cities.map((city) => (
+        <div
+          role="tablist"
+          aria-label="Countries"
+          className="mb-8 flex flex-wrap justify-center gap-2"
+        >
+          {countries.map(({ country, cities: countryCities }) => {
+            const selected = country === selectedCountry;
+            return (
+              <button
+                key={country}
+                type="button"
+                role="tab"
+                aria-selected={selected}
+                onClick={() => setSelectedCountry(country)}
+                className={`flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition ${
+                  selected
+                    ? "border-blue-600 bg-blue-600 text-white shadow-sm"
+                    : "border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:text-blue-700"
+                }`}
+              >
+                <span aria-hidden>{countryFlags[country] ?? "🌍"}</span>
+                {country}
+                <span
+                  className={`rounded-full px-2 py-0.5 text-xs ${
+                    selected ? "bg-white/20 text-white" : "bg-slate-100 text-slate-600"
+                  }`}
+                >
+                  {countryCities.length}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        <div role="tabpanel" className="grid gap-6 sm:grid-cols-2">
+          {visibleCities.map((city) => (
             <div
-              key={city.name}
+              key={city.slug}
               className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-md"
             >
               <div className="flex items-start justify-between">

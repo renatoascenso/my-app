@@ -2,6 +2,8 @@ export type City = {
   slug: string;
   name: string;
   country: string;
+  aliases?: string[]; // other spellings people search for, e.g. "Zürich", "Genève"
+
   rent: string;
   risk: string;
   bestFor: string;
@@ -556,16 +558,51 @@ export function getCityBySlug(slug: string): City | undefined {
   return cities.find((city) => city.slug === slug);
 }
 
+// Lowercase and strip accents so "Zürich", "zurich" and "ZURICH" all match.
+function normalize(text: string): string {
+  return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase();
+}
+
+function searchableNames(city: City): string[] {
+  return [city.name, ...(city.aliases ?? [])].map(normalize);
+}
+
 export function findCityByQuery(query: string): City | undefined {
-  const normalized = query.trim().toLowerCase();
+  const normalized = normalize(query);
   if (!normalized) return undefined;
-  return cities.find((city) => city.name.toLowerCase() === normalized);
+  return cities.find((city) => searchableNames(city).includes(normalized));
+}
+
+/** Cities whose name, alias or country contains the query (name matches first). */
+export function searchCities(query: string): City[] {
+  const normalized = normalize(query);
+  if (!normalized) return [];
+  const byName = cities.filter((city) => searchableNames(city).some((name) => name.includes(normalized)));
+  const byCountry = cities.filter(
+    (city) => !byName.includes(city) && normalize(city.country).includes(normalized)
+  );
+  return [...byName, ...byCountry];
+}
+
+export const countryFlags: Record<string, string> = {
+  Switzerland: "🇨🇭",
+  Portugal: "🇵🇹",
+  Denmark: "🇩🇰",
+};
+
+/** Countries with their cities, most cities first, then alphabetically. */
+export function citiesByCountry(): { country: string; cities: City[] }[] {
+  const groups = new Map<string, City[]>();
+  for (const city of cities) {
+    groups.set(city.country, [...(groups.get(city.country) ?? []), city]);
+  }
+  return [...groups.entries()]
+    .map(([country, list]) => ({ country, cities: list }))
+    .sort((a, b) => b.cities.length - a.cities.length || a.country.localeCompare(b.country));
 }
 
 export function slugify(text: string): string {
-  return text
-    .trim()
-    .toLowerCase()
+  return normalize(text)
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 }
