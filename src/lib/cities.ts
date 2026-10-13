@@ -1160,6 +1160,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "berlin",
+    name: "Berlin",
+    country: "Germany",
+    aliases: ["Berlino", "Berlim"],
+    rent: "€550–€750",
+    risk: "Scams and sublets without registration",
+    bestFor: "HU, FU, TU, UdK & Charité students, nightlife, creative scene",
+    dashboard: {
+      description:
+        "Germany's capital and largest university city, with more than 200,000 students across four universities, the Charité and dozens of other colleges. Berlin is big, international and still cheaper than Munich — but finding a room has become a competitive sport, and student dorms cover only about one student in twenty.",
+      costOfLiving: "€1,100–€1,500/month (rent, food, transport, insurance)",
+      heroImage: "/cities/berlin-hero.jpg",
+      heroCredit: {
+        text: "Hans-Jürgen Neubert · CC BY 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Berlin_East_Side_Oberbaumbr%C3%BCcke.jpg",
+      },
+      quickFacts: {
+        population: "3.91 million (end of 2025)",
+        averageRent: "€550–€750/mo for a WG room; dorms average about €340",
+        languages: "German; English widely spoken among students and in the start-up scene",
+        transportScore: "9.2/10",
+        safetyScore: "7.4/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "August to October and again in March–April, ahead of the winter and summer semesters. WG castings with dozens of applicants per room are normal in Friedrichshain, Kreuzberg, Neukölln and Prenzlauer Berg.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Berlin had 206,458 students in winter 2025/26, but the Studierendenwerk's roughly 9,100 dorm places house only about 5% of them, with an average wait of two semesters. Most students end up in WGs, where rooms in Germany's biggest cities averaged around €690 before the 2025 winter semester (WG-Gesucht/MMI).",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "Studierendenwerk Berlin",
+          trustScore: 4.5,
+          audience: "Students enrolled at Berlin universities",
+          pros: [
+            "Cheapest rooms in the city (about €340 warm on average)",
+            "Registration (Anmeldung) always possible",
+            "Dorms all over the city",
+          ],
+          cons: ["Waiting time of about two semesters", "Only ~9,100 places"],
+        },
+        {
+          name: "WG-Gesucht",
+          trustScore: 4.1,
+          audience: "Students looking for shared flats (WGs)",
+          pros: [
+            "Germany's largest WG platform",
+            "Thousands of Berlin rooms and sublets",
+            "Direct contact with flatmates",
+          ],
+          cons: ["Fierce competition and WG castings", "Scam listings slip through"],
+        },
+        {
+          name: "ImmoScout24",
+          trustScore: 3.8,
+          audience: "Long-term renters",
+          pros: [
+            "Largest flat listing portal in Germany",
+            "Many unfurnished apartments",
+            "Detailed filters",
+          ],
+          cons: ["Requires SCHUFA, income proof and German documents", "Hundreds of applicants per flat"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "Incoming and international students",
+          pros: [
+            "Free to use",
+            "Many short-term sublets",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Classic Berlin scams: a beautiful flat at a low price, an owner 'abroad', and a request to pay a deposit through a fake booking service before you get keys. Never pay before a viewing and a signed contract — and never send ID scans to strangers.",
+        },
+        {
+          title: "Registration (Anmeldung)",
+          text: "You must register your address at a Bürgeramt within 14 days of moving in, using a confirmation from the landlord (Wohnungsgeberbestätigung). Many short sublets don't allow this — without it you can't get a tax ID, a bank account or a residence permit easily. Ask before you sign.",
+        },
+        {
+          title: "Deposits and rent caps",
+          text: "The deposit (Kaution) may be at most three months' net cold rent, and can be paid in three installments. Berlin's rent brake (Mietpreisbremse) limits rents for new contracts, but overpriced furnished and temporary lets are common — ask what's included.",
+        },
+        {
+          title: "Paperwork for regular flats",
+          text: "Landlords usually ask for a SCHUFA credit report, proof of income or a guarantor, and ID. As a new arrival, WG rooms, dorms and sublets with registration are far more realistic in your first months.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
@@ -1353,6 +1470,7 @@ export const countryFlags: Record<string, string> = {
   Portugal: "🇵🇹",
   Denmark: "🇩🇰",
   France: "🇫🇷",
+  Germany: "🇩🇪",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
