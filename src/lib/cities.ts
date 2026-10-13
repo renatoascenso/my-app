@@ -1979,6 +1979,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "rotterdam",
+    name: "Rotterdam",
+    country: "Netherlands",
+    aliases: ["Roterdão", "Róterdam", "R'dam"],
+    rent: "€650–€800",
+    risk: "Overpriced rooms and scams, though the city enforces rent rules",
+    bestFor: "Erasmus University & Hogeschool Rotterdam students, architecture, nightlife",
+    dashboard: {
+      description:
+        "The Netherlands' second city and Europe's biggest port, home to Erasmus University Rotterdam (EUR), Hogeschool Rotterdam, Erasmus MC and arts schools like the Willem de Kooning Academy — with TU Delft 15 minutes away by train. Rotterdam is modern, diverse and cheaper than Amsterdam: the median room cost €710 a month in early 2026.",
+      costOfLiving: "€1,150–€1,500/month (rent, food, insurance, phone)",
+      heroImage: "/cities/rotterdam-hero.jpg",
+      heroCredit: {
+        text: "Kristoffer Trolle · CC BY 2.0",
+        url: "https://commons.wikimedia.org/wiki/File:Erasmus_bridge_and_Rotterdam_skyline_(21458216300).jpg",
+      },
+      quickFacts: {
+        population: "673,000 (1 January 2025)",
+        averageRent: "€710/mo median for a room (Kamernet, Q1 2026)",
+        languages: "Dutch; English widely spoken, especially at Erasmus",
+        transportScore: "9.0/10",
+        safetyScore: "7.6/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "June to September, before the academic year starts, and again in January for the second semester and exchange students.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Rooms are cheaper than in Amsterdam but scarce near Woudestein and in Kralingen and Noord. Many are still priced above the legal maximum — but unlike most Dutch cities, Rotterdam actively enforces the rules and has acted against landlords hundreds of times.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "Student housing (Stadswonen, SSH)",
+          trustScore: 4.4,
+          audience: "Students enrolled in Rotterdam",
+          pros: [
+            "Rooms and studios at regulated rents",
+            "Short-stay options for international students",
+            "Registration (BRP) always possible",
+          ],
+          cons: ["Waiting times for regular rooms", "Apply as early as possible"],
+        },
+        {
+          name: "Kamernet",
+          trustScore: 3.9,
+          audience: "Students looking for rooms in shared houses",
+          pros: [
+            "The Netherlands' biggest room platform",
+            "Many private rooms and sublets",
+            "Alerts for new listings",
+          ],
+          cons: ["Paid subscription to contact landlords", "Many rooms priced above the legal maximum"],
+        },
+        {
+          name: "Pararius",
+          trustScore: 3.8,
+          audience: "Students renting a whole flat, often with friends",
+          pros: [
+            "Large offer of flats from agents",
+            "English-language site",
+            "Detailed listings",
+          ],
+          cons: ["Expensive", "Landlords often ask for income of 3–4× the rent"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Short-term sublets from other students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Watch for landlords who are 'abroad', keys sent by post or through a fake booking platform, and deposits requested before any viewing. Never pay before you've seen the room (in person or by live video) and signed a contract.",
+        },
+        {
+          title: "Registration (BRP)",
+          text: "If you stay longer than four months, you must register your address with the municipality (BRP) to get a citizen service number (BSN) — needed for work, a bank account and health insurance. Avoid rooms where the landlord won't allow registration.",
+        },
+        {
+          title: "Check the legal maximum rent",
+          text: "Room rents are capped by the official points system (WWS). Use the Huurcommissie's rent check: the rent tribunal can lower your rent even after you've signed, and the City of Rotterdam also acts against landlords who overcharge.",
+        },
+        {
+          title: "Deposits, fees and contracts",
+          text: "The deposit can be at most two months' basic rent. Agencies working for the landlord may not charge you a fee. Since July 2024 most new leases must be permanent; temporary contracts are only allowed in specific cases, such as student housing.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
