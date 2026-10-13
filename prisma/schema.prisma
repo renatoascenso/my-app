@@ -19,3 +19,72 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+// ─── Admin panel authentication ───────────────────────────────────────────────
+// Only the cofounder emails in src/lib/admin/allowlist.ts may ever have a row here.
+
+model AdminUser {
+  id               String         @id @default(cuid())
+  email            String         @unique
+  name             String
+  passwordHash     String? // argon2/scrypt hash; null until the one-time setup link is used
+  totpSecret       String? // authenticator secret, encrypted with ADMIN_ENCRYPTION_KEY
+  totpEnabled      Boolean        @default(false)
+  lastTotpStep     Int? // last accepted 30-second code window; blocks reusing a code
+  failedLoginCount Int            @default(0)
+  lockedUntil      DateTime?
+  lastLoginAt      DateTime?
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  sessions         AdminSession[]
+  tokens           AdminToken[]   @relation("TokenOwner")
+  createdTokens    AdminToken[]   @relation("TokenCreator")
+}
+
+enum AdminSessionStage {
+  PENDING_MFA // password correct, authenticator code still required
+  ACTIVE // fully logged in
+}
+
+model AdminSession {
+  id         String            @id @default(cuid())
+  tokenHash  String            @unique // SHA-256 of the cookie value; the raw value is never stored
+  adminId    String
+  admin      AdminUser         @relation(fields: [adminId], references: [id], onDelete: Cascade)
+  stage      AdminSessionStage
+  expiresAt  DateTime
+  lastSeenAt DateTime          @default(now())
+  ipAddress  String?
+  userAgent  String?
+  createdAt  DateTime          @default(now())
+
+  @@index([adminId])
+}
+
+enum AdminTokenPurpose {
+  SETUP // first-time password + authenticator setup
+  RESET // forgot password / reset by a cofounder
+}
+
+model AdminToken {
+  id                String            @id @default(cuid())
+  tokenHash         String            @unique // SHA-256 of the link token; the raw value is never stored
+  purpose           AdminTokenPurpose
+  adminId           String
+  admin             AdminUser         @relation("TokenOwner", fields: [adminId], references: [id], onDelete: Cascade)
+  pendingTotpSecret String? // SETUP only: new authenticator secret (encrypted), applied when setup completes
+  createdById       String? // cofounder who generated it; null when created via email or server CLI
+  createdBy         AdminUser?        @relation("TokenCreator", fields: [createdById], references: [id], onDelete: SetNull)
+  expiresAt         DateTime
+  usedAt            DateTime?
+  createdAt         DateTime          @default(now())
+
+  @@index([adminId])
+}
+
+model RateLimit {
+  key       String   @id // e.g. "login:ip:1.2.3.4" or "reset:email:x@housingatlas.com"
+  count     Int      @default(0)
+  resetAt   DateTime
+  updatedAt DateTime @updatedAt
+}
