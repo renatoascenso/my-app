@@ -798,6 +798,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "porto",
+    name: "Porto",
+    country: "Portugal",
+    aliases: ["Oporto"],
+    rent: "€400–€600",
+    risk: "Informal contracts and deposit scams",
+    bestFor: "U.Porto & Católica students, river life, lower costs than Lisbon",
+    dashboard: {
+      description:
+        "Portugal's second city, stacked on the hills above the Douro river, with a historic center that is a UNESCO World Heritage Site. The University of Porto — the country's largest — has more than 4,600 international students, spread over campuses in the center, at Campo Alegre and at Asprela. Expect steep streets, a lively student scene and rents that are lower than Lisbon's but rising.",
+      costOfLiving: "€900–€1,300/month (rent, food, transport, essentials)",
+      heroImage: "/cities/porto-hero.jpg",
+      heroCredit: {
+        text: "Jakub Hałun · CC BY 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:View_of_Porto_old_town_from_Cais_de_Gaia_with_Porto_Cathedral,_20250605_1614_9873.jpg",
+      },
+      quickFacts: {
+        population: "About 250,000 in the municipality (metro area: 1.7M)",
+        averageRent: "€400–€600/mo for a room (median about €440)",
+        languages: "Portuguese, English widely spoken by younger people",
+        transportScore: "7.8/10",
+        safetyScore: "8.0/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "July to September and again in January–February, ahead of the U.Porto semesters. Rooms near the Asprela and Campo Alegre campuses and in the center are the first to go.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Short-term tourist rentals compete with students for flats in the center. The median room rent was about €440/month in mid-2025 (Idealista). Many offers are informal — no registered contract and no receipts — which leaves tenants with little protection.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "U.Porto residences (SASUP)",
+          trustScore: 4.4,
+          audience: "Students of the University of Porto",
+          pros: [
+            "Run by the university's social services",
+            "Lowest prices in the city",
+            "No guarantor needed",
+          ],
+          cons: ["Priority for scholarship students", "Very limited places"],
+        },
+        {
+          name: "Idealista",
+          trustScore: 4.0,
+          audience: "Students & young professionals",
+          pros: [
+            "Portugal's largest property portal",
+            "Rooms as well as flats",
+            "Price data by area",
+          ],
+          cons: ["Many listings in Portuguese only", "Fake listings appear regularly"],
+        },
+        {
+          name: "Uniplaces",
+          trustScore: 3.9,
+          audience: "International students booking from abroad",
+          pros: [
+            "Book online before arriving",
+            "Student-focused, English-language",
+            "Booking protection on payments",
+          ],
+          cons: ["Service fees", "Photos may differ from reality — check reviews"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "Erasmus and international students",
+          pros: [
+            "Free to use",
+            "Many rooms from leaving Erasmus students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Deposit scams",
+          text: "A common trick: a cheap, well-photographed room, a landlord who is 'abroad', and a request to pay the deposit by bank transfer before any viewing. Never pay before seeing the room (in person or by live video) and checking the landlord's identity.",
+        },
+        {
+          title: "Legal deposit limits",
+          text: "Portuguese law caps the security deposit (caução) at two months' rent, and advance rent at two months as well. Anything above that is not allowed — even if the contract says otherwise.",
+        },
+        {
+          title: "Informal contracts",
+          text: "Ask for a written contract registered with the tax office (Finanças) and electronic rent receipts. Without them you have little protection, can't prove your address, and may lose your deposit.",
+        },
+        {
+          title: "Get your NIF early",
+          text: "You'll need a Portuguese tax number (NIF) to sign a lease, open a bank account and get a phone contract. Get it as soon as you arrive — or before, through a representative.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
