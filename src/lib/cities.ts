@@ -1511,6 +1511,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "barcelona",
+    name: "Barcelona",
+    country: "Spain",
+    aliases: ["Barna", "Barcelone", "Barcellona"],
+    rent: "€550–€750",
+    risk: "Spain's most expensive rooms and fake listings aimed at newcomers",
+    bestFor: "UB, UPC, UPF & ESADE students, beach life, Erasmus",
+    dashboard: {
+      description:
+        "Catalonia's capital and one of Europe's favorite student cities: the Universitat de Barcelona (UB), UPC, UPF and business schools like ESADE, with the beach and the mountains both in reach. It is also Spain's most expensive city for a room — about €600 a month on average — and Catalonia now caps rents in tight markets like Barcelona, including rooms.",
+      costOfLiving: "€1,050–€1,400/month (rent, food, transport, phone)",
+      heroImage: "/cities/barcelona-hero.jpg",
+      heroCredit: {
+        text: "zenilorac · CC BY 2.0",
+        url: "https://commons.wikimedia.org/wiki/File:Vista_de_Barcelona.jpg",
+      },
+      quickFacts: {
+        population: "1.73 million (1 January 2025)",
+        averageRent: "€600/mo average for a room in a shared flat (idealista, 2025)",
+        languages: "Catalan and Spanish; English common in international programs",
+        transportScore: "9.4/10",
+        safetyScore: "7.6/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "June to September, before the academic year starts in September, and again in January for spring-semester exchange students.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "At about €600 a month, Barcelona has Spain's highest average room price (idealista, 2025). Supply is tight in Gràcia, Eixample and near the campuses, and some landlords have moved flats to coliving or sales since Catalonia's 2025 rules extended rent caps to rooms and seasonal lets.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "idealista",
+          trustScore: 4.1,
+          audience: "Students looking for rooms or whole flats",
+          pros: [
+            "Spain's largest property portal",
+            "Separate section for rooms in shared flats",
+            "Price history and area statistics",
+          ],
+          cons: ["Very competitive in central districts", "Fake listings slip through"],
+        },
+        {
+          name: "Badi",
+          trustScore: 3.9,
+          audience: "Students looking for flatmates",
+          pros: [
+            "Room-rental app founded in Barcelona",
+            "Profiles of the flatmates you'd live with",
+            "In-app chat before viewing",
+          ],
+          cons: ["Listing quality varies", "Popular rooms get many requests"],
+        },
+        {
+          name: "Spotahome",
+          trustScore: 3.8,
+          audience: "Students booking from abroad",
+          pros: [
+            "Video tours of properties",
+            "Book online before you arrive",
+            "Mid-term stays of a semester or a year",
+          ],
+          cons: ["Booking fee on top of rent", "No in-person viewing before you pay"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "Erasmus and international students",
+          pros: [
+            "Free to use",
+            "Short-term sublets from exchange students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Barcelona's tight market is a magnet for fake listings: a central flat at a bargain price, an owner who is 'abroad' and a deposit requested by transfer before any viewing. Never pay before a viewing (in person or by live video) and a written contract.",
+        },
+        {
+          title: "Rent caps",
+          text: "Barcelona is a stressed housing market, so rents are capped by the official reference index. Under rules Catalonia adopted in 2025, the cap also covers seasonal lets and rooms — the rents of all rooms in a flat together may not exceed the cap for the whole flat. Ask for the index value if a price looks high.",
+        },
+        {
+          title: "Deposit (fianza) and agency fees",
+          text: "For a flat rented as a home, the legal deposit is one month's rent, and the landlord must lodge it with the Catalan housing agency (INCASÒL). Since the 2023 housing law, agency and contract-handling fees must be paid by the landlord, not the tenant.",
+        },
+        {
+          title: "Empadronament and NIE",
+          text: "Register your address on the city's Padró — you'll need it for public services and much of your paperwork — and get your NIE or EU registration certificate if you stay longer than three months. Appointments can take weeks, so book early and check that the landlord allows registration.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
