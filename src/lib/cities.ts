@@ -667,6 +667,137 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "bern",
+    name: "Bern",
+    country: "Switzerland",
+    aliases: ["Berne", "Berna"],
+    rent: "CHF 650–1,000",
+    risk: "Few vacancies, fast-moving WG market",
+    bestFor: "Uni Bern, PH Bern & BFH students, Aare swims, calm city life",
+    dashboard: {
+      description:
+        "Switzerland's federal city: a UNESCO-listed old town wrapped by the Aare river, with the University of Bern (about 18,000 students) right next to the main station. Bern feels relaxed and compact — you can walk or cycle almost everywhere — but rooms near the university still go fast.",
+      costOfLiving: "CHF 1,700–2,300/month (rent, food, transport, insurance)",
+      heroImage: "/cities/bern-hero.jpg",
+      heroCredit: {
+        text: "Daniel Kraft · CC BY-SA 3.0",
+        url: "https://commons.wikimedia.org/wiki/File:Bern_Altstadt_von_Rosengarten_20211007.jpg",
+      },
+      quickFacts: {
+        population: "146,867 (end of 2025)",
+        averageRent: "CHF 650–1,000/mo for a room in a shared flat",
+        languages: "German (Bernese Swiss German), English widely used at the university",
+        transportScore: "9.0/10",
+        safetyScore: "8.8/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "July through mid-September and again in January, ahead of the university semesters. WG rooms in Länggasse, Breitenrain and Lorraine are the first to go.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Only 351 flats stood empty in the city on 1 June 2025 — a vacancy rate of 0.44%. Regular flats require a full Swiss application dossier, so student houses, WGs and sublets are the realistic options for newcomers.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "VBSL (Berner Studentenlogierhaus)",
+          trustScore: 4.4,
+          audience: "Students and young people in training",
+          pros: [
+            "Non-profit association housing around 780 students",
+            "Rooms from about CHF 560/month",
+            "No Swiss guarantor needed",
+          ],
+          cons: ["Waiting lists at semester start", "Limited short stays"],
+        },
+        {
+          name: "WG-Zimmer.ch",
+          trustScore: 4.0,
+          audience: "Students looking for shared flats (WGs)",
+          pros: [
+            "Largest shared-flat listing site in German-speaking Switzerland",
+            "Direct contact with flatmates",
+            "Many sublets during semester breaks",
+          ],
+          cons: ["Competitive near the university", "Mostly German-language"],
+        },
+        {
+          name: "Flatfox",
+          trustScore: 4.1,
+          audience: "Students & young professionals",
+          pros: [
+            "Clean, modern search interface",
+            "Many listings from Bern property managers",
+            "Direct online applications",
+          ],
+          cons: ["Few furnished rooms", "Popular listings fill within hours"],
+        },
+        {
+          name: "Homegate",
+          trustScore: 3.8,
+          audience: "Long-term renters & locals",
+          pros: [
+            "Largest overall listing volume in Switzerland",
+            "Detailed search filters",
+            "Direct landlord/agency contact",
+          ],
+          cons: [
+            "Mostly unfurnished, long-term flats",
+            "Requires a full Swiss application dossier",
+          ],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "Incoming students and expats",
+          pros: [
+            "Free to use",
+            "Sublets from students on exchange",
+            "Some English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Rental scams",
+          text: "Watch out for cheap furnished flats offered by a 'landlord abroad' who asks for a deposit or first rent before any viewing. Never transfer money before you've seen the room (in person or by live video) and checked who you're dealing with.",
+        },
+        {
+          title: "Application dossier",
+          text: "For regular flats, landlords expect a debt-collection extract (Betreibungsauszug), ID or permit and proof of income or a guarantor. Student houses, WGs and sublets are much more realistic in your first months.",
+        },
+        {
+          title: "Deposits and blocked accounts",
+          text: "Swiss law caps the rental deposit at 3 months' rent, held in a blocked account in the tenant's name. Deposit insurance providers are an alternative if you can't open a Swiss bank account yet. Paying a deposit in cash or to a private account is a red flag.",
+        },
+        {
+          title: "Registration within 14 days",
+          text: "Coming from abroad, you must register with the city's Einwohnerdienste within 14 days and apply for your study permit — bring your rental contract if you have one.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",

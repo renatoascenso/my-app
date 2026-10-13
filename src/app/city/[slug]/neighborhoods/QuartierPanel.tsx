@@ -103,6 +103,7 @@ export default function QuartierPanel({
         <p className="mt-1 text-sm text-slate-700">{quartier.caution}</p>
       </div>
 
+      {quartier.landmarks.length > 0 && (
       <div className="mt-6">
         <p className="text-xs font-medium uppercase tracking-wide text-slate-500">
           Landmarks in {quartier.name}
@@ -118,6 +119,7 @@ export default function QuartierPanel({
           ))}
         </div>
       </div>
+      )}
 
       <div className="mt-6">
         <button
