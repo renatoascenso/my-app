@@ -2,6 +2,7 @@ import MetroExplorer from "./neighborhoods/MetroExplorer";
 import StGallenExplorer from "./neighborhoods/StGallenExplorer";
 import CopenhagenExplorer from "./neighborhoods/CopenhagenExplorer";
 import ZurichExplorer from "./neighborhoods/ZurichExplorer";
+import LausanneExplorer from "./neighborhoods/LausanneExplorer";
 
 export const neighborhoodExplorerCopy: Record<string, { heading: string; subtitle: string }> = {
   lisbon: {
@@ -19,6 +20,11 @@ export const neighborhoodExplorerCopy: Record<string, { heading: string; subtitl
     subtitle:
       "Compare Zurich's 34 official statistical quarters across its 12 districts (Kreise) by room prices, safety, and commute time to ETH and UZH before comparing listings.",
   },
+  lausanne: {
+    heading: "Explore Lausanne's districts",
+    subtitle:
+      "Compare Lausanne's 18 official statistical districts by room prices, safety, and commute time to UNIL and EPFL before comparing listings.",
+  },
   copenhagen: {
     heading: "Explore Copenhagen's districts",
     subtitle:
@@ -30,5 +36,6 @@ export const neighborhoodExplorersBySlug: Record<string, () => React.ReactNode> 
   lisbon: () => <MetroExplorer />,
   "st-gallen": () => <StGallenExplorer />,
   zurich: () => <ZurichExplorer />,
+  lausanne: () => <LausanneExplorer />,
   copenhagen: () => <CopenhagenExplorer />,
 };

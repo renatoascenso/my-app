@@ -539,6 +539,137 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "lausanne",
+    name: "Lausanne",
+    country: "Switzerland",
+    aliases: ["Losanna"],
+    rent: "CHF 750–1,200",
+    risk: "Agencies require a Swiss guarantor",
+    bestFor: "UNIL, EPFL & EHL students, lake life, French-speaking Switzerland",
+    dashboard: {
+      description:
+        "A hilly, lively city on Lake Geneva and the capital of canton Vaud. UNIL and EPFL — together more than 30,000 students — sit side by side just west of the city, reached in minutes by the M1 metro, while the EHL hospitality school is in the forest above town. Expect steep streets, a strong student scene and a rental market where student residences fill up months in advance.",
+      costOfLiving: "CHF 1,800–2,400/month (rent, food, transport, insurance)",
+      heroImage: "/cities/lausanne-hero.jpg",
+      heroCredit: {
+        text: "Krzysztof Golik · CC BY-SA 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:View_of_Lausanne_from_Place_du_Chateau.jpg",
+      },
+      quickFacts: {
+        population: "151,000 (end of 2025)",
+        averageRent: "CHF 750–1,200/mo for a room in a shared flat",
+        languages: "French, English widely used at EPFL and in student life",
+        transportScore: "8.8/10",
+        safetyScore: "8.2/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "June to mid-September and again in January, ahead of the UNIL and EPFL semesters. The student housing foundation FMEL reported more than 2,000 applications for about 650 beds freeing up in summer 2025, so most applicants have to look on the private market.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "The Lausanne district had a vacancy rate of only 0.63% in June 2025. Real estate agencies usually ask for a guarantor living in Switzerland, Swiss financial documents and a valid residence permit — which is why the universities recommend rooms in shared flats, sublets and student residences to international students.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "UNIL-EPFL housing portal",
+          trustScore: 4.5,
+          audience: "Students of UNIL and EPFL",
+          pros: [
+            "Run jointly by the two universities",
+            "Private ads are screened to filter out scams",
+            "Rooms from private landlords and partner agencies",
+          ],
+          cons: ["Requires a UNIL or EPFL account", "Popular rooms go within days"],
+        },
+        {
+          name: "FMEL",
+          trustScore: 4.4,
+          audience: "Students in higher education in Lausanne",
+          pros: [
+            "Non-profit student housing foundation with about 4,000 beds",
+            "Rooms from around CHF 500/month",
+            "No Swiss guarantor needed",
+          ],
+          cons: ["Long waiting times — apply 6–9 months ahead", "Many applicants are refused each year"],
+        },
+        {
+          name: "Flatfox",
+          trustScore: 4.1,
+          audience: "Students & young professionals",
+          pros: [
+            "Clean, modern search interface",
+            "Shared flats and sublets as well as apartments",
+            "Direct online applications",
+          ],
+          cons: ["Few furnished rooms", "Popular listings fill within hours"],
+        },
+        {
+          name: "Homegate",
+          trustScore: 3.8,
+          audience: "Long-term renters & locals",
+          pros: [
+            "Largest overall listing volume in Switzerland",
+            "Detailed search filters",
+            "Direct landlord/agency contact",
+          ],
+          cons: [
+            "Mostly unfurnished, long-term flats",
+            "Agencies expect a Swiss guarantor and full dossier",
+          ],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "Incoming students and expats",
+          pros: [
+            "Free to use",
+            "Many sublets from students on exchange",
+            "Some English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Too-good-to-be-true listings",
+          text: "EPFL warns against overly attractive ads and advises never to pay money without a serious guarantee. Be wary of landlords who are 'abroad', can't show the room, or ask for a deposit before you've seen it — use the screened UNIL-EPFL portal when you can.",
+        },
+        {
+          title: "Swiss guarantor requirements",
+          text: "Most agencies ask for a guarantor domiciled in Switzerland, Swiss financial documents and a residence permit before you can apply. As a new arrival, focus on student residences, shared flats and sublets managed by private people or other students.",
+        },
+        {
+          title: "Deposits and blocked accounts",
+          text: "Swiss law caps the rental deposit at 3 months' rent, held in a blocked account in the tenant's name. Deposit insurance providers are an alternative if you can't open a Swiss bank account yet. Paying a deposit in cash or to a private account is a red flag.",
+        },
+        {
+          title: "Registration within 8 days",
+          text: "Students moving to Lausanne must register with the Contrôle des habitants within 8 days of arrival — it can be done online, up to 30 days before moving. You'll need your passport or ID and your lease or accommodation certificate.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
