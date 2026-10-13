@@ -1394,6 +1394,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "madrid",
+    name: "Madrid",
+    country: "Spain",
+    aliases: ["Madri", "Madryt"],
+    rent: "€500–€700",
+    risk: "Rising room prices and fake listings on popular portals",
+    bestFor: "Complutense, UPM, UAM, UC3M & IE students, nightlife, sunshine",
+    dashboard: {
+      description:
+        "Spain's capital and its biggest university city: Complutense, the Politécnica (UPM), the Autónoma (UAM), Carlos III (UC3M), Rey Juan Carlos (URJC) and private schools like IE and Comillas. Madrid is lively, sunny and well connected — but a room in a shared flat now averages about €575 a month, and good rooms near the campuses go fast before September.",
+      costOfLiving: "€1,000–€1,300/month (rent, food, transport, phone)",
+      heroImage: "/cities/madrid-hero.jpg",
+      heroCredit: {
+        text: "FouPic · CC BY 2.0",
+        url: "https://commons.wikimedia.org/wiki/File:Inicio_de_la_Gran_Via_-_edificio_Metr%C3%B3polis.jpg",
+      },
+      quickFacts: {
+        population: "3.53 million (1 January 2025)",
+        averageRent: "€575/mo average for a room in a shared flat (idealista, 2025)",
+        languages: "Spanish; English common at IE and in international programs",
+        transportScore: "9.4/10",
+        safetyScore: "8.2/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "June to September, before the academic year starts in September, with a second wave in January when spring-semester exchange students arrive.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Room prices in Madrid rose again in 2025 to an average of €575 a month (idealista). Rooms in Chamberí, Moncloa and Centro go within days, and many landlords prefer tenants who can show income, a guarantor or a Spanish bank account.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "idealista",
+          trustScore: 4.1,
+          audience: "Students looking for rooms or whole flats",
+          pros: [
+            "Spain's largest property portal",
+            "Separate section for rooms in shared flats",
+            "Price history and area statistics",
+          ],
+          cons: ["Very competitive in central districts", "Fake listings slip through"],
+        },
+        {
+          name: "Badi",
+          trustScore: 3.9,
+          audience: "Students looking for flatmates",
+          pros: [
+            "App built for room rentals",
+            "Profiles of the flatmates you'd live with",
+            "In-app chat before viewing",
+          ],
+          cons: ["Listing quality varies", "Popular rooms get many requests"],
+        },
+        {
+          name: "Spotahome",
+          trustScore: 3.8,
+          audience: "Students booking from abroad",
+          pros: [
+            "Video tours of properties",
+            "Book online before you arrive",
+            "Mid-term stays of a semester or a year",
+          ],
+          cons: ["Booking fee on top of rent", "No in-person viewing before you pay"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "Erasmus and international students",
+          pros: [
+            "Free to use",
+            "Short-term sublets from exchange students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Watch for the classic pattern: a central flat far below market price, an owner 'abroad' and a request to pay a deposit by transfer or through a fake booking service before you can see it. Never pay before a viewing (in person or by live video) and a written contract.",
+        },
+        {
+          title: "Deposit (fianza) and agency fees",
+          text: "For a flat rented as a home, the legal deposit is one month's rent; landlords may ask for at most two more months as an extra guarantee. Since the 2023 housing law, agency and contract-handling fees must be paid by the landlord, not the tenant.",
+        },
+        {
+          title: "Room contracts",
+          text: "Renting a single room in a shared flat often falls outside the housing protections of Spain's tenancy law (LAU). Get a written contract that states the rent, what bills are included, the deposit and the notice period.",
+        },
+        {
+          title: "Empadronamiento and NIE",
+          text: "Register your address on the city's Padrón (empadronamiento) — you'll need it for public services and many paperwork steps — and get your NIE or EU registration certificate if you stay longer than three months. Check that the landlord allows registration before you sign.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
@@ -1588,6 +1705,7 @@ export const countryFlags: Record<string, string> = {
   Denmark: "🇩🇰",
   France: "🇫🇷",
   Germany: "🇩🇪",
+  Spain: "🇪🇸",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
