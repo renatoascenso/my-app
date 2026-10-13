@@ -1879,7 +1879,7 @@ export const cities: City[] = [
         url: "https://commons.wikimedia.org/wiki/File:KeizersgrachtReguliersgrachtAmsterdam.jpg",
       },
       quickFacts: {
-        population: "942,000 (1 January 2025)",
+        population: "935,000 (1 January 2025)",
         averageRent: "€950/mo average for a room (Kamernet, Q2 2026)",
         languages: "Dutch; English spoken almost everywhere",
         transportScore: "9.4/10",
