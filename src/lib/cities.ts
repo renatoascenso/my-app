@@ -1862,6 +1862,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "amsterdam",
+    name: "Amsterdam",
+    country: "Netherlands",
+    aliases: ["Amsterdão", "Ámsterdam", "Amsterdam-Weesp"],
+    rent: "€850–€1,100",
+    risk: "Extreme shortage, overpriced rooms and rental scams",
+    bestFor: "UvA, VU & HvA students, cycling city, international atmosphere",
+    dashboard: {
+      description:
+        "The Netherlands' capital is home to the University of Amsterdam (UvA), the Vrije Universiteit (VU) and the Amsterdam University of Applied Sciences (HvA), with thousands of English-taught programs. Amsterdam is compact, international and best explored by bike — but it has the country's tightest housing market, with rooms averaging about €950 a month.",
+      costOfLiving: "€1,400–€1,800/month (rent, food, insurance, phone)",
+      heroImage: "/cities/amsterdam-hero.jpg",
+      heroCredit: {
+        text: "Massimo Catarinella · CC BY-SA 3.0",
+        url: "https://commons.wikimedia.org/wiki/File:KeizersgrachtReguliersgrachtAmsterdam.jpg",
+      },
+      quickFacts: {
+        population: "942,000 (1 January 2025)",
+        averageRent: "€950/mo average for a room (Kamernet, Q2 2026)",
+        languages: "Dutch; English spoken almost everywhere",
+        transportScore: "9.4/10",
+        safetyScore: "8.0/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "June to September, before the academic year starts, and again in January for the second semester. Many students start looking months ahead and still arrive without a room.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Rooms averaged €950 a month in Q2 2026 (Kamernet) — and many are priced above the legal maximum under the points system. Student housing has long waiting lists, and dozens of people may respond to a single room.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "ROOM.nl",
+          trustScore: 4.4,
+          audience: "Students in the Amsterdam region",
+          pros: [
+            "Rooms from housing corporations like DUWO and De Key",
+            "Regulated, fair rents",
+            "Registration (BRP) always possible",
+          ],
+          cons: ["Long waiting times", "Register as early as possible"],
+        },
+        {
+          name: "Kamernet",
+          trustScore: 3.9,
+          audience: "Students looking for rooms in shared houses",
+          pros: [
+            "The Netherlands' biggest room platform",
+            "Many private rooms and sublets",
+            "Alerts for new listings",
+          ],
+          cons: ["Paid subscription to contact landlords", "Many rooms priced above the legal maximum"],
+        },
+        {
+          name: "Pararius",
+          trustScore: 3.8,
+          audience: "Students renting a whole flat, often with friends",
+          pros: [
+            "Large offer of flats from agents",
+            "English-language site",
+            "Detailed listings",
+          ],
+          cons: ["Expensive", "Landlords often ask for income of 3–4× the rent"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Short-term sublets from other students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Amsterdam's shortage makes it the Netherlands' scam capital: a landlord who is 'abroad', keys sent by post or a fake booking platform, and a deposit requested before any viewing. Never pay before you've seen the room (in person or by live video) and signed a contract.",
+        },
+        {
+          title: "Registration (BRP)",
+          text: "If you stay longer than four months, you must register your address with the municipality (BRP) to get a citizen service number (BSN) — needed for work, a bank account and health insurance. Avoid rooms where the landlord won't allow registration.",
+        },
+        {
+          title: "Check the legal maximum rent",
+          text: "Room rents are capped by the official points system (WWS). Kamernet found that six in ten rooms on its platform are priced too high. Use the Huurcommissie's rent check, and know that the rent tribunal can lower your rent even after you've signed.",
+        },
+        {
+          title: "Deposits, fees and contracts",
+          text: "The deposit can be at most two months' basic rent. Agencies working for the landlord may not charge you a fee. Since July 2024 most new leases must be permanent; temporary contracts are only allowed in specific cases, such as student housing.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
@@ -2058,6 +2175,7 @@ export const countryFlags: Record<string, string> = {
   Germany: "🇩🇪",
   Spain: "🇪🇸",
   Italy: "🇮🇹",
+  Netherlands: "🇳🇱",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */

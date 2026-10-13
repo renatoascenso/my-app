@@ -8,6 +8,7 @@ import MadridExplorer from "./neighborhoods/MadridExplorer";
 import BarcelonaExplorer from "./neighborhoods/BarcelonaExplorer";
 import MilanExplorer from "./neighborhoods/MilanExplorer";
 import RomeExplorer from "./neighborhoods/RomeExplorer";
+import AmsterdamExplorer from "./neighborhoods/AmsterdamExplorer";
 import ParisExplorer from "./neighborhoods/ParisExplorer";
 import LyonExplorer from "./neighborhoods/LyonExplorer";
 import PortoExplorer from "./neighborhoods/PortoExplorer";
@@ -85,6 +86,11 @@ export const neighborhoodExplorerCopy: Record<string, { heading: string; subtitl
     subtitle:
       "Compare Rome's 15 municipi by room prices, safety, and commute time to Sapienza before comparing listings.",
   },
+  amsterdam: {
+    heading: "Explore Amsterdam's districts",
+    subtitle:
+      "Compare Amsterdam's stadsdelen by room prices, safety, and commute time to the UvA and the VU before comparing listings.",
+  },
   copenhagen: {
     heading: "Explore Copenhagen's districts",
     subtitle:
@@ -102,6 +108,7 @@ export const neighborhoodExplorersBySlug: Record<string, () => React.ReactNode> 
   barcelona: () => <BarcelonaExplorer />,
   milan: () => <MilanExplorer />,
   rome: () => <RomeExplorer />,
+  amsterdam: () => <AmsterdamExplorer />,
   paris: () => <ParisExplorer />,
   lyon: () => <LyonExplorer />,
   porto: () => <PortoExplorer />,
