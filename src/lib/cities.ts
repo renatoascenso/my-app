@@ -1628,6 +1628,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "milan",
+    name: "Milan",
+    country: "Italy",
+    aliases: ["Milano", "Mailand", "Milão", "Milán"],
+    rent: "€650–€800",
+    risk: "Italy's priciest rooms and unregistered 'in nero' contracts",
+    bestFor: "Politecnico, Bocconi, Statale, Cattolica & Bicocca students, design and fashion, career",
+    dashboard: {
+      description:
+        "Italy's economic capital and its biggest student city: the Politecnico, Bocconi, the Università Statale, the Cattolica, Milano-Bicocca, IULM and many design and fashion schools. Milan is international, well connected and full of opportunities — and the most expensive city in Italy for a single room, at around €700 a month.",
+      costOfLiving: "€1,100–€1,500/month (rent, food, transport, phone)",
+      heroImage: "/cities/milan-hero.jpg",
+      heroCredit: {
+        text: "kuhnmi · CC BY 2.0",
+        url: "https://commons.wikimedia.org/wiki/File:Piazza_del_Duomo_-_kuhnmi.jpg",
+      },
+      quickFacts: {
+        population: "1.37 million (end of 2024)",
+        averageRent: "€704/mo average for a single room (Immobiliare.it, August 2026)",
+        languages: "Italian; English widely used at Bocconi and the Politecnico",
+        transportScore: "9.2/10",
+        safetyScore: "7.8/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "July to September, before the academic year starts, and again in January–February for the second semester and incoming exchange students.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "A single room averaged €704 a month in August 2026 — still Italy's highest, though 4% lower than a year before (Immobiliare.it). The center and Porta Nuova pass €800. Many listings are taken within days, and some landlords push for unregistered cash contracts.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "Immobiliare.it",
+          trustScore: 4.1,
+          audience: "Students looking for rooms or whole flats",
+          pros: [
+            "Italy's largest property portal",
+            "Room listings with neighborhood price data",
+            "Many agency-managed listings",
+          ],
+          cons: ["Agency fees on many flats", "Fake listings slip through"],
+        },
+        {
+          name: "idealista",
+          trustScore: 4.0,
+          audience: "Students looking for rooms in shared flats",
+          pros: [
+            "Large section for rooms (stanze)",
+            "Alerts for new listings",
+            "Price statistics by area",
+          ],
+          cons: ["Very competitive in student areas", "Scam listings slip through"],
+        },
+        {
+          name: "University residences",
+          trustScore: 4.4,
+          audience: "Students enrolled at Milan's universities",
+          pros: [
+            "Run by or with the universities",
+            "Below-market prices for scholarship holders",
+            "Always a registered address",
+          ],
+          cons: ["Few places for the number of students", "Apply as soon as you're admitted"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "Erasmus and international students",
+          pros: [
+            "Free to use",
+            "Short-term sublets from exchange students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "The classic pattern: a central room well below market price, an owner who is 'abroad' and a request to pay a deposit by transfer or through a fake booking site before any viewing. Never pay before a viewing (in person or by live video) and a written contract.",
+        },
+        {
+          title: "Registered contracts only",
+          text: "Every lease must be registered with the Agenzia delle Entrate. Avoid 'in nero' cash deals: without a registered contract you have no legal protection and can't register your residence. Students studying away from home can use a special transitional contract (contratto per studenti universitari) of 6 to 36 months.",
+        },
+        {
+          title: "Deposit",
+          text: "By law the deposit (deposito cauzionale) can be at most three months' rent. Agree in writing on the condition of the room when you move in, and expect agency fees if you rent through an agency.",
+        },
+        {
+          title: "Codice fiscale and residence",
+          text: "You need an Italian tax code (codice fiscale) to sign a contract, and should register your residence at the Comune if you stay longer than three months. Non-EU students also need their permit of stay (permesso di soggiorno), which asks for a valid address.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
@@ -1823,6 +1940,7 @@ export const countryFlags: Record<string, string> = {
   France: "🇫🇷",
   Germany: "🇩🇪",
   Spain: "🇪🇸",
+  Italy: "🇮🇹",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
