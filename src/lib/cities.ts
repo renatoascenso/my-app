@@ -2096,6 +2096,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "london",
+    name: "London",
+    country: "United Kingdom",
+    aliases: ["Londres", "Londra", "Londen", "Londyn"],
+    rent: "£800–£1,100",
+    risk: "Very high rents, guarantor demands and flatshare scams",
+    bestFor: "UCL, Imperial, KCL, LSE & Queen Mary students, career, culture",
+    dashboard: {
+      description:
+        "One of the world's great university cities: UCL, Imperial, King's College, LSE, Queen Mary, City St George's, Goldsmiths and dozens more. London is huge, diverse and full of opportunity — and expensive: a room in inner London now averages over £1,000 a month, so most students trade rent against commute time.",
+      costOfLiving: "£1,400–£1,900/month (rent, food, transport, phone)",
+      heroImage: "/cities/london-hero.jpg",
+      heroCredit: {
+        text: "Julian Herzog · CC BY 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Palace_of_Westminster_London_2023_01.jpg",
+      },
+      quickFacts: {
+        population: "9.12 million (mid-2025)",
+        averageRent: "£1,002/mo for a room in inner London, £800 in outer London (SpareRoom, Q3 2026)",
+        languages: "English",
+        transportScore: "9.4/10",
+        safetyScore: "7.4/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "July to September, when new students and graduates arrive at the same time; competition eases a little from November to January.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Rooms averaged £1,002 a month in inner London and £800 in outer London in Q3 2026; SW7 near Imperial was the priciest postcode at £1,682 (SpareRoom). Good rooms go within days, and many landlords ask for a UK-based guarantor that international students don't have.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "University halls & student residences",
+          trustScore: 4.4,
+          audience: "First-year and international students",
+          pros: [
+            "Bills usually included",
+            "No guarantor hassle in many halls",
+            "Easy way to meet people",
+          ],
+          cons: ["Expensive en-suite rooms in private halls", "Limited places; apply early"],
+        },
+        {
+          name: "SpareRoom",
+          trustScore: 4.1,
+          audience: "Students looking for rooms in flatshares",
+          pros: [
+            "The UK's biggest flatshare site",
+            "Flatmate profiles and video viewings",
+            "Alerts for new rooms",
+          ],
+          cons: ["Paid boost to contact some listings early", "Scam listings slip through"],
+        },
+        {
+          name: "Rightmove",
+          trustScore: 3.9,
+          audience: "Groups renting a whole flat together",
+          pros: [
+            "The UK's largest property portal",
+            "Most letting agents list here",
+            "Detailed search filters",
+          ],
+          cons: ["Agents often require references and a guarantor", "Very fast-moving market"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Short-term sublets from other students",
+            "Direct contact with flatmates",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Watch for 'landlords' who are abroad, refuse viewings and ask for a deposit by bank transfer to hold the room. Never pay before you've seen the room (in person or by live video) and checked that the landlord or agent is real.",
+        },
+        {
+          title: "Deposits",
+          text: "Your deposit can be at most five weeks' rent (where annual rent is under £50,000), and a holding deposit at most one week's rent. The landlord must protect your deposit in a government-approved scheme within 30 days and tell you which one.",
+        },
+        {
+          title: "Renters' Rights Act",
+          text: "Since 1 May 2026, most private tenancies in England run month to month with no fixed end date, no-fault evictions are abolished, and landlords may not accept bids above the advertised rent or more than one month's rent in advance. Student houses (HMOs) have a special possession ground for the end of the academic year.",
+        },
+        {
+          title: "Right to Rent and council tax",
+          text: "Landlords must check your right to rent before you move in — international students usually prove it with a share code. Full-time students are exempt from council tax: ask your university for a certificate and send it to your borough.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
@@ -2293,6 +2410,7 @@ export const countryFlags: Record<string, string> = {
   Spain: "🇪🇸",
   Italy: "🇮🇹",
   Netherlands: "🇳🇱",
+  "United Kingdom": "🇬🇧",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
