@@ -19,6 +19,9 @@ import ListingDetailModal from "./ListingDetailModal";
 
 const quartierGeo = stGallenBoundaries as Record<string, Geometry>;
 
+// Stable reference: a new array on every render would make the map re-fly on each click.
+const ST_GALLEN_CENTER: [number, number] = [47.4232, 9.3703];
+
 const LeafletZoneMap = dynamic(() => import("./LeafletZoneMap"), {
   ssr: false,
   loading: () => (
@@ -150,7 +153,7 @@ export default function StGallenExplorer() {
       <div className="mt-8 grid gap-8 lg:grid-cols-[65fr_35fr]">
         <div>
           <LeafletZoneMap
-            center={[47.4232, 9.3703]}
+            center={ST_GALLEN_CENTER}
             zoom={13}
             zones={zones}
             selectedSlug={selectedSlug}
@@ -181,6 +184,7 @@ export default function StGallenExplorer() {
           {selectedQuartier ? (
             <QuartierPanel
               quartier={selectedQuartier}
+              badge={`Kreis ${selectedQuartier.kreis}`}
               showListings={showListings}
               onShowListings={handleShowListings}
             />

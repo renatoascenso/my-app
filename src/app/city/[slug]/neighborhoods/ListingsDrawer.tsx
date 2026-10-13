@@ -65,8 +65,8 @@ export default function ListingsDrawer({
 
       {allListings.length === 0 ? (
         <p className="mt-4 text-sm text-slate-600">
-          No demo listings for this area yet — Avenidas Novas currently has
-          prototype listings available.
+          No sample listings for this area yet. Try another area, or show
+          all listings in the city.
         </p>
       ) : (
         <>
