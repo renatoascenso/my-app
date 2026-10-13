@@ -539,6 +539,134 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "geneva",
+    name: "Geneva",
+    country: "Switzerland",
+    aliases: ["Genève", "Geneve", "Genf", "Ginevra", "Genebra"],
+    rent: "CHF 900–1,400",
+    risk: "Vacancy rate of just 0.34%",
+    bestFor: "UNIGE & Graduate Institute students, international atmosphere, the lake",
+    dashboard: {
+      description:
+        "A compact, international city at the tip of Lake Geneva, home to the University of Geneva (over 18,000 students), the Graduate Institute and dozens of international organizations. Expect trams everywhere, French as the everyday language, and one of the tightest rental markets in Switzerland.",
+      costOfLiving: "CHF 2,000–2,700/month (rent, food, transport, insurance)",
+      heroImage: "/cities/geneva-hero.jpg",
+      heroCredit: {
+        text: "Thibaut120094 · CC BY 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Rade_de_Gen%C3%A8ve_2010-10-02.JPG",
+      },
+      quickFacts: {
+        population: "About 200,000 in the city; 536,000 in the canton (2025)",
+        averageRent: "CHF 900–1,400/mo for a room in a shared flat",
+        languages: "French, English widely used at the universities and international organizations",
+        transportScore: "9.0/10",
+        safetyScore: "7.8/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "June to mid-September and again in January, ahead of the UNIGE semesters. The Ciguë student housing cooperative reports around fifteen applicants for every room it can offer.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Only 858 of the canton's 252,906 apartments stood empty on 1 June 2025 — a vacancy rate of 0.34%. Regular flats go to applicants with a full Swiss dossier, so student residences, the university's housing office and shared flats are the realistic options for newcomers.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "UNIGE Housing Office (BLOG)",
+          trustScore: 4.5,
+          audience: "Students enrolled at the University of Geneva",
+          pros: [
+            "Rooms and studios managed by the university",
+            "Shared flats and some couple housing",
+            "No Swiss guarantor needed",
+          ],
+          cons: ["Only for eligible UNIGE students", "Limited places at semester start"],
+        },
+        {
+          name: "Cité Universitaire (FULE)",
+          trustScore: 4.4,
+          audience: "University students aged 18 to 35",
+          pros: [
+            "About 850 rooms on one campus",
+            "Rooms from around CHF 480/month",
+            "International community",
+          ],
+          cons: ["Waiting lists", "Age limit of 35"],
+        },
+        {
+          name: "Ciguë",
+          trustScore: 4.3,
+          audience: "Students and people in training",
+          pros: [
+            "Non-profit housing cooperative with about 700 beds",
+            "Affordable shared flats",
+            "Community-run",
+          ],
+          cons: ["Around 15 applicants per room", "Few short stays"],
+        },
+        {
+          name: "Flatfox",
+          trustScore: 4.1,
+          audience: "Students & young professionals",
+          pros: [
+            "Clean, modern search interface",
+            "Shared flats and sublets as well as apartments",
+            "Direct online applications",
+          ],
+          cons: ["Few furnished rooms", "Popular listings fill within hours"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "Incoming students, interns and expats",
+          pros: [
+            "Free to use",
+            "Many sublets from interns and students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Rental scams",
+          text: "Geneva's international, short-stay crowd makes it a target for fake listings: cheap furnished flats, a landlord who is 'abroad', and a request for a deposit before any viewing. Never pay before you've seen the room and checked who you're renting from.",
+        },
+        {
+          title: "Dossier requirements",
+          text: "For regular flats, agencies expect a debt-collection extract, residence permit and proof of income or a Swiss guarantor. As a new arrival, aim for university housing, cooperatives, shared flats and sublets first.",
+        },
+        {
+          title: "Deposits and blocked accounts",
+          text: "Swiss law caps the rental deposit at 3 months' rent, held in a blocked account in the tenant's name. Deposit insurance providers are an alternative if you can't open a Swiss bank account yet. Paying a deposit in cash or to a private account is a red flag.",
+        },
+        {
+          title: "Registration within 14 days",
+          text: "Coming from abroad, you must announce your arrival within 14 days and apply for your study permit with the cantonal population office (OCPM). Living across the border in France changes your permit, insurance and transport situation — check before you sign anything there.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
