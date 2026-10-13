@@ -915,6 +915,134 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "paris",
+    name: "Paris",
+    country: "France",
+    aliases: ["Parigi", "París"],
+    rent: "€800–€1,000",
+    risk: "Very high rents and illegal overpricing",
+    bestFor: "Sorbonne, Sciences Po, PSL & Paris Cité students, culture, career",
+    dashboard: {
+      description:
+        "France's capital and its biggest student city, with about 390,000 students spread over universities and grandes écoles across the 20 arrondissements. Expect world-class culture, an excellent metro, tiny flats and some of the highest rents in Europe — but also strong student support, from CROUS residences to free rent guarantees and housing aid.",
+      costOfLiving: "€1,300–€1,800/month (rent, food, transport, essentials)",
+      heroImage: "/cities/paris-hero.jpg",
+      heroCredit: {
+        text: "Jebulon · CC0",
+        url: "https://commons.wikimedia.org/wiki/File:Pont_Alexandre_III_depuis_pont_de_la_Concorde_Paris.jpg",
+      },
+      quickFacts: {
+        population: "2.11 million in the city (Île-de-France region: 12M+)",
+        averageRent: "€795/mo for a room in a shared flat; €974/mo for a studio",
+        languages: "French; English common in universities and business, less so with landlords",
+        transportScore: "9.6/10",
+        safetyScore: "7.2/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "June to September, ahead of the academic year — CROUS applications open in spring through the national student portal. January brings a second, smaller wave for the spring semester.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Average student rents reached €974/month for a studio and €795 for a room in a shared flat in 2025 (Studapart). Landlords usually require a guarantor with French income — the free state guarantee Visale solves this for most students under 30.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "CROUS residences",
+          trustScore: 4.5,
+          audience: "Students enrolled in French higher education",
+          pros: [
+            "Public student housing at the lowest prices",
+            "Eligible for housing aid (APL)",
+            "No guarantor hassle with Visale",
+          ],
+          cons: ["Priority for scholarship students", "Demand far exceeds supply in Paris"],
+        },
+        {
+          name: "Cité internationale universitaire",
+          trustScore: 4.4,
+          audience: "International students and researchers (mostly master's and above)",
+          pros: [
+            "Campus of residence houses in the 14th arrondissement",
+            "Very international community",
+            "Rooms through partner universities or national houses",
+          ],
+          cons: ["Admission criteria and limited places", "Often reserved for longer stays"],
+        },
+        {
+          name: "Studapart",
+          trustScore: 4.0,
+          audience: "Students of partner schools and universities",
+          pros: [
+            "Student-focused housing platform",
+            "Partnered with many French schools",
+            "Online booking with guarantee options",
+          ],
+          cons: ["Service fees", "Prices at market level"],
+        },
+        {
+          name: "Leboncoin & PAP",
+          trustScore: 3.5,
+          audience: "Students comfortable searching in French",
+          pros: [
+            "Largest number of private listings",
+            "Direct contact with owners (PAP: no agency fees)",
+            "Rooms, studios and sublets",
+          ],
+          cons: ["Fake listings and scams", "Competition is intense"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "Erasmus and international students",
+          pros: [
+            "Free to use",
+            "Sublets from students on exchange",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Rent above the legal cap",
+          text: "Paris limits rents per square meter by area (encadrement des loyers), but in 2024–25 about 31% of listings exceeded the cap. Check any offer with the city's rent simulator — and note the current scheme was set to run until 24 November 2026 unless extended.",
+        },
+        {
+          title: "Guarantor requirements",
+          text: "Most landlords ask for a guarantor earning three times the rent in France. Visale, the free state guarantee from Action Logement, covers students under 30 — including international students once their visa is valid.",
+        },
+        {
+          title: "Deposits and scams",
+          text: "By law the deposit is at most one month's rent (unfurnished) or two months' (furnished). Never pay a deposit or 'reservation fee' before visiting and signing a lease — fake listings on classified sites are common.",
+        },
+        {
+          title: "Paperwork after arrival",
+          text: "Non-EU students must validate their long-stay student visa (VLS-TS) online within 3 months of arrival. With a valid lease you can apply for CAF housing aid (APL), which can cover a significant part of the rent.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
@@ -1107,6 +1235,7 @@ export const countryFlags: Record<string, string> = {
   Switzerland: "🇨🇭",
   Portugal: "🇵🇹",
   Denmark: "🇩🇰",
+  France: "🇫🇷",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
