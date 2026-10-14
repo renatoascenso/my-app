@@ -2213,6 +2213,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "stockholm",
+    name: "Stockholm",
+    country: "Sweden",
+    aliases: ["Estocolmo", "Stoccolma", "Sztokholm"],
+    rent: "SEK 5,000–9,000",
+    risk: "Years-long housing queues, illegal sublets and rental scams",
+    bestFor: "KTH, Stockholm University, KI & SSE students, nature, innovation",
+    dashboard: {
+      description:
+        "Sweden's capital spreads across 14 islands and is home to KTH, Stockholm University, Karolinska Institutet, the Stockholm School of Economics and Konstfack. Life is green, safe and English-friendly — but first-hand contracts take years in the queue, so most students start in a student corridor or a sublet (andrahand), where a one-room flat averaged about 9,500 kr a month in 2025.",
+      costOfLiving: "SEK 11,000–15,000/month (rent, food, transport, phone)",
+      heroImage: "/cities/stockholm-hero.jpg",
+      heroCredit: {
+        text: "Julian Herzog · CC BY 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Riddarholmen_Stockholm_2016_01.jpg",
+      },
+      quickFacts: {
+        population: "999,200 (end of 2025)",
+        averageRent: "SEK 9,540/mo average for a sublet one-room flat (Qasa, 2025)",
+        languages: "Swedish; English spoken almost everywhere",
+        transportScore: "9.2/10",
+        safetyScore: "8.0/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "June to August, before the autumn semester starts in late August, and again in December–January for the spring semester.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "A sublet one-room flat averaged SEK 9,540 a month in Stockholm municipality and SEK 14,000 in the inner city in 2025 (Qasa), and the number of advertised sublets fell 18% in early 2026. First-hand rental contracts take many years in the city's housing queue, and even SSSB corridor rooms usually need about a year of queue time.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "SSSB",
+          trustScore: 4.5,
+          audience: "Students at Stockholm's universities",
+          pros: [
+            "Stockholm's largest student housing provider",
+            "Corridor rooms from about SEK 3,800–5,200",
+            "First-hand contracts at fair rents",
+          ],
+          cons: ["Queue time — join the queue as early as possible", "Membership in a student union needed to keep earning queue days"],
+        },
+        {
+          name: "Qasa",
+          trustScore: 4.0,
+          audience: "Students looking for sublets (andrahand)",
+          pros: [
+            "Sweden's largest marketplace for rental homes",
+            "Verified users and digital contracts",
+            "Rent paid through the platform",
+          ],
+          cons: ["Service fee on top of rent", "Heavy competition for each listing"],
+        },
+        {
+          name: "Bostadsförmedlingen",
+          trustScore: 4.2,
+          audience: "Anyone planning to stay in Stockholm long term",
+          pros: [
+            "The city's official housing queue",
+            "First-hand contracts at regulated rents",
+            "Includes some youth and student flats",
+          ],
+          cons: ["Queue times of many years for central flats", "Annual queue fee"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Short-term sublets from other students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Stockholm's shortage attracts fake sublets: a central flat at a low price, an owner who is 'abroad' and a deposit requested before any viewing. Never pay before you've seen the home (in person or by live video), met the person and signed a contract.",
+        },
+        {
+          title: "Illegal sublets",
+          text: "To sublet a rental flat (hyresrätt), the tenant needs the landlord's approval; to rent out a cooperative flat (bostadsrätt), the owner needs the housing association's approval. Ask for proof — without it, you can be forced to move out at short notice.",
+        },
+        {
+          title: "Check the rent",
+          text: "Sublet rents must be reasonable: for a rental flat, roughly the first-hand rent plus a surcharge if it's furnished. If you've paid too much, you can apply to the Rent Tribunal (Hyresnämnden) to get money back, even after moving out — within the legal time limit.",
+        },
+        {
+          title: "Personnummer and registration",
+          text: "If you'll stay a year or more, register with the Swedish Tax Agency (Skatteverket) to get a personnummer — needed for BankID, a bank account and many services. Shorter stays usually only get a coordination number, which makes daily life harder, so plan ahead.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
@@ -2411,6 +2528,7 @@ export const countryFlags: Record<string, string> = {
   Italy: "🇮🇹",
   Netherlands: "🇳🇱",
   "United Kingdom": "🇬🇧",
+  Sweden: "🇸🇪",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
