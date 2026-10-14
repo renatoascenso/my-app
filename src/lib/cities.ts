@@ -2447,6 +2447,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "prague",
+    name: "Prague",
+    country: "Czech Republic",
+    aliases: ["Praha", "Prag", "Praga"],
+    rent: "CZK 9,000–13,000",
+    risk: "Fast-rising rents, extra service charges and rental scams",
+    bestFor: "Charles University, CTU, VŠE & CZU students, history, nightlife",
+    dashboard: {
+      description:
+        "The Czech capital is home to Charles University — founded in 1348 — the Czech Technical University (CTU), the Prague University of Economics and Business (VŠE), the Czech University of Life Sciences and several private international schools. Prague is beautiful, central and still cheaper than most Western capitals, but rents have climbed fast: a room in a shared flat now costs around CZK 10,000–11,000 a month.",
+      costOfLiving: "CZK 18,000–24,000/month (rent, food, transport, phone)",
+      heroImage: "/cities/prague-hero.jpg",
+      heroCredit: {
+        text: "Moyan Brenn · CC BY 2.0",
+        url: "https://commons.wikimedia.org/wiki/File:Prague_(6365119737).jpg",
+      },
+      quickFacts: {
+        population: "1.41 million (end of 2025)",
+        averageRent: "CZK 10,000–11,000/mo for a room in a shared flat (2025)",
+        languages: "Czech; English common among young people and at universities",
+        transportScore: "9.4/10",
+        safetyScore: "8.4/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "July to September, before the winter semester starts in late September or early October, and again in January–February for the summer semester.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Rooms in shared flats cost around CZK 10,000–11,000 a month in 2025, and fewer flats are on offer than in previous years. Dorm places are limited — Charles University and CTU dorms range from about CZK 2,800 to 8,400 a month — so apply as soon as you're admitted.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "University dorms (koleje)",
+          trustScore: 4.5,
+          audience: "Students at Prague's public universities",
+          pros: [
+            "Far below market rents",
+            "Run by the universities",
+            "Address registration handled for you",
+          ],
+          cons: ["Limited places; apply early", "Shared rooms are common"],
+        },
+        {
+          name: "Sreality.cz",
+          trustScore: 4.0,
+          audience: "Students renting a flat or room",
+          pros: [
+            "The Czech Republic's largest property portal",
+            "Huge choice of flats across Prague",
+            "Detailed filters by district",
+          ],
+          cons: ["Many agency listings with commission", "Mostly in Czech"],
+        },
+        {
+          name: "Bezrealitky",
+          trustScore: 4.0,
+          audience: "Students who want to rent directly from owners",
+          pros: [
+            "Listings directly from owners",
+            "No agency commission",
+            "Rooms and flatshares included",
+          ],
+          cons: ["Popular listings go fast", "Check contracts carefully"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Short-term sublets from other students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Watch for a cheap central flat, an owner who is 'abroad' and a deposit requested by transfer or through a fake booking service before any viewing. Never pay before you've seen the room (in person or by live video) and signed a contract.",
+        },
+        {
+          title: "Rent plus service charges",
+          text: "Prices are often listed as rent plus 'poplatky' — service charges and energy paid on top. Ask for the total monthly cost, and note that charges are settled once a year, which can mean an extra bill.",
+        },
+        {
+          title: "Deposits and agency fees",
+          text: "The deposit (jistota) can be at most three months' rent and must be returned when you move out, minus any justified claims. Agencies often charge a commission of about one month's rent — ask before you view.",
+        },
+        {
+          title: "Registering with the foreign police",
+          text: "Foreigners must report their address in the Czech Republic — EU citizens within 30 days if staying longer, non-EU citizens within three working days. Dorms and hotels often do this for you; in a private flat, check who will.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
@@ -2647,6 +2764,7 @@ export const countryFlags: Record<string, string> = {
   "United Kingdom": "🇬🇧",
   Sweden: "🇸🇪",
   Austria: "🇦🇹",
+  "Czech Republic": "🇨🇿",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
