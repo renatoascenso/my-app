@@ -2330,6 +2330,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "vienna",
+    name: "Vienna",
+    country: "Austria",
+    aliases: ["Wien", "Viena", "Vienne", "Wiedeń", "Bécs"],
+    rent: "€500–€700",
+    risk: "Rising private rents, dorm waiting lists and rental scams",
+    bestFor: "University of Vienna, TU Wien, WU, MedUni & BOKU students, culture, quality of life",
+    dashboard: {
+      description:
+        "Austria's capital is Central Europe's biggest student city: the University of Vienna, TU Wien, WU, the Medical University, BOKU, the University of Applied Arts and several universities of applied sciences. Vienna regularly tops quality-of-life rankings and has a large regulated rental sector — but private rooms for students are getting pricier, at around €620 a month for a room in a shared flat.",
+      costOfLiving: "€1,000–€1,350/month (rent, food, transport, phone)",
+      heroImage: "/cities/vienna-hero.jpg",
+      heroCredit: {
+        text: "Guido Radig · CC BY-SA 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Karlskirche_in_Wien_mit_Teich.JPG",
+      },
+      quickFacts: {
+        population: "2.04 million (1 January 2026)",
+        averageRent: "€620/mo for a private room in a shared flat (HousingAnywhere, 2026)",
+        languages: "German (Viennese accent); English common at universities",
+        transportScore: "9.6/10",
+        safetyScore: "8.6/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "August to early October, before the winter semester starts on 1 October, and again in January–February for the summer semester starting in March.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Vienna's large municipal and cooperative housing stock keeps many rents low, but most of it is hard for newcomers to access. Students rely on dorms with waiting lists or the private WG market, where a room costs around €620 a month in 2026 (HousingAnywhere).",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "Student dorms (Studentenheime)",
+          trustScore: 4.5,
+          audience: "Students enrolled at Vienna's universities",
+          pros: [
+            "Many non-profit operators across the city",
+            "Furnished rooms with bills included",
+            "Registration (Meldezettel) always possible",
+          ],
+          cons: ["Waiting lists before the winter semester", "Apply months ahead"],
+        },
+        {
+          name: "WG-Gesucht",
+          trustScore: 4.1,
+          audience: "Students looking for shared flats (WGs)",
+          pros: [
+            "The main platform for WG rooms in Vienna",
+            "Direct contact with flatmates",
+            "Many short-term sublets",
+          ],
+          cons: ["Competitive in popular districts", "Scam listings slip through"],
+        },
+        {
+          name: "willhaben",
+          trustScore: 3.9,
+          audience: "Students renting a whole flat",
+          pros: [
+            "Austria's largest classifieds site",
+            "Many flats from private landlords and agents",
+            "Detailed filters by district",
+          ],
+          cons: ["Mostly unfurnished flats", "Fake listings slip through"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Short-term sublets from other students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Watch for a cheap central flat, an owner who is 'abroad' and a deposit requested by transfer or through a fake booking service before any viewing. Never pay before you've seen the room (in person or by live video) and signed a contract.",
+        },
+        {
+          title: "Registration (Meldezettel)",
+          text: "You must register your address within three days of moving in. EU citizens staying longer than three months also need a registration certificate (Anmeldebescheinigung) within four months. Make sure your landlord allows registration.",
+        },
+        {
+          title: "Rent rules",
+          text: "In many older buildings, rents are capped under the Tenancy Act (Mietrechtsgesetz), and fixed-term leases must be discounted. Fixed-term contracts must normally run at least three years, but tenants may give notice after one year. The city's arbitration board (Schlichtungsstelle) can check whether your rent is legal.",
+        },
+        {
+          title: "Deposits and agency fees",
+          text: "Deposits (Kaution) of up to three months' rent are common; get a written receipt. Since July 2023, whoever hires the estate agent pays them, so tenants usually no longer pay agency fees.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
@@ -2529,6 +2646,7 @@ export const countryFlags: Record<string, string> = {
   Netherlands: "🇳🇱",
   "United Kingdom": "🇬🇧",
   Sweden: "🇸🇪",
+  Austria: "🇦🇹",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
