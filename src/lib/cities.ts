@@ -2681,6 +2681,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "brussels",
+    name: "Brussels",
+    country: "Belgium",
+    aliases: ["Bruxelles", "Brussel", "Bruselas", "Bruxelas", "Bruksela"],
+    rent: "€600–€800",
+    risk: "Belgium's priciest student rooms and rental scams",
+    bestFor: "ULB, VUB, UCLouvain Saint-Louis & KU Leuven Brussels students, EU careers",
+    dashboard: {
+      description:
+        "Belgium's bilingual capital and the heart of the EU is home to the French-speaking ULB, the Dutch-speaking VUB, UCLouvain Saint-Louis, KU Leuven's Brussels campuses and many university colleges. Brussels is international, central and well connected — but it's by far Belgium's most expensive student city, with a student room ('kot') averaging €600–€695 a month.",
+      costOfLiving: "€1,050–€1,400/month (rent, food, transport, phone)",
+      heroImage: "/cities/brussels-hero.jpg",
+      heroCredit: {
+        text: "Edison McCullen · CC BY-SA 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Grand-Place_de_Bruxelles_en_heure_bleue.jpg",
+      },
+      quickFacts: {
+        population: "1.26 million in the Brussels-Capital Region (1 January 2026)",
+        averageRent: "€600–€695/mo for a student room, utilities included (Kotkompas, 2025)",
+        languages: "French and Dutch; English widely spoken",
+        transportScore: "8.8/10",
+        safetyScore: "7.4/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "May to September, before the academic year starts in mid-September, and again in January–February for the second semester and Erasmus students.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "A student room costs €600 a month with shared facilities and €695 with a private bathroom; studios average €795, utilities included (Kotkompas 2025). Supply is short, many international students and interns compete for the same rooms, and Brussels doubled its tax on furnished rentals.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "University housing services",
+          trustScore: 4.5,
+          audience: "ULB, VUB and other Brussels students",
+          pros: [
+            "University residences near the campuses",
+            "Lists of vetted private rooms",
+            "Help with student lease questions",
+          ],
+          cons: ["Limited places", "Apply early in spring"],
+        },
+        {
+          name: "Immoweb",
+          trustScore: 4.0,
+          audience: "Students renting a room or a flat",
+          pros: [
+            "Belgium's largest property portal",
+            "Rooms, studios and flatshares",
+            "Filters by municipality",
+          ],
+          cons: ["Very competitive", "Fake listings slip through"],
+        },
+        {
+          name: "Spotahome",
+          trustScore: 3.8,
+          audience: "International students booking from abroad",
+          pros: [
+            "Video tours of properties",
+            "Book online before you arrive",
+            "Mid-term stays of a semester or a year",
+          ],
+          cons: ["Booking fee on top of rent", "No in-person viewing before you pay"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "Erasmus and international students",
+          pros: [
+            "Free to use",
+            "Short-term sublets from other students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Watch for a cheap central room, an owner who is 'abroad' and a deposit requested by transfer or through a fake booking site before any viewing. Never pay before you've seen the room (in person or by live video) and signed a contract.",
+        },
+        {
+          title: "Student leases",
+          text: "Brussels has a dedicated student lease (bail étudiant / studentenhuurovereenkomst) with rules adapted to the academic year. Make sure your contract is written, states the rent and charges, and is registered by the landlord.",
+        },
+        {
+          title: "Rental deposit",
+          text: "The rental guarantee can be at most two months' rent when placed in a blocked bank account in your name — never pay it in cash to the landlord. Do a written check-in inventory (état des lieux) to get it back.",
+        },
+        {
+          title: "Register at your municipality",
+          text: "Register at your commune within eight working days of moving in; a local police officer usually visits to confirm your address. You'll need this for your residence card if you stay more than three months.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
@@ -2882,6 +2999,7 @@ export const countryFlags: Record<string, string> = {
   Sweden: "🇸🇪",
   Austria: "🇦🇹",
   "Czech Republic": "🇨🇿",
+  Belgium: "🇧🇪",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
