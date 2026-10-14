@@ -2564,6 +2564,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "frankfurt",
+    name: "Frankfurt",
+    country: "Germany",
+    aliases: ["Frankfurt am Main", "Francfort", "Francoforte", "Fráncfort"],
+    rent: "€600–€750",
+    risk: "High WG prices, scarce dorm places and rental scams",
+    bestFor: "Goethe University, Frankfurt UAS & Frankfurt School students, finance, career",
+    dashboard: {
+      description:
+        "Germany's financial capital is home to Goethe University with its Westend, Bockenheim, Riedberg and Niederrad campuses, the Frankfurt University of Applied Sciences, the Frankfurt School of Finance & Management, the Städelschule and the HfMDK. Frankfurt is compact, international and well connected — and one of Germany's pricier student cities, with WG rooms at a median of €630 a month.",
+      costOfLiving: "€1,150–€1,500/month (rent, food, transport, insurance)",
+      heroImage: "/cities/frankfurt-hero.jpg",
+      heroCredit: {
+        text: "Norbert Nagel · CC BY-SA 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Frankfurt_Skyline_with_river_Main_2014.jpg",
+      },
+      quickFacts: {
+        population: "782,000 (end of 2024, city register)",
+        averageRent: "€630/mo median for a WG room (winter 2026/27)",
+        languages: "German; English widely used in business and at Goethe University",
+        transportScore: "9.2/10",
+        safetyScore: "7.8/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "August to October and again in March–April, ahead of the winter and summer semesters.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "WG rooms in Frankfurt had a median asking rent of €630 in winter 2026/27, well above the national average of about €510 (WG-Gesucht/MMI). Rooms near the Westend campus, in Bockenheim and the Nordend go fast, and landlords often prefer tenants with German income or guarantors.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "Studierendenwerk Frankfurt am Main",
+          trustScore: 4.5,
+          audience: "Students enrolled at Frankfurt's universities",
+          pros: [
+            "Dorms across the city, many near the campuses",
+            "Far below market rents",
+            "Registration (Anmeldung) always possible",
+          ],
+          cons: ["Waiting lists at semester start", "Apply as soon as you're admitted"],
+        },
+        {
+          name: "WG-Gesucht",
+          trustScore: 4.1,
+          audience: "Students looking for shared flats (WGs)",
+          pros: [
+            "Germany's largest WG platform",
+            "Many sublets during semester breaks",
+            "Direct contact with flatmates",
+          ],
+          cons: ["Competitive in popular areas", "Scam listings slip through"],
+        },
+        {
+          name: "ImmoScout24",
+          trustScore: 3.8,
+          audience: "Long-term renters",
+          pros: [
+            "Largest flat listing portal in Germany",
+            "Many unfurnished apartments",
+            "Detailed filters",
+          ],
+          cons: ["Requires SCHUFA, income proof and German documents", "Expensive and heavily contested"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "Incoming and international students",
+          pros: [
+            "Free to use",
+            "Short-term sublets from exchange students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Frankfurt's high prices attract fake listings: a cheap flat near the center, an owner 'abroad', and a request to pay through a fake booking or key-delivery service. Never pay before a viewing and a signed contract.",
+        },
+        {
+          title: "Registration (Anmeldung)",
+          text: "You must register your address within 14 days of moving in, with a confirmation from the landlord (Wohnungsgeberbestätigung). Make sure sublets allow registration — you'll need it for a tax ID, bank account and residence permit.",
+        },
+        {
+          title: "Deposits and rent caps",
+          text: "The deposit (Kaution) may be at most three months' net cold rent and can be paid in three installments. The rent brake (Mietpreisbremse) applies in Frankfurt, but furnished and temporary lets are often far above it.",
+        },
+        {
+          title: "Apply for dorms early",
+          text: "Apply to the Studierendenwerk as soon as you have your admission — places near the campuses fill up before the winter semester. Until then, temporary sublets and WG rooms in outer districts are the realistic options.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
