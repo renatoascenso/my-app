@@ -2798,6 +2798,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "dublin",
+    name: "Dublin",
+    country: "Ireland",
+    aliases: ["Baile Átha Cliath", "Dublín", "Dublino"],
+    rent: "€800–€1,100",
+    risk: "Severe shortage, very high rents and frequent rental scams",
+    bestFor: "Trinity, UCD, DCU & TU Dublin students, tech careers, English-speaking",
+    dashboard: {
+      description:
+        "Ireland's capital is home to Trinity College Dublin, University College Dublin (UCD), Dublin City University (DCU), TU Dublin, the RCSI and several private colleges — and to Europe's headquarters of many tech companies. Dublin is friendly, English-speaking and lively, but it has one of Europe's tightest rental markets: a room in a shared house costs roughly €770 a month on average, and well over €1,000 in popular areas.",
+      costOfLiving: "€1,300–€1,750/month (rent, food, transport, phone)",
+      heroImage: "/cities/dublin-hero.jpg",
+      heroCredit: {
+        text: "Sean MacEntee · CC BY 2.0",
+        url: "https://commons.wikimedia.org/wiki/File:Sunshine_on_the_Ha%27penny_Bridge,_Dublin_(14350608541).jpg",
+      },
+      quickFacts: {
+        population: "1.46 million in County Dublin (Census 2022)",
+        averageRent: "€769/mo estimated average for a room in a shared house (RTB-based, 2026)",
+        languages: "English; Irish on signs and official documents",
+        transportScore: "7.6/10",
+        safetyScore: "7.6/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "June to September, before the academic year starts in September; January brings a smaller wave of exchange students.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Rooms in shared houses average around €770 a month (2026 estimate based on Residential Tenancies Board data), but rooms near Trinity, in Rathmines or close to UCD regularly exceed €1,000. Supply is very limited, viewings attract dozens of people, and many students turn to digs — renting a room in a family home.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "On-campus & student residences",
+          trustScore: 4.4,
+          audience: "First-year and international students",
+          pros: [
+            "Rooms run by the universities or purpose-built providers",
+            "Close to campus, bills often included",
+            "Safe, managed buildings",
+          ],
+          cons: ["Expensive — often €1,000+ a month", "Limited places; apply early"],
+        },
+        {
+          name: "Daft.ie",
+          trustScore: 4.0,
+          audience: "Students looking for rooms or houses",
+          pros: [
+            "Ireland's largest property site",
+            "Separate section for shared rooms",
+            "Alerts for new listings",
+          ],
+          cons: ["Extremely competitive", "Scam listings slip through"],
+        },
+        {
+          name: "Digs (Rent-a-Room)",
+          trustScore: 4.0,
+          audience: "Students happy to live with a host family",
+          pros: [
+            "Often cheaper than a shared house",
+            "Bills and sometimes meals included",
+            "Many colleges run digs schemes",
+          ],
+          cons: ["House rules and less independence", "Fewer legal protections than a tenancy"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Short-term sublets from other students",
+            "Direct contact with flatmates",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Dublin's shortage makes it a scam hotspot: a landlord who is 'abroad', keys sent by post, and a deposit requested by transfer before any viewing. Never pay before you've seen the room in person or by live video and checked who you're dealing with.",
+        },
+        {
+          title: "Deposits and advance rent",
+          text: "For a standard tenancy, the deposit can be at most one month's rent and rent in advance at most one month, so nobody can ask for more than two months' rent to secure a room. Student-specific accommodation can accept more rent in advance if you choose.",
+        },
+        {
+          title: "Tenancy or licence?",
+          text: "Renting a room in the owner's own home (digs / Rent-a-Room) is a licence, not a tenancy, so the Residential Tenancies Board can't resolve disputes. In a regular tenancy, ask your landlord to register it with the RTB and keep written records of all payments.",
+        },
+        {
+          title: "Rent controls",
+          text: "Rent controls now apply nationwide, and a new rent-control system covers tenancies created from 1 March 2026. If you think a rent increase or a new rent breaks the rules, you can check with the RTB.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
@@ -3000,6 +3117,7 @@ export const countryFlags: Record<string, string> = {
   Austria: "🇦🇹",
   "Czech Republic": "🇨🇿",
   Belgium: "🇧🇪",
+  Ireland: "🇮🇪",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
