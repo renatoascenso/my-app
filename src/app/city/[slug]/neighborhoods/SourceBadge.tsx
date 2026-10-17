@@ -9,9 +9,11 @@ export default function SourceBadge({ source }: { source: string }) {
   const style = sourceStyles[source] ?? "bg-slate-100 text-slate-700";
   return (
     <span
-      className={`inline-flex w-fit items-center rounded-full px-2.5 py-1 text-xs font-bold ${style}`}
+      title={source}
+      className={`inline-flex w-fit max-w-full min-w-0 items-center rounded-full px-2.5 py-1 text-xs font-bold ${style}`}
     >
-      {source}
+      {/* Wrap the badge to its own line before letting long names spill out of the card. */}
+      <span className="truncate">{source}</span>
     </span>
   );
 }

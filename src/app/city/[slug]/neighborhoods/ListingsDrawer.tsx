@@ -115,7 +115,7 @@ export default function ListingsDrawer({
                       {listing.currency}{listing.rent}
                       <span className="text-xs font-normal text-slate-500">/mo</span>
                     </p>
-                    <div className="mt-2 flex items-center gap-2">
+                    <div className="mt-2 flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1.5">
                       <span className="text-xs text-slate-500">{listing.type}</span>
                       <SourceBadge source={listing.source} />
                     </div>
