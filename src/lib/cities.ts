@@ -3032,6 +3032,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "budapest",
+    name: "Budapest",
+    country: "Hungary",
+    aliases: ["Budapeszt", "Budapeste", "Budapeŝto"],
+    rent: "HUF 110,000–180,000",
+    risk: "Fast-rising rents, extra utility costs and rental scams",
+    bestFor: "ELTE, BME, Corvinus, Semmelweis & CEU students, nightlife, value",
+    dashboard: {
+      description:
+        "Hungary's capital straddles the Danube — hilly Buda on one side, lively Pest on the other — and hosts ELTE, BME (Budapest University of Technology and Economics), Corvinus, Semmelweis University with its large international medical programs, CEU and more. Budapest is beautiful and affordable by Western standards, but rents have climbed quickly: rooms in the inner districts now rarely cost less than HUF 100,000 a month.",
+      costOfLiving: "HUF 280,000–400,000/month (rent, food, transport, phone)",
+      heroImage: "/cities/budapest-hero.jpg",
+      heroCredit: {
+        text: "Pierre Blaché · CC0",
+        url: "https://commons.wikimedia.org/wiki/File:Hungarian_Parliament_Building_2023-9.jpg",
+      },
+      quickFacts: {
+        population: "1.69 million (1 January 2025)",
+        averageRent: "HUF 100,000+/mo for a room in the inner districts (2025)",
+        languages: "Hungarian; English common among students and young people",
+        transportScore: "9.0/10",
+        safetyScore: "8.2/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "Late July to September, after the Hungarian university admissions results and before the semester starts in September, and again in January–February.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Rooms in the inner districts rarely go for less than HUF 100,000 a month (Rentigo, 2025), and whole flats in the central districts often cost HUF 300,000 or more. Many international students arrive at the same time each September, and listings often leave out utilities (rezsi) and the building's common charge.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "University dorms (kollégium)",
+          trustScore: 4.3,
+          audience: "Students at Budapest's universities",
+          pros: [
+            "Far below market rents",
+            "Run by or with the universities",
+            "Address registration handled for you",
+          ],
+          cons: ["Limited places, often shared rooms", "Apply as soon as you're admitted"],
+        },
+        {
+          name: "ingatlan.com",
+          trustScore: 4.0,
+          audience: "Students renting a flat or room",
+          pros: [
+            "Hungary's largest property portal",
+            "Flats in every district",
+            "Price and area filters",
+          ],
+          cons: ["Mostly whole flats", "Mostly in Hungarian"],
+        },
+        {
+          name: "alberlet.hu",
+          trustScore: 3.8,
+          audience: "Students looking for rooms and flatshares",
+          pros: [
+            "Dedicated rental site",
+            "Rooms in shared flats",
+            "Direct contact with landlords",
+          ],
+          cons: ["Listing quality varies", "Popular rooms go fast"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "Erasmus and international students",
+          pros: [
+            "Free to use",
+            "Short-term sublets from other students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Watch for a cheap central flat, an owner who is 'abroad' and a deposit requested by transfer before any viewing. Never pay before you've seen the room (in person or by live video) and signed a written contract.",
+        },
+        {
+          title: "Rent plus utilities",
+          text: "Many listings quote rent without utilities (rezsi) and the building's common charge (közös költség). Ask for the full monthly total and how utilities are split before you sign.",
+        },
+        {
+          title: "Deposit and handover",
+          text: "Deposits (kaució) are usually one to two months' rent. Sign a written contract and a handover protocol listing the flat's condition and meter readings, so you can get the deposit back.",
+        },
+        {
+          title: "Address registration",
+          text: "Register your address at a government office (kormányablak) with your lease and the owner's consent. EU citizens staying longer than three months also need a registration certificate from the immigration authority — check that your landlord allows registration.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
@@ -3236,6 +3353,7 @@ export const countryFlags: Record<string, string> = {
   Belgium: "🇧🇪",
   Ireland: "🇮🇪",
   Poland: "🇵🇱",
+  Hungary: "🇭🇺",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
