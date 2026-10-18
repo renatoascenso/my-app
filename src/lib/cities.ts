@@ -2915,6 +2915,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "warsaw",
+    name: "Warsaw",
+    country: "Poland",
+    aliases: ["Warszawa", "Varsovia", "Varsóvia", "Varsovie", "Warschau"],
+    rent: "PLN 1,200–1,800",
+    risk: "Extra fees on top of rent, strict lease types and rental scams",
+    bestFor: "University of Warsaw, Warsaw University of Technology, SGH & Kozminski students, value, career",
+    dashboard: {
+      description:
+        "Poland's capital is its biggest student city: the University of Warsaw, the Warsaw University of Technology, SGH Warsaw School of Economics, the Medical University, SGGW, Kozminski University, SWPS and many more. Warsaw is dynamic, safe and far cheaper than Western capitals — a room averages around PLN 1,300 a month — though prices in the center are much higher.",
+      costOfLiving: "PLN 3,200–4,500/month (rent, food, transport, phone)",
+      heroImage: "/cities/warsaw-hero.jpg",
+      heroCredit: {
+        text: "Quintin Soloviev · CC BY 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Skyline_of_Warsaw,_Poland_(cropped).jpg",
+      },
+      quickFacts: {
+        population: "1.87 million (end of 2025)",
+        averageRent: "PLN 1,300/mo average for a room (Otodom, July 2026)",
+        languages: "Polish; English common among students and young people",
+        transportScore: "9.0/10",
+        safetyScore: "8.6/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "August and September, before the academic year starts on 1 October, and again in February for the summer semester.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "A room averaged about PLN 1,300 a month in July 2026 (Otodom), but central rooms often cost PLN 1,800 or more. Many listings show the rent without the administrative fee (czynsz) and utilities, and some landlords only offer an 'occasional lease' that is hard for international students to sign.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "University dorms (akademiki)",
+          trustScore: 4.4,
+          audience: "Students at Warsaw's public universities",
+          pros: [
+            "Far below market rents",
+            "Run by the universities",
+            "Registration handled for you",
+          ],
+          cons: ["Often shared rooms", "Limited places for international students"],
+        },
+        {
+          name: "Otodom",
+          trustScore: 4.0,
+          audience: "Students renting a room or flat",
+          pros: [
+            "Poland's largest property portal",
+            "Rooms and flats across all districts",
+            "Detailed filters",
+          ],
+          cons: ["Many agency listings with commission", "Mostly in Polish"],
+        },
+        {
+          name: "OLX",
+          trustScore: 3.6,
+          audience: "Students looking for cheaper rooms",
+          pros: [
+            "Huge number of private room offers",
+            "Direct contact with owners",
+            "Fast-moving market",
+          ],
+          cons: ["Little verification", "Scam listings slip through"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "Erasmus and international students",
+          pros: [
+            "Free to use",
+            "Short-term sublets from other students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Watch for a cheap central flat, an owner who is 'abroad' and a deposit requested by transfer before any viewing. Never pay before you've seen the room (in person or by live video) and signed a written contract.",
+        },
+        {
+          title: "The total monthly cost",
+          text: "Listings often quote rent plus the building's administrative fee (czynsz administracyjny) and utilities (media) separately. Ask for the full monthly total in writing before you agree.",
+        },
+        {
+          title: "Occasional leases and deposits",
+          text: "Some landlords use an 'occasional lease' (najem okazjonalny), which requires a notarial statement and the address of somewhere you could move to if evicted — often impossible for newcomers. Deposits are legally capped (at 6 months' rent for occasional leases), but 1–2 months is usual; get a written receipt.",
+        },
+        {
+          title: "Registering your stay",
+          text: "Foreigners staying longer than 30 days must register their address (zameldowanie) at the city office, using the lease and the landlord's consent. EU citizens staying longer than three months must also register their residence with the Mazovian Voivodeship Office.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
@@ -3118,6 +3235,7 @@ export const countryFlags: Record<string, string> = {
   "Czech Republic": "🇨🇿",
   Belgium: "🇧🇪",
   Ireland: "🇮🇪",
+  Poland: "🇵🇱",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
