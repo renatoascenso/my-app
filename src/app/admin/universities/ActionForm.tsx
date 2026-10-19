@@ -49,7 +49,7 @@ export function ActionForm({
         >
           {pending ? "Saving…" : submitLabel}
         </button>
-        {state?.error && <p className="text-sm text-red-700">{state.error}</p>}
+        {state?.error && !pending && <p className="text-sm text-red-700">{state.error}</p>}
         {state?.ok && !pending && <p className="text-sm text-emerald-700">{state.ok}</p>}
       </div>
     </form>
