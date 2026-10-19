@@ -88,3 +88,122 @@ model RateLimit {
   resetAt   DateTime
   updatedAt DateTime @updatedAt
 }
+
+// ─── Universities, campuses and university housing ───────────────────────────
+// Edited by the cofounders in /admin/universities. Only rows with published = true appear
+// on the public site. Every fact that can go stale carries a sourceUrl and a lastCheckedAt.
+
+enum HousingAvailability {
+  YES // the university runs or allocates its own housing
+  LIMITED // only for some groups (e.g. exchange students) or very few places
+  PARTNER // no own housing, but official partner residences / providers
+  NO
+  UNKNOWN
+}
+
+enum StudyLevel {
+  BACHELOR
+  MASTER
+  PHD
+  EXCHANGE
+  ALL
+}
+
+model University {
+  id               String                      @id @default(cuid())
+  citySlug         String // matches a city slug in src/lib/cities.ts, e.g. "zurich"
+  name             String
+  shortName        String?
+  website          String?
+  housingPageUrl   String? // the university's own accommodation page
+  offersHousing    HousingAvailability         @default(UNKNOWN)
+  housingSummary   String? // short text shown on the city page
+  published        Boolean                     @default(false)
+  lastCheckedAt    DateTime? // when someone last verified the information against the official page
+  lastEditedBy     String? // email of the cofounder who last saved it
+  createdAt        DateTime                    @default(now())
+  updatedAt        DateTime                    @updatedAt
+  campuses         Campus[]
+  housingOptions   UniversityHousing[]
+  platformMentions UniversityPlatformMention[]
+
+  @@unique([citySlug, name])
+  @@index([citySlug])
+}
+
+model Campus {
+  id           String              @id @default(cuid())
+  universityId String
+  university   University          @relation(fields: [universityId], references: [id], onDelete: Cascade)
+  name         String
+  address      String?
+  lat          Float
+  lng          Float
+  isMain       Boolean             @default(false)
+  sortOrder    Int                 @default(0)
+  housing      UniversityHousing[]
+  createdAt    DateTime            @default(now())
+  updatedAt    DateTime            @updatedAt
+
+  @@index([universityId])
+}
+
+model UniversityHousing {
+  id             String            @id @default(cuid())
+  universityId   String
+  university     University        @relation(fields: [universityId], references: [id], onDelete: Cascade)
+  campusId       String? // nearest / associated campus
+  campus         Campus?           @relation(fields: [campusId], references: [id], onDelete: SetNull)
+  name           String
+  provider       String? // who runs it, e.g. the university, a student-housing foundation
+  address        String?
+  lat            Float?
+  lng            Float?
+  description    String?
+  audiences      StudyLevel[] // who may apply; empty = not stated
+  roomTypes      String? // e.g. "Single rooms, studios"
+  priceMin       Int?
+  priceMax       Int?
+  currency       String? // "CHF", "€", "£", ...
+  applicationUrl String?
+  sourceUrl      String // official page the information comes from
+  published      Boolean           @default(false)
+  lastCheckedAt  DateTime
+  lastEditedBy   String?
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+  deadlines      HousingDeadline[]
+
+  @@index([universityId])
+}
+
+// One row per intake and audience, because universities often set different dates
+// for bachelor, master, PhD or exchange students.
+model HousingDeadline {
+  id        String            @id @default(cuid())
+  housingId String
+  housing   UniversityHousing @relation(fields: [housingId], references: [id], onDelete: Cascade)
+  intake    String // e.g. "Autumn semester 2027"
+  audience  StudyLevel        @default(ALL)
+  opensAt   DateTime?
+  closesAt  DateTime?
+  note      String? // e.g. "Rolling allocation — apply as soon as you're admitted"
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+
+  @@index([housingId])
+}
+
+// A housing platform that a university itself points students to (shown as
+// "Listed by <university>" on the city page). Only add it with a source link.
+model UniversityPlatformMention {
+  id            String     @id @default(cuid())
+  universityId  String
+  university    University @relation(fields: [universityId], references: [id], onDelete: Cascade)
+  platformName  String // must match a platform name used on the city page, e.g. "WOKO"
+  sourceUrl     String
+  lastCheckedAt DateTime
+  createdAt     DateTime   @default(now())
+
+  @@unique([universityId, platformName])
+}
