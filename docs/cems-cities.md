@@ -4,9 +4,9 @@ Goal: every city with a CEMS member school has a HousingAtlas city guide and dis
 Source: CEMS member list (33 schools), checked 2026-11-03. "Live" means the school's CEMS campus
 lies inside a live city map.
 
-**Status: 17 covered · 2 partly covered · 14 missing**
+**Status: 18 covered · 2 partly covered · 13 missing**
 
-## Covered (17)
+## Covered (18)
 
 | School | Country | CEMS campus | HousingAtlas city | Map area |
 |---|---|---|---|---|
@@ -15,6 +15,7 @@ lies inside a live city map.
 | Copenhagen Business School | Denmark | Frederiksberg | Copenhagen | Frederiksberg |
 | Cornell SC Johnson College of Business | United States | Ithaca, NY (Dyson School, Warren Hall) | Ithaca | Cornell central campus |
 | Corvinus University of Budapest | Hungary | Budapest | Budapest | — |
+| Ivey Business School | Canada | Western University, London, Ontario | London, Ontario | Medway |
 | Louvain School of Management | Belgium | Place des Doyens, Louvain-la-Neuve | Louvain-la-Neuve | Centre |
 | Norwegian School of Economics (NHH) | Norway | Helleveien, Sandviken, Bergen | Bergen | Bergenhus |
 | Nova School of Business and Economics | Portugal | Carcavelos (Cascais) | Lisbon (region map) | Cascais |
@@ -35,14 +36,13 @@ lies inside a live city map.
 | Esade | Spain | Sant Cugat del Vallès (CEMS MIM taught there) | Barcelona | Sant Cugat is ~15–20 km outside Barcelona's 10 districts |
 | HEC Paris | France | Jouy-en-Josas | Paris | Campus is ~20 km south-west of Paris's 20 arrondissements |
 
-## Missing (14)
+## Missing (13)
 
 | School | Country | City to build | Notes |
 |---|---|---|---|
 | Escola de Administração de Empresas de São Paulo – FGV | Brazil | São Paulo | |
 | HKUST Business School | Hong Kong (China) | Hong Kong | Clear Water Bay campus, Sai Kung |
 | Indian Institute of Management Calcutta | India | Kolkata | Joka campus |
-| Ivey Business School | Canada | London, Ontario | Western University |
 | Keio University | Japan | Tokyo / Yokohama | CEMS courses on Mita (Tokyo) and Hiyoshi (Yokohama) campuses |
 | Koç University Graduate School of Business | Turkey | Istanbul | Rumelifeneri campus, Sarıyer |
 | Korea University Business School | South Korea | Seoul | Anam campus |
