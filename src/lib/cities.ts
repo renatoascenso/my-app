@@ -3149,6 +3149,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "cologne",
+    name: "Cologne",
+    country: "Germany",
+    aliases: ["Köln", "Koeln", "Colonia", "Keulen", "Kolonia"],
+    rent: "€550–€750",
+    risk: "Tight WG market, fake listings and deposit scams",
+    bestFor: "University of Cologne (incl. CEMS at the WiSo faculty), TH Köln & Sport University students, nightlife",
+    dashboard: {
+      description:
+        "Germany's fourth-largest city is home to the University of Cologne — one of the country's largest universities, whose WiSo faculty runs the CEMS programme — as well as TH Köln and the German Sport University. Students love Sülz next to the main campus, the Kwartier Latäng and Ehrenfeld. A WG room averaged about €620 a month in spring 2026 (Moses Mendelssohn Institut), and good rooms are often gone within a day.",
+      costOfLiving: "€1,000–1,300/month (rent, food, transport, phone)",
+      heroImage: "/cities/cologne-hero.jpg",
+      heroCredit: {
+        text: "Dietmar Rabich · CC BY-SA 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:K%C3%B6ln,_Hohenzollernbr%C3%BCcke_--_2014_--_1873.jpg",
+      },
+      quickFacts: {
+        population: "1,100,076 (residents' register, end of 2025)",
+        averageRent: "€620/mo average for a WG room (Moses Mendelssohn Institut, spring 2026)",
+        languages: "German; English widely spoken among students",
+        transportScore: "8.6/10",
+        safetyScore: "7.8/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "August to October before the winter semester, and February to April before the summer semester.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "WG rooms averaged about €620 in spring 2026, around 6% more than a year earlier (Moses Mendelssohn Institut), and popular rooms in Sülz, Ehrenfeld or the Kwartier Latäng get dozens of applications. Dormitory places from the Kölner Studierendenwerk are much cheaper but limited, so apply early.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "Kölner Studierendenwerk",
+          trustScore: 4.5,
+          audience: "Students at Cologne's universities",
+          pros: [
+            "Rooms in student residences across the city",
+            "Rents well below the private market",
+            "Free online application for several residences at once",
+          ],
+          cons: ["Limited places and waiting times", "Little choice of location"],
+        },
+        {
+          name: "WG-Gesucht",
+          trustScore: 4.1,
+          audience: "Students looking for a WG room",
+          pros: [
+            "Germany's biggest platform for shared flats",
+            "Many listings in Sülz, Ehrenfeld and the Innenstadt",
+            "Short-term sublets (Zwischenmiete) too",
+          ],
+          cons: ["Very competitive — reply fast", "Scam listings appear regularly"],
+        },
+        {
+          name: "ImmoScout24",
+          trustScore: 3.9,
+          audience: "Students looking for their own flat",
+          pros: [
+            "Largest selection of apartments",
+            "Filters for district, size and price",
+            "Many listings from professional landlords",
+          ],
+          cons: ["Few rooms in shared flats", "Landlords often ask for a SCHUFA credit report"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Short-term sublets from other students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Fake listings often offer a cheap, central room from an owner who is 'abroad' and asks for the deposit before any viewing. Never pay before you've seen the room (in person or by live video) and signed a contract.",
+        },
+        {
+          title: "Deposit (Kaution)",
+          text: "By law the deposit can be at most three months' net rent (Kaltmiete), and you may pay it in three monthly instalments. Pay it only against a signed contract and keep proof of payment.",
+        },
+        {
+          title: "Registration (Anmeldung)",
+          text: "You must register your address at a Bürgeramt within two weeks of moving in, using a confirmation from your landlord (Wohnungsgeberbestätigung). If a landlord refuses to provide it, treat that as a red flag.",
+        },
+        {
+          title: "Sublets",
+          text: "If you sublet a room (Untermiete or Zwischenmiete), the main tenant needs the landlord's permission. Ask for it in writing — without it, you can be asked to leave at short notice.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "ithaca",
     name: "Ithaca",
     country: "United States",
