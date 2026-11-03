@@ -12,6 +12,7 @@ import AmsterdamExplorer from "./neighborhoods/AmsterdamExplorer";
 import RotterdamExplorer from "./neighborhoods/RotterdamExplorer";
 import LondonExplorer from "./neighborhoods/LondonExplorer";
 import StockholmExplorer from "./neighborhoods/StockholmExplorer";
+import EspooExplorer from "./neighborhoods/EspooExplorer";
 import ViennaExplorer from "./neighborhoods/ViennaExplorer";
 import PragueExplorer from "./neighborhoods/PragueExplorer";
 import FrankfurtExplorer from "./neighborhoods/FrankfurtExplorer";
@@ -111,6 +112,11 @@ export const neighborhoodExplorerCopy: Record<string, { heading: string; subtitl
     subtitle:
       "Compare London's 32 boroughs and the City by room prices, safety, and commute time to the universities before comparing listings.",
   },
+  espoo: {
+    heading: "Explore Espoo's districts",
+    subtitle:
+      "Compare Espoo's 7 major districts (suuralueet) by room prices, safety, and commute time to Aalto University's Otaniemi campus before comparing listings.",
+  },
   stockholm: {
     heading: "Explore Stockholm's districts",
     subtitle:
@@ -172,6 +178,7 @@ export const neighborhoodExplorersBySlug: Record<string, () => React.ReactNode> 
   rotterdam: () => <RotterdamExplorer />,
   london: () => <LondonExplorer />,
   stockholm: () => <StockholmExplorer />,
+  espoo: () => <EspooExplorer />,
   vienna: () => <ViennaExplorer />,
   prague: () => <PragueExplorer />,
   frankfurt: () => <FrankfurtExplorer />,
