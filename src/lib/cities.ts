@@ -3149,6 +3149,112 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "london-ontario",
+    name: "London, Ontario",
+    country: "Canada",
+    aliases: ["London ON", "London Ontario", "Western University", "Ivey", "Ivey Business School"],
+    rent: "CA$750–CA$1,050",
+    risk: "Rental scams, illegal deposits and rooms outside tenant protection",
+    bestFor: "Western University & Ivey Business School (CEMS) students, Fanshawe College",
+    dashboard: {
+      description:
+        "The 'Forest City' in south-western Ontario, about two hours from Toronto, is home to Western University — whose Ivey Business School is Canada's CEMS school — and Fanshawe College. Most Western students rent rooms in shared houses in Old North, in student apartments around Masonville or downtown. Purpose-built rental vacancy rose to 4% in 2025, its highest since 2010 (CMHC), but rooms close to campus still go early.",
+      costOfLiving: "CA$1,600–2,200/month (rent, food, transport, phone)",
+      heroImage: "/cities/london-ontario-hero.jpg",
+      heroCredit: {
+        text: "WabbitWanderer · CC BY-SA 2.0",
+        url: "https://commons.wikimedia.org/wiki/File:Along_the_Thames_(19822167921).jpg",
+      },
+      quickFacts: {
+        population: "422,324 (City of London, 2021 Census)",
+        averageRent: "Rooms near Western typically listed at CA$750–950/mo (Western Off-Campus Housing listings, 2026)",
+        languages: "English",
+        transportScore: "7.2/10",
+        safetyScore: "7.8/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "Student leases usually start on 1 May or 1 September, and houses near campus for the next school year are often rented out during the winter term. January brings a smaller wave of winter-term sublets.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Most student leases run 12 months, so one-term exchange students usually need a sublet. Rooms near Western typically list for about CA$750–950 a month on the university's off-campus housing service, and utilities and internet are often extra — budget for heating in winter.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "Western Off-Campus Housing",
+          trustScore: 4.4,
+          audience: "Western University students",
+          pros: [
+            "The university's own off-campus listing service",
+            "Rooms, houses and sublets near campus",
+            "Advice on leases and tenant rights",
+          ],
+          cons: ["Listings are posted by private landlords", "Popular houses go early"],
+        },
+        {
+          name: "Western Housing",
+          trustScore: 4.3,
+          audience: "Upper-year and graduate students",
+          pros: [
+            "University-run residences and apartments",
+            "Upper-year and graduate options such as Bayfield, Ausable and Beaver halls",
+            "On or next to campus",
+          ],
+          cons: ["Limited places for upper-year and graduate students", "Apply early"],
+        },
+        {
+          name: "Kijiji & Facebook Marketplace",
+          trustScore: 2.8,
+          audience: "Students looking for rooms and sublets",
+          pros: [
+            "Many listings and sublets",
+            "Free to use",
+            "Good for short stays",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Watch out for landlords who ask for an e-transfer before a viewing or claim to be out of the country. Never pay before you've seen the place (in person or by live video) and signed a lease.",
+        },
+        {
+          title: "Deposits",
+          text: "In Ontario a landlord may only ask for a rent deposit of up to one month's rent (usually used as last month's rent) and a refundable key deposit — damage deposits are not allowed.",
+        },
+        {
+          title: "Standard lease",
+          text: "Most Ontario tenancies must use the province's Standard Lease form. Note that renting a room where you share the kitchen or bathroom with the owner is not covered by the Residential Tenancies Act, so you have fewer protections.",
+        },
+        {
+          title: "Sublets",
+          text: "If you're here for one term, look for a sublet — and make sure the landlord agrees in writing, since the original tenant stays responsible for the lease.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "louvain-la-neuve",
     name: "Louvain-la-Neuve",
     country: "Belgium",
@@ -4037,6 +4143,7 @@ export const countryFlags: Record<string, string> = {
   Finland: "🇫🇮",
   "United States": "🇺🇸",
   Norway: "🇳🇴",
+  Canada: "🇨🇦",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
