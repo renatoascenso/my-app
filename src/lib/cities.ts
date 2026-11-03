@@ -3149,6 +3149,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "helsinki",
+    name: "Helsinki",
+    country: "Finland",
+    aliases: ["Helsingfors", "Helsínquia", "Helsinky"],
+    rent: "€500–€800",
+    risk: "Fake listings, deposit scams and long queues for student studios",
+    bestFor: "University of Helsinki, Hanken, Uniarts, Metropolia & Haaga-Helia students; Aalto via metro",
+    dashboard: {
+      description:
+        "Finland's capital is home to the University of Helsinki, Hanken School of Economics, the University of the Arts and the universities of applied sciences Metropolia and Haaga-Helia — and Aalto University's Otaniemi campus is about 10 minutes by metro from Ruoholahti. Hoas offers student rooms in shared apartments for about €250–500 a month, while private-market rooms usually cost more; a non-subsidised one-room flat averaged €26.71/m² in Q2 2026 (Statistics Finland).",
+      costOfLiving: "€1,000–1,300/month (rent, food, transport, phone)",
+      heroImage: "/cities/helsinki-hero.jpg",
+      heroCredit: {
+        text: "Leonhard Lenz · CC0",
+        url: "https://commons.wikimedia.org/wiki/File:Kauppatori_Helsinki_from_city_ferry_2022-09-18_03.jpg",
+      },
+      quickFacts: {
+        population: "694,392 (end of 2025)",
+        averageRent: "€26.71/m² for a non-subsidised one-room flat (Statistics Finland, Q2 2026)",
+        languages: "Finnish and Swedish; English spoken almost everywhere",
+        transportScore: "9.2/10",
+        safetyScore: "8.4/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "June to August, before the autumn semester: student housing offers for 1 August and 1 September tenancies go out mainly in June–August. Spring is usually easier.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Hoas shared-apartment rooms usually take 1–2 months to be offered, but studios take 6–8 months and popular locations over a year. On the private market, a non-subsidised one-room flat in Helsinki averaged €26.71/m² in Q2 2026 (Statistics Finland) — about €800 a month for 30 m² — and the inner city is the most expensive.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "Hoas",
+          trustScore: 4.5,
+          audience: "Students at any university in the Helsinki region",
+          pros: [
+            "Shared-apartment rooms from about €250–500",
+            "Buildings across Helsinki, Espoo and Vantaa",
+            "Apply as soon as you have your study place",
+          ],
+          cons: ["Studios take 6–8 months to be offered", "Unfurnished for degree students"],
+        },
+        {
+          name: "Oikotie",
+          trustScore: 3.9,
+          audience: "Students looking on the private market",
+          pros: [
+            "Large selection of private rental flats",
+            "Search by neighbourhood, size and price",
+            "Many listings from professional landlords",
+          ],
+          cons: ["Few rooms in shared flats", "Heavy competition in the inner city"],
+        },
+        {
+          name: "HousingAnywhere",
+          trustScore: 3.8,
+          audience: "Exchange students who need a furnished place",
+          pros: [
+            "Furnished mid-term rentals booked online",
+            "English-language listings",
+            "Booking before arrival",
+          ],
+          cons: ["Service fees on top of rent", "Prices above the local market"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Short-term sublets from other students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Watch out for listings that seem too good to be true — very cheap rent for the size and location, or a landlord who is 'abroad'. Never send money or personal information before you've seen the flat and signed a written rental agreement.",
+        },
+        {
+          title: "Deposits",
+          text: "Finnish landlords usually ask for a security deposit; by law it can be at most three months' rent. Pay it only against a signed contract, keep the receipt, and document the flat's condition with photos when you move in.",
+        },
+        {
+          title: "Unfurnished flats",
+          text: "Most student housing from Hoas comes unfurnished. Budget for basic furniture or look for furnished sublets — and check whether home insurance is required by your contract.",
+        },
+        {
+          title: "Registration",
+          text: "If you'll stay longer than a few months, register your address and get a Finnish personal identity code from the Digital and Population Data Services Agency (DVV); EU citizens staying over three months also register their right of residence with Migri. You'll need the code for banking and many services.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "espoo",
     name: "Espoo",
     country: "Finland",
