@@ -3149,6 +3149,112 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "louvain-la-neuve",
+    name: "Louvain-la-Neuve",
+    country: "Belgium",
+    aliases: ["Louvain la Neuve", "LLN", "Ottignies", "Ottignies-Louvain-la-Neuve", "UCLouvain", "Louvain School of Management"],
+    rent: "€400–€550",
+    risk: "Kot shortage before September, fake listings and extra local taxes",
+    bestFor: "UCLouvain & Louvain School of Management (CEMS) students, car-free campus life",
+    dashboard: {
+      description:
+        "A car-free university town built from scratch in the 1970s for UCLouvain, about 30 km south-east of Brussels. The Louvain School of Management — Belgium's CEMS school — sits in the centre at Place des Doyens. Most students live in kots (student rooms): UCLouvain rents out around 5,000 furnished rooms across its campuses at €360–490 a month on 10-month contracts in 2026–27, and private kots cost a little more.",
+      costOfLiving: "€850–1,100/month (rent, food, transport, phone)",
+      heroImage: "/cities/louvain-la-neuve-hero.jpg",
+      heroCredit: {
+        text: "EmDee · CC BY-SA 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Belgique_-_Brabant_wallon_-_Lac_de_Louvain-la-Neuve_-_08f.jpg",
+      },
+      quickFacts: {
+        population: "31,823 (Ottignies-Louvain-la-Neuve, 1 January 2026)",
+        averageRent: "€360–490/mo for a UCLouvain room on a 10-month contract (UCLouvain, 2026–27)",
+        languages: "French; English widely spoken on campus",
+        transportScore: "8.2/10",
+        safetyScore: "8.6/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "Spring and summer before the academic year starts in mid-September; UCLouvain processes international students' housing requests once their admission is confirmed. Many students go home at weekends, so the town is busiest from Monday to Thursday.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Kots in the centre go fast before September. On top of the rent, budget for internet (about €30/month) and Ottignies-Louvain-la-Neuve's residence tax on student rooms of €325 a year (UCLouvain, 2026–27).",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "UCLouvain housing",
+          trustScore: 4.6,
+          audience: "Students enrolled at UCLouvain",
+          pros: [
+            "About 5,000 furnished university rooms across its campuses",
+            "€360–490 a month with charges included except electricity (2026–27)",
+            "Deposit of only €150",
+          ],
+          cons: ["Reserved for enrolled students; apply as soon as you're admitted", "10-month contracts"],
+        },
+        {
+          name: "Immoweb",
+          trustScore: 3.9,
+          audience: "Students looking for private kots and flats",
+          pros: [
+            "Belgium's largest property portal",
+            "Kots, studios and flats in Louvain-la-Neuve and Ottignies",
+            "Filters by price and type",
+          ],
+          cons: ["Competitive before September", "Listings in French"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Semester sublets from other students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Fake kot listings ask for a deposit or first month's rent before any viewing, often from an owner who is 'abroad'. Never pay before you've seen the room (in person or by live video) and signed a contract.",
+        },
+        {
+          title: "Rental deposit",
+          text: "In Wallonia a rental deposit placed on a blocked bank account can be at most two months' rent; UCLouvain asks only €150 for its own rooms. Never hand over the deposit in cash without a receipt.",
+        },
+        {
+          title: "Student lease",
+          text: "Wallonia has a specific student lease (bail étudiant) for kots. Check that your contract is one, what it says about the rental period and charges, and do a written check-in report (état des lieux) when you move in.",
+        },
+        {
+          title: "Registration",
+          text: "Non-Belgian students staying longer than three months must register at the Ottignies-Louvain-la-Neuve town hall. Keep your lease handy — you'll need your address for the residence permit.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "bergen",
     name: "Bergen",
     country: "Norway",
