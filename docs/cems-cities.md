@@ -4,15 +4,16 @@ Goal: every city with a CEMS member school has a HousingAtlas city guide and dis
 Source: CEMS member list (33 schools), checked 2026-11-03. "Live" means the school's CEMS campus
 lies inside a live city map.
 
-**Status: 13 covered · 2 partly covered · 18 missing**
+**Status: 14 covered · 2 partly covered · 17 missing**
 
-## Covered (13)
+## Covered (14)
 
 | School | Country | CEMS campus | HousingAtlas city | Map area |
 |---|---|---|---|---|
 | Aalto University School of Business | Finland | Otaniemi, Espoo | Espoo | Suur-Tapiola |
 | Bocconi University | Italy | Milan | Milan | — |
 | Copenhagen Business School | Denmark | Frederiksberg | Copenhagen | Frederiksberg |
+| Cornell SC Johnson College of Business | United States | Ithaca, NY (Dyson School, Warren Hall) | Ithaca | Cornell central campus |
 | Corvinus University of Budapest | Hungary | Budapest | Budapest | — |
 | Nova School of Business and Economics | Portugal | Carcavelos (Cascais) | Lisbon (region map) | Cascais |
 | Prague University of Economics and Business | Czech Republic | Prague | Prague | — |
@@ -31,11 +32,10 @@ lies inside a live city map.
 | Esade | Spain | Sant Cugat del Vallès (CEMS MIM taught there) | Barcelona | Sant Cugat is ~15–20 km outside Barcelona's 10 districts |
 | HEC Paris | France | Jouy-en-Josas | Paris | Campus is ~20 km south-west of Paris's 20 arrondissements |
 
-## Missing (18)
+## Missing (17)
 
 | School | Country | City to build | Notes |
 |---|---|---|---|
-| Cornell SC Johnson College of Business | United States | Ithaca, NY | **In progress.** CEMS taught on the Ithaca campus (Dyson School) |
 | Escola de Administração de Empresas de São Paulo – FGV | Brazil | São Paulo | |
 | HKUST Business School | Hong Kong (China) | Hong Kong | Clear Water Bay campus, Sai Kung |
 | Indian Institute of Management Calcutta | India | Kolkata | Joka campus |
