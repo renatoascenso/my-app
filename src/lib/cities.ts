@@ -3149,6 +3149,112 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "ithaca",
+    name: "Ithaca",
+    country: "United States",
+    aliases: ["Ithaca NY", "Cornell", "Cornell University"],
+    rent: "$800–$1,300",
+    risk: "Leases signed a year ahead, rental scams and guarantor requirements",
+    bestFor: "Cornell (incl. CEMS at the Dyson School) and Ithaca College students, gorges and lake life",
+    dashboard: {
+      description:
+        "A small college city at the southern tip of Cayuga Lake, home to Cornell University — whose SC Johnson College of Business hosts the only CEMS programme in the US, at the Dyson School — and Ithaca College. Most Cornell students live in Collegetown or the neighborhoods around East Hill; leases usually run 12 months from August, and popular Collegetown places are often signed up to a year in advance.",
+      costOfLiving: "$1,800–2,500/month (rent, food, transport, phone)",
+      heroImage: "/cities/ithaca-hero.jpg",
+      heroCredit: {
+        text: "Andrew Parmet · CC BY 3.0",
+        url: "https://commons.wikimedia.org/wiki/File:Cornell_West_Campus_from_McGraw_Tower.jpg",
+      },
+      quickFacts: {
+        population: "32,108 (City of Ithaca, 2020 Census)",
+        averageRent: "$620–910/mo for a single room in Cornell's Hasbrouck graduate apartments (Cornell Housing, 2026–27)",
+        languages: "English",
+        transportScore: "6.8/10",
+        safetyScore: "8.2/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "Collegetown leases for the next school year are often signed in the autumn, close to a year before move-in in August. Cornell's graduate housing applications for 2026–27 opened on 1 April 2026. January brings a smaller wave of spring-semester sublets.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Supply right next to campus is limited, so the best Collegetown houses go early, and rents are usually quoted per person. Most leases run 12 months, which leaves one-semester exchange students looking for sublets. Heating and utilities are often extra — check before signing, as Ithaca winters are long and cold.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "Cornell Housing",
+          trustScore: 4.6,
+          audience: "Cornell graduate and professional students",
+          pros: [
+            "Hasbrouck rooms from $620–910 a month (2026–27)",
+            "Maplewood apartments within walking distance of campus",
+            "Billed through your Cornell account",
+          ],
+          cons: ["Limited places — apply as soon as the portal opens", "Mostly 12-month contracts"],
+        },
+        {
+          name: "Apartments.com & Zillow",
+          trustScore: 3.8,
+          audience: "Students looking for apartments off campus",
+          pros: [
+            "Large selection of apartments and complexes",
+            "Online applications and tours",
+            "Filters for price, pets and parking",
+          ],
+          cons: ["Few individual rooms", "Application fees and credit checks"],
+        },
+        {
+          name: "Craigslist & Facebook groups",
+          trustScore: 2.8,
+          audience: "Students looking for sublets and rooms",
+          pros: [
+            "Many short-term sublets from Cornell students",
+            "Free to use",
+            "Good for one-semester stays",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Be wary of a cheap Collegetown listing whose owner is 'abroad' and asks for payment by wire, Zelle, crypto or gift cards before a viewing. Never pay before you've seen the place (in person or by live video) and signed a written lease.",
+        },
+        {
+          title: "Security deposits",
+          text: "In New York State a security deposit can be at most one month's rent, and after you move out the landlord must return it — or give you an itemised list of deductions — within 14 days. Document the apartment's condition with photos at move-in.",
+        },
+        {
+          title: "Guarantors and credit checks",
+          text: "Many landlords ask for a US credit history or a US-based guarantor, which international students usually don't have. Ask early whether the landlord accepts a guarantor service, extra proof of funds or Cornell enrollment documents instead.",
+        },
+        {
+          title: "Subletting",
+          text: "Most leases run 12 months. If you're here for one semester, look for a sublet — and make sure the main tenant has the landlord's written consent, or you could be asked to leave.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "helsinki",
     name: "Helsinki",
     country: "Finland",
@@ -3589,6 +3695,7 @@ export const countryFlags: Record<string, string> = {
   Poland: "🇵🇱",
   Hungary: "🇭🇺",
   Finland: "🇫🇮",
+  "United States": "🇺🇸",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
