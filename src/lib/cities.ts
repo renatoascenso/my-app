@@ -3149,6 +3149,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "bergen",
+    name: "Bergen",
+    country: "Norway",
+    aliases: ["Björgvin", "NHH", "Norwegian School of Economics"],
+    rent: "NOK 5,500–8,000",
+    risk: "Fast-rising rents, large deposits and fake listings",
+    bestFor: "NHH (CEMS), University of Bergen & HVL students, fjords and mountains",
+    dashboard: {
+      description:
+        "Norway's second-largest city lies between fjords and mountains and is home to NHH Norwegian School of Economics — Norway's CEMS school, in Sandviken — the University of Bergen and Western Norway University of Applied Sciences. A room in a shared flat (kollektiv) averaged about NOK 6,400 a month in Q1 2026, and Bergen's rents have risen 27% since 2023, faster than in Oslo or Trondheim (Hybel/Menon Economics).",
+      costOfLiving: "NOK 13,000–17,000/month (rent, food, transport, phone)",
+      heroImage: "/cities/bergen-hero.jpg",
+      heroCredit: {
+        text: "Diego Delso · CC BY-SA 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Vista_de_Bergen_desde_la_monta%C3%B1a_Fl%C3%B8yen,_Noruega,_2019-09-08,_DD_48.jpg",
+      },
+      quickFacts: {
+        population: "294,860 (1 January 2026)",
+        averageRent: "NOK 6,400/mo average for a room in a shared flat (Hybel/Menon Economics, Q1 2026)",
+        languages: "Norwegian; English spoken almost everywhere",
+        transportScore: "8.0/10",
+        safetyScore: "8.8/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "July and August before the autumn semester, when thousands of new students arrive at once, and again in December–January for the spring semester.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Rents in Bergen rose 27% between Q1 2023 and Q1 2026 — the steepest increase of Norway's three biggest student cities — and a room in a shared flat now averages about NOK 6,400 a month (Hybel/Menon Economics). Student housing from Sammen is much cheaper but in high demand at the start of the autumn semester, so apply as soon as you're admitted.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "Sammen",
+          trustScore: 4.5,
+          audience: "Students at NHH, UiB, HVL and other Bergen institutions",
+          pros: [
+            "Western Norway's student welfare organisation",
+            "Student villages such as Fantoft, with rents well below the private market",
+            "Apply online as soon as you are admitted",
+          ],
+          cons: ["High demand before the autumn semester", "Some rooms are small or shared"],
+        },
+        {
+          name: "Finn.no",
+          trustScore: 4.0,
+          audience: "Students looking on the private market",
+          pros: [
+            "Norway's largest marketplace for rentals",
+            "Rooms, hybler and whole flats",
+            "Filters by borough and price",
+          ],
+          cons: ["Heavy competition for central rooms", "Scam listings appear regularly"],
+        },
+        {
+          name: "Hybel.no",
+          trustScore: 3.9,
+          audience: "Students looking for a hybel or kollektiv room",
+          pros: [
+            "Focused on rooms and small flats",
+            "Digital rental contracts",
+            "Profiles let landlords contact you",
+          ],
+          cons: ["Fewer listings than Finn.no", "Some services cost extra"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Short-term sublets from other students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Fake listings often offer a central hybel at a low price from a landlord who is 'abroad' and asks for money before a viewing. Never pay before you've seen the place (in person or by live video) and signed a contract.",
+        },
+        {
+          title: "Deposit (depositum)",
+          text: "By law a deposit can be at most six months' rent, and it must be paid into a separate deposit account in your name — never to the landlord's private account. A deposit guarantee is a common alternative.",
+        },
+        {
+          title: "Contract",
+          text: "Use a written contract (for example the standard form from the Norwegian Consumer Council) that states the rent, what's included — electricity is often extra — the notice period and the deposit.",
+        },
+        {
+          title: "Registration",
+          text: "EU/EEA students staying longer than three months register with the police/UDI, and anyone moving to Norway for six months or more reports the move to the National Population Register (Folkeregisteret). You'll need an ID number for a bank account and many services.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "cologne",
     name: "Cologne",
     country: "Germany",
@@ -3813,6 +3930,7 @@ export const countryFlags: Record<string, string> = {
   Hungary: "🇭🇺",
   Finland: "🇫🇮",
   "United States": "🇺🇸",
+  Norway: "🇳🇴",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
