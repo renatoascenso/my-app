@@ -4,9 +4,9 @@ Goal: every city with a CEMS member school has a HousingAtlas city guide and dis
 Source: CEMS member list (33 schools), checked 2026-11-03. "Live" means the school's CEMS campus
 lies inside a live city map.
 
-**Status: 14 covered · 2 partly covered · 17 missing**
+**Status: 15 covered · 2 partly covered · 16 missing**
 
-## Covered (14)
+## Covered (15)
 
 | School | Country | CEMS campus | HousingAtlas city | Map area |
 |---|---|---|---|---|
@@ -22,6 +22,7 @@ lies inside a live city map.
 | Stockholm School of Economics | Sweden | Stockholm | Stockholm | Norra innerstaden |
 | The London School of Economics and Political Science | United Kingdom | London | London | — |
 | UCD Michael Smurfit Graduate Business School | Ireland | Blackrock, Dublin | Dublin | Blackrock |
+| University of Cologne | Germany | Main campus, Lindenthal (WiSo faculty) | Cologne | Lindenthal |
 | University of St.Gallen | Switzerland | St. Gallen | St. Gallen | — |
 | WU Vienna | Austria | Vienna | Vienna | — |
 
@@ -32,7 +33,7 @@ lies inside a live city map.
 | Esade | Spain | Sant Cugat del Vallès (CEMS MIM taught there) | Barcelona | Sant Cugat is ~15–20 km outside Barcelona's 10 districts |
 | HEC Paris | France | Jouy-en-Josas | Paris | Campus is ~20 km south-west of Paris's 20 arrondissements |
 
-## Missing (17)
+## Missing (16)
 
 | School | Country | City to build | Notes |
 |---|---|---|---|
@@ -52,4 +53,3 @@ lies inside a live city map.
 | Universidad Adolfo Ibáñez | Chile | Santiago | |
 | Universidad de los Andes School of Management | Colombia | Bogotá | |
 | University of Cape Town Graduate School of Business | South Africa | Cape Town | |
-| University of Cologne | Germany | Cologne | |
