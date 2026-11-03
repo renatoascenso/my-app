@@ -3149,6 +3149,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "espoo",
+    name: "Espoo",
+    country: "Finland",
+    aliases: ["Esbo", "Otaniemi", "Aalto", "Aalto University"],
+    rent: "€400–€650",
+    risk: "Long queues for student studios, fake listings and deposit scams",
+    bestFor: "Aalto University students (incl. School of Business), Laurea, tech, nature",
+    dashboard: {
+      description:
+        "Finland's second-largest city lies directly west of Helsinki and is home to Aalto University's Otaniemi campus — including the School of Business, which moved there in 2019 — and Laurea's Leppävaara campus. The metro links Otaniemi, Tapiola and Matinkylä to central Helsinki in about 15 minutes. Most students live in Hoas or AYY student housing, where a room in a shared apartment costs about €250–500 a month; on the private market rooms run about €400–600 (Aalto University, 2026).",
+      costOfLiving: "€900–1,200/month (rent, food, transport, phone)",
+      heroImage: "/cities/espoo-hero.jpg",
+      heroCredit: {
+        text: "Aatu Dorochenko · CC BY-SA 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Aalto_yliopisto_Otaniemi_2018.jpg",
+      },
+      quickFacts: {
+        population: "325,716 (end of 2025)",
+        averageRent: "€23.77/m² for a non-subsidised one-room flat (Statistics Finland, Q2 2026)",
+        languages: "Finnish and Swedish; English spoken almost everywhere",
+        transportScore: "8.4/10",
+        safetyScore: "8.8/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "June to August, before the autumn semester: student housing offers for 1 August and 1 September tenancies go out mainly in June–August. Spring is usually easier.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Hoas shared-apartment rooms usually take 1–2 months to be offered, but studios take 6–8 months and popular locations over a year, so student housing can't be guaranteed from day one. On the private market, a non-subsidised one-room flat in Espoo averaged €23.77/m² in Q2 2026 (Statistics Finland) — about €710 a month for 30 m².",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "AYY Housing",
+          trustScore: 4.6,
+          audience: "Aalto University students",
+          pros: [
+            "About 2,500 student apartments, mostly on the Otaniemi campus",
+            "Water and internet included in the rent",
+            "Run by the Aalto University Student Union",
+          ],
+          cons: ["AYY membership required", "Apartments are unfurnished"],
+        },
+        {
+          name: "Hoas",
+          trustScore: 4.5,
+          audience: "Students at any university in the Helsinki region",
+          pros: [
+            "Shared-apartment rooms from about €250–500",
+            "Several buildings in Otaniemi and Tapiola",
+            "Apply as soon as you have your study place",
+          ],
+          cons: ["Studios take 6–8 months to be offered", "Unfurnished for degree students"],
+        },
+        {
+          name: "Oikotie",
+          trustScore: 3.9,
+          audience: "Students looking on the private market",
+          pros: [
+            "Large selection of private rental flats",
+            "Search by neighbourhood, size and price",
+            "Many listings from professional landlords",
+          ],
+          cons: ["Few rooms in shared flats", "Heavy competition for flats near the metro"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Short-term sublets from other students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Watch out for listings that seem too good to be true — very cheap rent for the size and location, or a landlord who is 'abroad'. Never send money or personal information before you've seen the flat and signed a written rental agreement.",
+        },
+        {
+          title: "Deposits",
+          text: "Finnish landlords usually ask for a security deposit; by law it can be at most three months' rent. Pay it only against a signed contract, keep the receipt, and document the flat's condition with photos when you move in.",
+        },
+        {
+          title: "Unfurnished flats",
+          text: "Most student housing from Hoas and AYY comes unfurnished. Budget for basic furniture or look for furnished sublets — and check whether home insurance is required by your contract.",
+        },
+        {
+          title: "Registration",
+          text: "If you'll stay longer than a few months, register your address and get a Finnish personal identity code from the Digital and Population Data Services Agency (DVV); EU citizens staying over three months also register their right of residence with Migri. You'll need the code for banking and many services.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "copenhagen",
     name: "Copenhagen",
     country: "Denmark",
@@ -3354,6 +3471,7 @@ export const countryFlags: Record<string, string> = {
   Ireland: "🇮🇪",
   Poland: "🇵🇱",
   Hungary: "🇭🇺",
+  Finland: "🇫🇮",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
