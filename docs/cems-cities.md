@@ -4,9 +4,9 @@ Goal: every city with a CEMS member school has a HousingAtlas city guide and dis
 Source: CEMS member list (33 schools), checked 2026-11-03. "Live" means the school's CEMS campus
 lies inside a live city map.
 
-**Status: 15 covered · 2 partly covered · 16 missing**
+**Status: 16 covered · 2 partly covered · 15 missing**
 
-## Covered (15)
+## Covered (16)
 
 | School | Country | CEMS campus | HousingAtlas city | Map area |
 |---|---|---|---|---|
@@ -15,6 +15,7 @@ lies inside a live city map.
 | Copenhagen Business School | Denmark | Frederiksberg | Copenhagen | Frederiksberg |
 | Cornell SC Johnson College of Business | United States | Ithaca, NY (Dyson School, Warren Hall) | Ithaca | Cornell central campus |
 | Corvinus University of Budapest | Hungary | Budapest | Budapest | — |
+| Norwegian School of Economics (NHH) | Norway | Helleveien, Sandviken, Bergen | Bergen | Bergenhus |
 | Nova School of Business and Economics | Portugal | Carcavelos (Cascais) | Lisbon (region map) | Cascais |
 | Prague University of Economics and Business | Czech Republic | Prague | Prague | — |
 | Rotterdam School of Management, Erasmus University | Netherlands | Woudestein, Rotterdam | Rotterdam | — |
@@ -33,7 +34,7 @@ lies inside a live city map.
 | Esade | Spain | Sant Cugat del Vallès (CEMS MIM taught there) | Barcelona | Sant Cugat is ~15–20 km outside Barcelona's 10 districts |
 | HEC Paris | France | Jouy-en-Josas | Paris | Campus is ~20 km south-west of Paris's 20 arrondissements |
 
-## Missing (16)
+## Missing (15)
 
 | School | Country | City to build | Notes |
 |---|---|---|---|
@@ -46,7 +47,6 @@ lies inside a live city map.
 | Korea University Business School | South Korea | Seoul | Anam campus |
 | Louvain School of Management | Belgium | Louvain-la-Neuve | ~30 km from Brussels |
 | National University of Singapore | Singapore | Singapore | |
-| Norwegian School of Economics | Norway | Bergen | |
 | Onsi Sawiris School of Business, American University in Cairo | Egypt | Cairo | New Cairo campus |
 | The University of Sydney Business School | Australia | Sydney | |
 | Tsinghua University School of Economics and Management | China | Beijing | |
