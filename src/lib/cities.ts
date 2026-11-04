@@ -3149,6 +3149,112 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "seoul",
+    name: "Seoul",
+    country: "South Korea",
+    aliases: ["서울", "Séoul", "Korea University", "KUBS"],
+    rent: "₩500,000–₩800,000",
+    risk: "Large deposits, jeonse fraud and tiny goshiwon rooms",
+    bestFor: "Korea University Business School (CEMS), Yonsei & SNU students, nightlife and food",
+    dashboard: {
+      description:
+        "South Korea's capital is home to Korea University — whose Business School on the Anam campus in Seongbuk-gu is Korea's CEMS school — as well as Yonsei, SNU and dozens more. Around Anam, students rent one-rooms for about ₩500,000–700,000 a month plus a deposit, or cheaper goshiwon rooms; Korea University's Anam Global House costs ₩2.43–3.44 million for a single room for a 4- or 6-month stay in Fall 2026.",
+      costOfLiving: "₩1,300,000–1,800,000/month (rent, food, transport, phone)",
+      heroImage: "/cities/seoul-hero.jpg",
+      heroCredit: {
+        text: "Ksiom · CC BY-SA 3.0",
+        url: "https://commons.wikimedia.org/wiki/File:Korea_University_Main_Hall.jpg",
+      },
+      quickFacts: {
+        population: "About 9.3 million registered residents (2026)",
+        averageRent: "₩2.43–3.44 million for a single room in Anam Global House, 4 or 6 months (Korea University, Fall 2026)",
+        languages: "Korean; English common around universities",
+        transportScore: "9.6/10",
+        safetyScore: "9.2/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "January–February before the spring semester starts in March, and July–August before the fall semester in September. Korea University's international dormitory applications open months ahead.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Most private rentals near campus are one-rooms rented as wolse: a monthly rent plus a deposit that is often several million won. Short stays are hard to find outside dormitories, goshiwon and share houses, which are smaller but need only small deposits.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "Korea University dormitories",
+          trustScore: 4.6,
+          audience: "Korea University students, including exchange students",
+          pros: [
+            "Anam Global House and CJ International House on campus",
+            "Single, double and triple rooms",
+            "No deposit hunting or agents",
+          ],
+          cons: ["Fees must be paid in one lump sum", "Limited places"],
+        },
+        {
+          name: "Zigbang & Dabang",
+          trustScore: 3.9,
+          audience: "Students looking for one-rooms off campus",
+          pros: [
+            "Korea's biggest apps for one-rooms and officetels",
+            "Map search around stations",
+            "Photos and price filters",
+          ],
+          cons: ["Mostly in Korean", "Deposits of several million won are common"],
+        },
+        {
+          name: "Facebook groups & share houses",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Furnished share-house rooms with small deposits",
+            "English-language offers",
+            "Short stays possible",
+          ],
+          cons: [
+            "No listing verification",
+            "Scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Deposit fraud",
+          text: "Before paying a deposit, check the building's property register (deunggibu deungbon) for mortgages or debts that could swallow your deposit — jeonse and deposit fraud cases have hit thousands of tenants. Use a licensed real-estate agent.",
+        },
+        {
+          title: "Protect your deposit",
+          text: "After moving in, file a move-in report at the community centre and get a fixed-date stamp (hwakjeong ilja) on your contract — together they give your deposit legal priority.",
+        },
+        {
+          title: "Goshiwon rooms",
+          text: "Goshiwon are cheap and need almost no deposit, but rooms can be tiny and some older buildings have poor fire safety. Look for windows, sprinklers and a clear exit before signing.",
+        },
+        {
+          title: "Alien Registration Card",
+          text: "If you stay longer than 90 days, you must apply for an Alien Registration Card (residence card) at the immigration office within 90 days of arrival — you'll need it for a phone contract and bank account.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "hong-kong",
     name: "Hong Kong",
     country: "Hong Kong",
@@ -4476,6 +4582,7 @@ export const countryFlags: Record<string, string> = {
   Australia: "🇦🇺",
   Singapore: "🇸🇬",
   "Hong Kong": "🇭🇰",
+  "South Korea": "🇰🇷",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
