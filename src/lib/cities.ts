@@ -3149,6 +3149,112 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "santiago",
+    name: "Santiago",
+    country: "Chile",
+    aliases: ["Santiago de Chile", "Universidad Adolfo Ibáñez", "UAI", "Adolfo Ibanez"],
+    rent: "CLP 230,000–CLP 380,000",
+    risk: "A remote campus, deposit scams and paperwork without a Chilean RUT",
+    bestFor: "Universidad Adolfo Ibáñez (CEMS), Providencia, Ñuñoa and Las Condes",
+    dashboard: {
+      description:
+        "Santiago is home to Universidad Adolfo Ibáñez — Chile's CEMS school — whose main campus lies in Peñalolén at the foot of the Andes, far from the city centre. UAI has no dormitories, so students rent rooms or flats themselves. Many choose Providencia, Ñuñoa or Las Condes for city life and accept a long commute; living in La Reina or Peñalolén keeps the trip to campus short.",
+      costOfLiving: "CLP 700,000–1,000,000/month (rent, food, transport, phone)",
+      heroImage: "/cities/santiago-hero.jpg",
+      heroCredit: {
+        text: "Pablo García Saldaña · CC0",
+        url: "https://commons.wikimedia.org/wiki/File:Skyline_of_Santiago,_Chile.jpg",
+      },
+      quickFacts: {
+        population: "7,400,741 in the Santiago Metropolitan Region (2024 census)",
+        averageRent: "About CLP 245,000–280,000/mo for a room in Ñuñoa or Providencia (2026 student rental reports)",
+        languages: "Spanish; English common at UAI but less so in everyday life",
+        transportScore: "7.6/10",
+        safetyScore: "6.4/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "February to early March before the first semester starts, and July before the second. Rooms near metro Lines 1 and 6 in Providencia and Ñuñoa go fastest.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "The Peñalolén campus is far from the popular student neighbourhoods, and many exchange students end up taking ride-hailing cars to class. Landlords often ask for a Chilean ID number (RUT), proof of income or a guarantor, which newcomers don't have — so furnished rooms, student residences and sublets are common first options.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "Student residences (e.g. LivinnX)",
+          trustScore: 4.2,
+          audience: "Exchange students who want a furnished room on arrival",
+          pros: [
+            "Furnished rooms with contracts for one semester",
+            "Easy to book from abroad",
+            "Community of other students",
+          ],
+          cons: ["More expensive than a room in a shared flat", "Mostly central, far from Peñalolén"],
+        },
+        {
+          name: "Portal Inmobiliario",
+          trustScore: 3.9,
+          audience: "Students renting a whole flat",
+          pros: [
+            "Chile's largest property portal",
+            "Filters by comuna and metro station",
+            "Many listings from agencies",
+          ],
+          cons: ["Mostly in Spanish", "Agencies usually ask for a RUT and proof of income"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Rooms from other students and flat shares",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Never transfer a deposit before seeing the room and signing a contract. Be wary of 'owners' abroad who can't show the flat, and check that the person renting it out is the owner or a registered agent.",
+        },
+        {
+          title: "Deposit and contract",
+          text: "A deposit (garantía) of one month's rent plus the first month in advance is common. Get a written contract, agree how the deposit is returned, and photograph the flat's condition at move-in.",
+        },
+        {
+          title: "Rent adjustments",
+          text: "Rents are often adjusted by inflation (IPC) or priced in UF, an inflation-indexed unit, so the amount in pesos can rise during the lease. Check what's included — common expenses (gastos comunes) are often extra.",
+        },
+        {
+          title: "Safety",
+          text: "Phone theft and robberies are common in parts of the centre. Ask about the street at night, prefer buildings with a concierge, and use ride-hailing apps late in the evening.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "sao-paulo",
     name: "São Paulo",
     country: "Brazil",
@@ -5003,6 +5109,7 @@ export const countryFlags: Record<string, string> = {
   "Türkiye": "🇹🇷",
   China: "🇨🇳",
   Brazil: "🇧🇷",
+  Chile: "🇨🇱",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
