@@ -3149,6 +3149,112 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "hong-kong",
+    name: "Hong Kong",
+    country: "Hong Kong",
+    aliases: ["Hongkong", "HKUST", "Hong Kong University of Science and Technology", "香港"],
+    rent: "HK$5,000–HK$8,000",
+    risk: "Tiny, costly rooms, upfront agent fees and subdivided-flat risks",
+    bestFor: "HKUST Business School (CEMS), HKU & CUHK students, city life next to mountains and sea",
+    dashboard: {
+      description:
+        "Hong Kong is home to HKUST — whose Business School on the Clear Water Bay campus in Sai Kung is Hong Kong's CEMS school — as well as HKU and CUHK. Most HKUST students live in on-campus halls, which cost about HK$18,626–32,526 a year for students admitted in Fall 2026; off campus, students usually rent rooms in Hang Hau or Tseung Kwan O and take a short minibus ride up the hill.",
+      costOfLiving: "HK$12,000–17,000/month (rent, food, transport, phone)",
+      heroImage: "/cities/hong-kong-hero.jpg",
+      heroCredit: {
+        text: "Diego Delso · CC BY-SA 3.0",
+        url: "https://commons.wikimedia.org/wiki/File:Vista_del_Puerto_de_Victoria_desde_Kowloon,_Hong_Kong,_2013-08-11,_DD_01.JPG",
+      },
+      quickFacts: {
+        population: "7,518,300 (mid-2026, provisional)",
+        averageRent: "HK$18,626–32,526/year for an HKUST hall place (new students, Fall 2026)",
+        languages: "Cantonese, English and Mandarin",
+        transportScore: "9.4/10",
+        safetyScore: "9.2/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "June to August before the Fall term starts in September, and December–January for the Spring term. Apply for HKUST housing as soon as you're admitted.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Rooms are small and expensive: near HKUST, a shared room in Hang Hau or Tseung Kwan O typically lists at about HK$5,000–5,500 a month and a single room at about HK$7,000–7,500. Standard leases usually ask for a two-month deposit, the first month's rent and often half a month's agent commission upfront.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "HKUST Student Housing",
+          trustScore: 4.6,
+          audience: "HKUST students, including exchange students",
+          pros: [
+            "Halls on the Clear Water Bay campus",
+            "About HK$18,626–32,526 a year for new students (Fall 2026)",
+            "No agent fees",
+          ],
+          cons: ["Places are limited, especially for postgraduates", "Shared rooms in many halls"],
+        },
+        {
+          name: "28Hse",
+          trustScore: 3.9,
+          audience: "Students renting flats or rooms off campus",
+          pros: [
+            "One of Hong Kong's largest property portals",
+            "Search by MTR station and district",
+            "Many listings in Tseung Kwan O",
+          ],
+          cons: ["Mostly whole flats via agents", "Listings mainly in Chinese"],
+        },
+        {
+          name: "Facebook groups & Carousell",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Room shares and sublets from other students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Fake listings often ask for a deposit before a viewing. Only pay after seeing the room and signing a tenancy agreement, and check that the agent holds a licence from the Estate Agents Authority.",
+        },
+        {
+          title: "Upfront costs",
+          text: "Expect a deposit of usually two months' rent, the first month's rent and often half a month's agent commission. Get receipts for everything and ask how the deposit will be returned.",
+        },
+        {
+          title: "Subdivided flats",
+          text: "Many cheap rooms are in subdivided units, which can be cramped, poorly ventilated or unsafe. Check fire exits, windows and the electricity and water charges before signing.",
+        },
+        {
+          title: "HKID card",
+          text: "If you'll stay longer than 180 days, you must apply for a Hong Kong Identity Card within 30 days of arrival. You'll need it, or your student visa, for bank accounts and contracts.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "singapore",
     name: "Singapore",
     country: "Singapore",
@@ -4369,6 +4475,7 @@ export const countryFlags: Record<string, string> = {
   Canada: "🇨🇦",
   Australia: "🇦🇺",
   Singapore: "🇸🇬",
+  "Hong Kong": "🇭🇰",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
