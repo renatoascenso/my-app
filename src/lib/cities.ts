@@ -3149,6 +3149,123 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "sydney",
+    name: "Sydney",
+    country: "Australia",
+    aliases: ["University of Sydney", "USYD", "Sídney", "Sydney NSW"],
+    rent: "A$350–A$550/week",
+    risk: "Very high rents, share-house scams and rooms outside tenancy law",
+    bestFor: "University of Sydney Business School (CEMS), UTS & UNSW students, beaches",
+    dashboard: {
+      description:
+        "Australia's largest city is home to the University of Sydney — whose Business School, in the Abercrombie Building in Darlington, is Australia's CEMS school — as well as UTS and UNSW. Rents are quoted per week: most students share houses in Newtown, Glebe, Redfern or the Inner West, while the university's own rooms cost A$306–603 a week in 2026.",
+      costOfLiving: "A$2,300–3,200/month (rent, food, transport, phone)",
+      heroImage: "/cities/sydney-hero.jpg",
+      heroCredit: {
+        text: "Bernard Spragg · CC0",
+        url: "https://commons.wikimedia.org/wiki/File:Sydney_and_its_Bridge._(21929835895).jpg",
+      },
+      quickFacts: {
+        population: "5,231,147 (Greater Sydney, 2021 Census)",
+        averageRent: "A$306–603/week for a room in University of Sydney accommodation (2026)",
+        languages: "English",
+        transportScore: "8.6/10",
+        safetyScore: "8.4/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "January and February before Semester 1 starts in late February, and June–July before Semester 2. University of Sydney accommodation runs 48- and 52-week contracts from January, plus 26-week contracts for Semester 2.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Sydney is one of the world's most expensive rental markets, and rents are quoted per week. Rooms close to campus are scarce at the start of each semester, and international students usually can't get concession fares on public transport, so living nearby saves both time and money.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "University of Sydney Accommodation",
+          trustScore: 4.5,
+          audience: "University of Sydney students",
+          pros: [
+            "Rooms on campus at Queen Mary, Regiment, Abercrombie and Darlington House",
+            "A$306–603 a week in 2026",
+            "Semester-2-only contracts available",
+          ],
+          cons: ["Limited places", "Long contracts (48 or 52 weeks) for Semester 1 starters"],
+        },
+        {
+          name: "Flatmates.com.au",
+          trustScore: 4.0,
+          audience: "Students looking for rooms in share houses",
+          pros: [
+            "Australia's biggest share-house platform",
+            "Profiles and messaging",
+            "Many rooms in Newtown and the Inner West",
+          ],
+          cons: ["Paid upgrade for faster messaging", "Scam listings appear regularly"],
+        },
+        {
+          name: "Domain & realestate.com.au",
+          trustScore: 3.9,
+          audience: "Students renting a whole flat with friends",
+          pros: [
+            "Most apartments and houses for rent",
+            "Inspection times listed online",
+            "Agency-managed leases",
+          ],
+          cons: ["Heavy competition at inspections", "References and rental history usually required"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Semester sublets from other students",
+            "Furnished rooms",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Fake listings often offer a cheap room near campus and ask for a bond or rent before an inspection. Never pay before you've seen the room (in person or by live video) and signed an agreement.",
+        },
+        {
+          title: "Bond",
+          text: "In New South Wales a bond can be at most four weeks' rent and must be lodged with NSW Fair Trading (Rental Bonds Online), not kept by the landlord. Ask for the bond lodgement number.",
+        },
+        {
+          title: "Boarders and lodgers",
+          text: "If you rent a room in a house where the owner lives, you're usually a boarder or lodger and not covered by the Residential Tenancies Act. Get the house rules, rent and notice period in writing.",
+        },
+        {
+          title: "Condition report",
+          text: "Fill in the condition report carefully and take dated photos when you move in — it's the main evidence for getting your bond back.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "london-ontario",
     name: "London, Ontario",
     country: "Canada",
@@ -4144,6 +4261,7 @@ export const countryFlags: Record<string, string> = {
   "United States": "🇺🇸",
   Norway: "🇳🇴",
   Canada: "🇨🇦",
+  Australia: "🇦🇺",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
