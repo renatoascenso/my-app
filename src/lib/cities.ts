@@ -3149,6 +3149,112 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "singapore",
+    name: "Singapore",
+    country: "Singapore",
+    aliases: ["Singapur", "Singapura", "NUS", "National University of Singapore"],
+    rent: "S$900–S$1,800",
+    risk: "Rental scams, minimum-stay rules and agent fees",
+    bestFor: "NUS Business School (CEMS), NTU & SMU students, safety and food",
+    dashboard: {
+      description:
+        "The city-state is home to the National University of Singapore — whose Business School on the Kent Ridge campus is Singapore's CEMS school — as well as NTU and SMU. Many NUS students live on campus or rent a room in an HDB flat in Clementi, Queenstown or along the Circle Line; a common room in a heartland HDB flat typically costs about S$900–1,300 a month in 2026, more in condos or central areas.",
+      costOfLiving: "S$1,800–2,600/month (rent, food, transport, phone)",
+      heroImage: "/cities/singapore-hero.jpg",
+      heroCredit: {
+        text: "Basile Morin · CC BY-SA 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Marina_Bays_Sands_Hotel_and_skyline_of_the_Central_Business_District_Singapore.jpg",
+      },
+      quickFacts: {
+        population: "6.21 million (June 2026)",
+        averageRent: "About S$900–1,300/mo for a common room in a heartland HDB flat (2026 market guides)",
+        languages: "English, Mandarin, Malay and Tamil; English is the working language",
+        transportScore: "9.6/10",
+        safetyScore: "9.6/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "June to August before Semester 1 starts in August, and November–December before Semester 2 in January. NUS residence applications open months ahead, so apply as soon as you're admitted.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Rooms near Kent Ridge are in high demand, and minimum-stay rules limit short lets: HDB flats and rooms can only be rented for at least six months, and private homes for at least three months. For a one-semester exchange, NUS housing or a private-property room is usually the easiest option.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "NUS student housing",
+          trustScore: 4.6,
+          audience: "NUS students, including exchange students",
+          pros: [
+            "Halls, residential colleges and residences on the Kent Ridge campus",
+            "Prince George's Park single rooms from about S$193–294 a week (AY2026/27)",
+            "No agent fees",
+          ],
+          cons: ["Limited places and an application process", "Some residences have community requirements"],
+        },
+        {
+          name: "PropertyGuru",
+          trustScore: 4.0,
+          audience: "Students looking for rooms in HDB flats and condos",
+          pros: [
+            "Singapore's biggest property portal",
+            "Filter by MRT station",
+            "Many room listings",
+          ],
+          cons: ["Many listings come through agents", "Scam listings appear"],
+        },
+        {
+          name: "Facebook groups & Carousell",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Room shares from other students",
+            "Direct contact with tenants",
+          ],
+          cons: [
+            "No listing verification",
+            "Frequent scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Fake listings often ask for a deposit before a viewing, sometimes from a 'landlord' who is overseas. Only pay after viewing the room and signing a tenancy agreement, and check that an agent is registered with the Council for Estate Agencies.",
+        },
+        {
+          title: "Minimum stays",
+          text: "Rooms in HDB flats must be rented for at least six months and private homes for at least three. Offers for shorter stays in residential homes are usually illegal — and you can lose the room without notice.",
+        },
+        {
+          title: "Deposit and stamp duty",
+          text: "Landlords usually ask for a security deposit of one month's rent per year of lease. Tenants often pay the stamp duty on the tenancy agreement, so check the contract and keep proof of all payments.",
+        },
+        {
+          title: "Student's Pass",
+          text: "Landlords must check your immigration status, and HDB owners must register you as a tenant. Have your Student's Pass (or In-Principle Approval) ready when you sign.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "sydney",
     name: "Sydney",
     country: "Australia",
@@ -4262,6 +4368,7 @@ export const countryFlags: Record<string, string> = {
   Norway: "🇳🇴",
   Canada: "🇨🇦",
   Australia: "🇦🇺",
+  Singapore: "🇸🇬",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
