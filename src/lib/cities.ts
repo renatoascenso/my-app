@@ -3149,6 +3149,112 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "bogota",
+    name: "Bogotá",
+    country: "Colombia",
+    aliases: ["Bogota", "Santa Fe de Bogotá", "Universidad de los Andes", "Uniandes"],
+    rent: "COP 1,100,000–COP 1,700,000",
+    risk: "Street crime, guarantor requirements and traffic-heavy commutes",
+    bestFor: "Universidad de los Andes School of Management (CEMS), Javeriana & Rosario students, Chapinero",
+    dashboard: {
+      description:
+        "Bogotá is home to Universidad de los Andes — Colombia's CEMS school — whose campus sits at the foot of the eastern hills next to La Candelaria, the historic centre. Uniandes has no on-campus housing; its housing team refers students to partner residences such as CityU, across from campus. Off campus, students look in La Candelaria and La Macarena within walking distance, or in Teusaquillo and Chapinero, a short bus ride north.",
+      costOfLiving: "COP 2,500,000–3,800,000/month (rent, food, transport, phone)",
+      heroImage: "/cities/bogota-hero.jpg",
+      heroCredit: {
+        text: "Felipe Ortega Grijalba · CC BY-SA 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Panorama_de_Bogot%C3%A1.jpg",
+      },
+      quickFacts: {
+        population: "About 7.9 million (DANE projection for 2025)",
+        averageRent: "Studios and one-bedrooms in Chapinero and La Candelaria often COP 1.6–2.7 million/mo (2026 listings)",
+        languages: "Spanish; English common at Uniandes but less so in everyday life",
+        transportScore: "7.0/10",
+        safetyScore: "6.0/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "December to January before the first semester and June to July before the second. Furnished rooms near Uniandes and in Chapinero go first.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Standard leases usually require a Colombian co-signer (codeudor) or rental insurance, which international students rarely have — so furnished rooms and student residences are the usual first step. Safety changes from block to block, and traffic makes commutes slow, so living close to campus or to a good bus route matters.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "Uniandes partner residences (e.g. CityU)",
+          trustScore: 4.4,
+          audience: "Uniandes students, including exchange students",
+          pros: [
+            "Referred by the Uniandes housing team",
+            "CityU is across from campus",
+            "Private rooms in shared apartments",
+          ],
+          cons: ["Housing is not guaranteed for exchange students", "More expensive than a room in a shared house"],
+        },
+        {
+          name: "Fincaraíz and Metrocuadrado",
+          trustScore: 3.9,
+          audience: "Students renting a flat or studio",
+          pros: [
+            "Colombia's largest property portals",
+            "Filters by neighbourhood and price",
+            "Many furnished studios",
+          ],
+          cons: ["Mostly in Spanish", "Long leases usually need a co-signer or insurance"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Rooms in shared houses",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Never pay before seeing the room and signing a contract. Be wary of 'owners' who are abroad or ask for money to hold a room, and check that the person renting it out is the owner or a registered agency.",
+        },
+        {
+          title: "Guarantees",
+          text: "Colombian law doesn't allow landlords to demand a cash deposit for a standard lease; instead they ask for a co-signer or a rental insurance policy. Furnished rooms and short-term rentals often work differently, so read the contract carefully.",
+        },
+        {
+          title: "Rent increases",
+          text: "For residential leases, the annual increase is capped at the previous year's consumer price inflation (IPC). Make sure the contract states the rent, what's included and when it can rise.",
+        },
+        {
+          title: "Safety",
+          text: "Phone theft is common. Ask about the street at night, prefer buildings with a doorman, avoid walking alone in the centre after dark, and use ride-hailing apps instead of street taxis.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "santiago",
     name: "Santiago",
     country: "Chile",
@@ -5110,6 +5216,7 @@ export const countryFlags: Record<string, string> = {
   China: "🇨🇳",
   Brazil: "🇧🇷",
   Chile: "🇨🇱",
+  Colombia: "🇨🇴",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
