@@ -4,9 +4,9 @@ Goal: every city with a CEMS member school has a HousingAtlas city guide and dis
 Source: CEMS member list (33 schools), checked 2026-11-03. "Live" means the school's CEMS campus
 lies inside a live city map.
 
-**Status: 26 covered · 2 partly covered · 5 missing**
+**Status: 27 covered · 2 partly covered · 4 missing**
 
-## Covered (26)
+## Covered (27)
 
 | School | Country | CEMS campus | HousingAtlas city | Map area |
 |---|---|---|---|---|
@@ -33,6 +33,7 @@ lies inside a live city map.
 | The University of Sydney Business School | Australia | Abercrombie Building, Darlington | Sydney | Darlington |
 | Tsinghua University School of Economics and Management | China | Main campus, Haidian District | Beijing | Qinghuayuan |
 | UCD Michael Smurfit Graduate Business School | Ireland | Blackrock, Dublin | Dublin | Blackrock |
+| Universidad Adolfo Ibáñez | Chile | Peñalolén campus (Diagonal Las Torres) | Santiago | Peñalolén |
 | University of Cologne | Germany | Main campus, Lindenthal (WiSo faculty) | Cologne | Lindenthal |
 | University of St.Gallen | Switzerland | St. Gallen | St. Gallen | — |
 | WU Vienna | Austria | Vienna | Vienna | — |
@@ -44,12 +45,11 @@ lies inside a live city map.
 | Esade | Spain | Sant Cugat del Vallès (CEMS MIM taught there) | Barcelona | Sant Cugat is ~15–20 km outside Barcelona's 10 districts |
 | HEC Paris | France | Jouy-en-Josas | Paris | Campus is ~20 km south-west of Paris's 20 arrondissements |
 
-## Missing (5)
+## Missing (4)
 
 | School | Country | City to build | Notes |
 |---|---|---|---|
 | Indian Institute of Management Calcutta | India | Kolkata | Joka campus |
 | Onsi Sawiris School of Business, American University in Cairo | Egypt | Cairo | New Cairo campus |
-| Universidad Adolfo Ibáñez | Chile | Santiago | |
 | Universidad de los Andes School of Management | Colombia | Bogotá | |
 | University of Cape Town Graduate School of Business | South Africa | Cape Town | |
