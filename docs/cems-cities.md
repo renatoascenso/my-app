@@ -4,9 +4,9 @@ Goal: every city with a CEMS member school has a HousingAtlas city guide and dis
 Source: CEMS member list (33 schools), checked 2026-11-03. "Live" means the school's CEMS campus
 lies inside a live city map.
 
-**Status: 25 covered · 2 partly covered · 6 missing**
+**Status: 26 covered · 2 partly covered · 5 missing**
 
-## Covered (25)
+## Covered (26)
 
 | School | Country | CEMS campus | HousingAtlas city | Map area |
 |---|---|---|---|---|
@@ -15,6 +15,7 @@ lies inside a live city map.
 | Copenhagen Business School | Denmark | Frederiksberg | Copenhagen | Frederiksberg |
 | Cornell SC Johnson College of Business | United States | Ithaca, NY (Dyson School, Warren Hall) | Ithaca | Cornell central campus |
 | Corvinus University of Budapest | Hungary | Budapest | Budapest | — |
+| Escola de Administração de Empresas de São Paulo – FGV | Brazil | Avenida Nove de Julho, Bela Vista | São Paulo | Bela Vista |
 | HKUST Business School | Hong Kong (China) | Clear Water Bay campus | Hong Kong | Sai Kung |
 | Ivey Business School | Canada | Western University, London, Ontario | London, Ontario | Medway |
 | Keio University | Japan | Mita campus, Minato (Hiyoshi campus in Yokohama is outside the map) | Tokyo | Minato |
@@ -43,11 +44,10 @@ lies inside a live city map.
 | Esade | Spain | Sant Cugat del Vallès (CEMS MIM taught there) | Barcelona | Sant Cugat is ~15–20 km outside Barcelona's 10 districts |
 | HEC Paris | France | Jouy-en-Josas | Paris | Campus is ~20 km south-west of Paris's 20 arrondissements |
 
-## Missing (6)
+## Missing (5)
 
 | School | Country | City to build | Notes |
 |---|---|---|---|
-| Escola de Administração de Empresas de São Paulo – FGV | Brazil | São Paulo | |
 | Indian Institute of Management Calcutta | India | Kolkata | Joka campus |
 | Onsi Sawiris School of Business, American University in Cairo | Egypt | Cairo | New Cairo campus |
 | Universidad Adolfo Ibáñez | Chile | Santiago | |
