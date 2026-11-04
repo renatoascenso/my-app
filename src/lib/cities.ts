@@ -3149,6 +3149,112 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "cape-town",
+    name: "Cape Town",
+    country: "South Africa",
+    aliases: ["Kaapstad", "UCT Graduate School of Business", "UCT GSB", "University of Cape Town"],
+    rent: "R6,000–R10,000",
+    risk: "Crime, deposit scams and high rents near the Waterfront",
+    bestFor: "UCT Graduate School of Business (CEMS), Green Point, Sea Point and the City Bowl",
+    dashboard: {
+      description:
+        "Cape Town is home to the UCT Graduate School of Business — South Africa's CEMS school — whose Breakwater campus sits at the V&A Waterfront, a few kilometres from UCT's main campus. Housing isn't guaranteed: the GSB's CEMS exchange fact sheet points students to Airbnb and to furnished apartment buildings in Green Point. Green Point and Sea Point are within walking or short bus distance of the campus; rooms in Observatory, Mowbray and Rondebosch near UCT's main campus are cheaper but a longer drive away.",
+      costOfLiving: "R12,000–18,000/month (rent, food, transport, phone)",
+      heroImage: "/cities/cape-town-hero.jpg",
+      heroCredit: {
+        text: "SkyPixels · CC BY-SA 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Cape_Town_City.jpg",
+      },
+      quickFacts: {
+        population: "4,772,846 in the City of Cape Town (2022 census)",
+        averageRent: "R12,561/mo average across all Western Cape rentals (PayProp, Q2 2026); rooms in Observatory often R4,500–6,500",
+        languages: "English, Afrikaans and isiXhosa; English is used at the GSB and in everyday life",
+        transportScore: "5.8/10",
+        safetyScore: "5.6/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "December to February before the academic year, and June to July before the second semester. December to February is also the tourist high season, when short-term rentals on the Atlantic Seaboard get much more expensive.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Rooms close to the Waterfront are among the most expensive in South Africa, and the cheaper student suburbs near UCT's main campus are a long drive away. Landlords often ask for proof of income (sometimes three times the rent), a credit check or an application fee, so newcomers usually start with furnished apartments or rooms in shared houses.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "Furnished apartments in Green Point",
+          trustScore: 4.3,
+          audience: "CEMS exchange students who want to walk to the GSB",
+          pros: [
+            "Suggested in the GSB's CEMS exchange fact sheet",
+            "Furnished, with short contracts",
+            "Walking distance to the Breakwater campus",
+          ],
+          cons: ["Expensive compared with a room in a shared house", "Limited availability"],
+        },
+        {
+          name: "Property24 and Private Property",
+          trustScore: 3.9,
+          audience: "Students renting a room or flat",
+          pros: [
+            "South Africa's largest property portals",
+            "Filters by suburb and price",
+            "Room listings in shared houses",
+          ],
+          cons: ["Agents often ask for proof of income and an application fee", "Long leases are the norm"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Rooms from other students and sublets",
+            "Short-term offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Never pay a deposit before seeing the place and signing a lease. Be wary of 'owners' abroad who can't show the flat, and check that the person renting it out is the owner or a registered agent.",
+        },
+        {
+          title: "Deposit",
+          text: "Under the Rental Housing Act, the landlord must keep your deposit in an interest-bearing account and pay it back with the interest. Ask for a joint inspection when you move in and out — if nothing is owed, the deposit must be refunded within 7 days of the lease ending.",
+        },
+        {
+          title: "Rent increases",
+          text: "There's no legal cap on rent increases; the yearly increase is usually set in the lease, so check it before signing. Disputes can go to the Western Cape Rental Housing Tribunal free of charge.",
+        },
+        {
+          title: "Safety",
+          text: "Crime is a real concern in parts of the city. Ask about the street at night, prefer buildings with access control, don't walk alone after dark, and use ride-hailing apps late in the evening.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "bogota",
     name: "Bogotá",
     country: "Colombia",
@@ -5217,6 +5323,7 @@ export const countryFlags: Record<string, string> = {
   Brazil: "🇧🇷",
   Chile: "🇨🇱",
   Colombia: "🇨🇴",
+  "South Africa": "🇿🇦",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
