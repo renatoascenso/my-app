@@ -25,6 +25,7 @@ import HongKongExplorer from "./neighborhoods/HongKongExplorer";
 import SeoulExplorer from "./neighborhoods/SeoulExplorer";
 import TokyoExplorer from "./neighborhoods/TokyoExplorer";
 import IstanbulExplorer from "./neighborhoods/IstanbulExplorer";
+import BeijingExplorer from "./neighborhoods/BeijingExplorer";
 import ViennaExplorer from "./neighborhoods/ViennaExplorer";
 import PragueExplorer from "./neighborhoods/PragueExplorer";
 import FrankfurtExplorer from "./neighborhoods/FrankfurtExplorer";
@@ -128,6 +129,11 @@ export const neighborhoodExplorerCopy: Record<string, { heading: string; subtitl
     heading: "Explore Istanbul's districts",
     subtitle:
       "Compare Istanbul's 39 districts (ilçe) by room prices, safety, and commute time to Koç University's Rumelifeneri campus before comparing listings.",
+  },
+  beijing: {
+    heading: "Explore the neighbourhoods around Tsinghua",
+    subtitle:
+      "Compare 28 Beijing subdistricts near Tsinghua University by room prices, safety, and commute time to the School of Economics and Management before comparing listings.",
   },
   tokyo: {
     heading: "Explore Tokyo's wards",
@@ -263,6 +269,7 @@ export const neighborhoodExplorersBySlug: Record<string, () => React.ReactNode> 
   seoul: () => <SeoulExplorer />,
   tokyo: () => <TokyoExplorer />,
   istanbul: () => <IstanbulExplorer />,
+  beijing: () => <BeijingExplorer />,
   vienna: () => <ViennaExplorer />,
   prague: () => <PragueExplorer />,
   frankfurt: () => <FrankfurtExplorer />,

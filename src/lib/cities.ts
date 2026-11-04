@@ -3149,6 +3149,108 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "beijing",
+    name: "Beijing",
+    country: "China",
+    aliases: ["Peking", "北京", "Tsinghua University", "Tsinghua SEM", "Wudaokou"],
+    rent: "RMB 3,000–RMB 5,500",
+    risk: "Police registration within 24 hours, sublet scams and rent paid three months ahead",
+    bestFor: "Tsinghua University School of Economics and Management (CEMS), Peking University students, Wudaokou",
+    dashboard: {
+      description:
+        "Beijing is home to Tsinghua University — China's CEMS school — whose School of Economics and Management sits on the main campus in Haidian District. Most international students live in the Zijing apartments on campus. Off campus, students look in Wudaokou right outside the east gate, around Zhongguancun, or further north in Qinghe and along Line 13, where rooms are cheaper.",
+      costOfLiving: "RMB 6,000–9,000/month (rent, food, transport, phone)",
+      heroImage: "/cities/beijing-hero.jpg",
+      heroCredit: {
+        text: "Windmemories · CC BY-SA 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:West_gate_of_Tsinghua_University_(May_2017).jpg",
+      },
+      quickFacts: {
+        population: "21.80 million (end of 2025)",
+        averageRent: "About RMB 3,500–5,000/mo for a room in a shared flat in Wudaokou (listings and rental guides)",
+        languages: "Mandarin Chinese; English common at Tsinghua and in Wudaokou",
+        transportScore: "8.8/10",
+        safetyScore: "9.0/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "July to early September before the fall semester, and January to February before the spring semester. Rooms near Wudaokou go quickly, so start looking a few weeks before you arrive.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Places in the Zijing international student apartments are limited and rooms are shared. Off campus, many landlords ask for rent three months in advance plus a deposit, listings are mostly in Chinese, and every foreigner must register their address with the local police within 24 hours of moving in.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "Tsinghua international student apartments",
+          trustScore: 4.6,
+          audience: "Registered Tsinghua international students, including exchange students",
+          pros: [
+            "Zijing buildings in the north-east of the main campus",
+            "Room for more than 3,000 international students",
+            "Water and electricity included",
+          ],
+          cons: ["Mostly double rooms", "Places are limited — apply as soon as housing opens"],
+        },
+        {
+          name: "Wellcee",
+          trustScore: 3.9,
+          audience: "International students looking for rooms and flats",
+          pros: [
+            "English-language listings",
+            "Many shared flats near Wudaokou",
+            "Landlords and flatmates post directly",
+          ],
+          cons: ["Listings are not all verified", "Many rooms are sublets"],
+        },
+        {
+          name: "Ziroom and Lianjia",
+          trustScore: 3.8,
+          audience: "Students renting longer term",
+          pros: [
+            "China's large rental platforms with many Beijing flats",
+            "Furnished rooms with standard contracts (Ziroom)",
+            "Agents handle viewings",
+          ],
+          cons: ["Mostly in Chinese and need a Chinese phone number", "Service and agency fees"],
+        },
+      ],
+      risks: [
+        {
+          title: "Police registration",
+          text: "Foreigners living off campus must register their address at the local police station within 24 hours of arriving or signing the lease, and again after moving. Before paying anything, make sure the landlord will provide the documents you need.",
+        },
+        {
+          title: "Sublet scams",
+          text: "Many rooms are rented out by a tenant or a 'second landlord' rather than the owner. Ask to see the owner's property certificate or the main lease, and never pay before signing a written contract.",
+        },
+        {
+          title: "Rent and deposit",
+          text: "Rent is often paid three months in advance plus a one-month deposit. Agree in writing what the rent covers — heating, property fees and internet — and document the flat's condition at move-in.",
+        },
+        {
+          title: "Agency fees",
+          text: "Agents may charge a fee of up to a month's rent. Ask about all fees before viewing, and pay only through traceable channels with a receipt.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "istanbul",
     name: "Istanbul",
     country: "Türkiye",
@@ -4793,6 +4895,7 @@ export const countryFlags: Record<string, string> = {
   "South Korea": "🇰🇷",
   Japan: "🇯🇵",
   "Türkiye": "🇹🇷",
+  China: "🇨🇳",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
