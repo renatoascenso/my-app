@@ -3149,6 +3149,112 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "sao-paulo",
+    name: "São Paulo",
+    country: "Brazil",
+    aliases: ["Sao Paulo", "Sampa", "SP", "FGV", "FGV EAESP", "Fundação Getulio Vargas"],
+    rent: "R$ 1,800–R$ 2,800",
+    risk: "Rental guarantee requirements, street crime and deposit scams",
+    bestFor: "FGV EAESP (CEMS), USP & Insper students, Avenida Paulista",
+    dashboard: {
+      description:
+        "São Paulo is home to FGV EAESP — Brazil's CEMS school — on Avenida Nove de Julho in Bela Vista, a few minutes' walk from Avenida Paulista. FGV has no dormitories of its own but partners with the student-housing operator Uliving. Most students rent rooms or small studios within walking distance or along the metro in Bela Vista, Consolação, Jardim Paulista, Pinheiros and Vila Mariana.",
+      costOfLiving: "R$ 4,000–6,000/month (rent, food, transport, phone)",
+      heroImage: "/cities/sao-paulo-hero.jpg",
+      heroCredit: {
+        text: "Wilfredor · CC0",
+        url: "https://commons.wikimedia.org/wiki/File:Avenida_Paulista_32.jpg",
+      },
+      quickFacts: {
+        population: "11,904,961 (IBGE estimate, July 2025)",
+        averageRent: "About R$ 66/m² per month on average (FipeZap, September 2026, via press reports)",
+        languages: "Portuguese; English common at FGV but less so in everyday life",
+        transportScore: "8.0/10",
+        safetyScore: "6.4/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "January to February before the first semester and June to July before the second. Furnished rooms near Paulista go quickly, so start looking a few weeks before you arrive.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Standard leases usually require a guarantor in Brazil, a rental-guarantee insurance or a deposit, which is hard for international students — so many choose furnished rooms, student residences or short-term rentals instead. Rents in São Paulo are the highest of Brazil's state capitals, and safety varies from street to street.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "Uliving",
+          trustScore: 4.4,
+          audience: "FGV students, including exchange students",
+          pros: [
+            "Student residence operator partnering with FGV",
+            "Discounted rates for FGV students",
+            "Furnished studios, booked online",
+          ],
+          cons: ["More expensive than a room in a shared flat", "Limited places"],
+        },
+        {
+          name: "QuintoAndar",
+          trustScore: 4.1,
+          audience: "Students renting a flat for a semester or longer",
+          pros: [
+            "Large rental platform with many São Paulo flats",
+            "Leases without a guarantor (paid guarantee service)",
+            "Online contracts and viewings",
+          ],
+          cons: ["Mostly unfurnished flats", "Fees on top of rent"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Rooms in shared flats (repúblicas)",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Never pay a deposit by Pix before seeing the room and signing a contract. Check that the person renting it out is the owner or a registered agent, and be wary of prices far below the market.",
+        },
+        {
+          title: "Rental guarantees",
+          text: "Brazilian landlords usually ask for one guarantee: a guarantor (fiador), rental-guarantee insurance or a cash deposit (caução). By law a cash deposit can be at most three months' rent, and only one type of guarantee may be required.",
+        },
+        {
+          title: "Rent increases",
+          text: "Rent is usually adjusted once a year by an inflation index (often IGP-M or IPCA). Check which index the contract uses and what is included — condominium fees and IPTU property tax are often extra.",
+        },
+        {
+          title: "Safety",
+          text: "Phone theft is common. Ask about the street at night, prefer buildings with a doorman, and use ride-hailing apps late in the evening.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "beijing",
     name: "Beijing",
     country: "China",
@@ -4896,6 +5002,7 @@ export const countryFlags: Record<string, string> = {
   Japan: "🇯🇵",
   "Türkiye": "🇹🇷",
   China: "🇨🇳",
+  Brazil: "🇧🇷",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
