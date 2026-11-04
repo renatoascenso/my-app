@@ -4,9 +4,9 @@ Goal: every city with a CEMS member school has a HousingAtlas city guide and dis
 Source: CEMS member list (33 schools), checked 2026-11-03. "Live" means the school's CEMS campus
 lies inside a live city map.
 
-**Status: 24 covered · 2 partly covered · 7 missing**
+**Status: 25 covered · 2 partly covered · 6 missing**
 
-## Covered (24)
+## Covered (25)
 
 | School | Country | CEMS campus | HousingAtlas city | Map area |
 |---|---|---|---|---|
@@ -30,6 +30,7 @@ lies inside a live city map.
 | Stockholm School of Economics | Sweden | Stockholm | Stockholm | Norra innerstaden |
 | The London School of Economics and Political Science | United Kingdom | London | London | — |
 | The University of Sydney Business School | Australia | Abercrombie Building, Darlington | Sydney | Darlington |
+| Tsinghua University School of Economics and Management | China | Main campus, Haidian District | Beijing | Qinghuayuan |
 | UCD Michael Smurfit Graduate Business School | Ireland | Blackrock, Dublin | Dublin | Blackrock |
 | University of Cologne | Germany | Main campus, Lindenthal (WiSo faculty) | Cologne | Lindenthal |
 | University of St.Gallen | Switzerland | St. Gallen | St. Gallen | — |
@@ -42,14 +43,13 @@ lies inside a live city map.
 | Esade | Spain | Sant Cugat del Vallès (CEMS MIM taught there) | Barcelona | Sant Cugat is ~15–20 km outside Barcelona's 10 districts |
 | HEC Paris | France | Jouy-en-Josas | Paris | Campus is ~20 km south-west of Paris's 20 arrondissements |
 
-## Missing (7)
+## Missing (6)
 
 | School | Country | City to build | Notes |
 |---|---|---|---|
 | Escola de Administração de Empresas de São Paulo – FGV | Brazil | São Paulo | |
 | Indian Institute of Management Calcutta | India | Kolkata | Joka campus |
 | Onsi Sawiris School of Business, American University in Cairo | Egypt | Cairo | New Cairo campus |
-| Tsinghua University School of Economics and Management | China | Beijing | |
 | Universidad Adolfo Ibáñez | Chile | Santiago | |
 | Universidad de los Andes School of Management | Colombia | Bogotá | |
 | University of Cape Town Graduate School of Business | South Africa | Cape Town | |
