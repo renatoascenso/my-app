@@ -3149,6 +3149,108 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "tokyo",
+    name: "Tokyo",
+    country: "Japan",
+    aliases: ["東京", "Tokio", "Tóquio", "Keio", "Keio University"],
+    rent: "¥70,000–¥130,000",
+    risk: "Key money, guarantor requirements and landlords who refuse foreigners",
+    bestFor: "Keio University (CEMS), Waseda & UTokyo students, food, culture and safety",
+    dashboard: {
+      description:
+        "Tokyo is home to Keio University — Japan's CEMS school — whose CEMS courses run on the Mita campus in Minato and the Hiyoshi campus in Yokohama, linked by the Tokyu Toyoko and Meguro lines. Keio's international dormitories cost residents about ¥92,000–100,000 a month including utilities, and studios of up to 30 m² in the 23 wards averaged about ¥112,000 in March 2026 (At Home). Share houses are the easiest option for short stays.",
+      costOfLiving: "¥170,000–240,000/month (rent, food, transport, phone)",
+      heroImage: "/cities/tokyo-hero.jpg",
+      heroCredit: {
+        text: "David Kernan · CC BY 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Tokyo_Tower,_Minato_City.jpg",
+      },
+      quickFacts: {
+        population: "14.18 million (Tokyo Metropolis, October 2024); about 9.7 million in the 23 wards",
+        averageRent: "About ¥112,000/mo for a studio up to 30 m² in the 23 wards (At Home, March 2026)",
+        languages: "Japanese; English limited outside central areas",
+        transportScore: "9.8/10",
+        safetyScore: "9.6/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "January–March before the academic year starts in April, and July–August before the September intake. Keio accepts international dormitory applications in late January for March move-in and in July for September move-in.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Regular leases usually need key money (reikin), a deposit (shikikin), an agency fee and a guarantor company, and some landlords still refuse foreign tenants. Studio rents in the 23 wards rose about 13% year on year to around ¥112,000 in March 2026 (At Home), so share houses and Keio's dormitories are popular with exchange students.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "Keio international dormitories",
+          trustScore: 4.6,
+          audience: "Keio international and exchange students",
+          pros: [
+            "Dormitories such as Takanawa (near Mita) and Motosumiyoshi (near Hiyoshi)",
+            "About ¥92,000–100,000 a month including utilities",
+            "No key money or guarantor needed",
+          ],
+          cons: ["Limited places; applications only twice a year", "¥20,000 cleaning fee and cancellation fees"],
+        },
+        {
+          name: "SUUMO",
+          trustScore: 4.0,
+          audience: "Students looking for their own apartment",
+          pros: [
+            "Japan's largest rental listing site",
+            "Search by station and commute time",
+            "Very large selection",
+          ],
+          cons: ["Mostly in Japanese", "Upfront costs of several months' rent"],
+        },
+        {
+          name: "Share-house operators",
+          trustScore: 3.9,
+          audience: "International and exchange students",
+          pros: [
+            "Furnished rooms with utilities included",
+            "No key money; short contracts possible",
+            "English-speaking staff at larger operators such as Oakhouse",
+          ],
+          cons: ["Small rooms and shared facilities", "Management fees on top of rent"],
+        },
+      ],
+      risks: [
+        {
+          title: "Upfront costs",
+          text: "A regular lease often costs four to six months' rent upfront: deposit (shikikin), key money (reikin, non-refundable), agency fee, guarantor-company fee and the first month's rent. Ask for an itemised estimate before applying.",
+        },
+        {
+          title: "Guarantors",
+          text: "Most landlords require a Japanese guarantor or a guarantor company. International students usually use a guarantor company — check which ones accept your residence status.",
+        },
+        {
+          title: "Restoration charges",
+          text: "When you move out, landlords may deduct cleaning and restoration costs from the deposit. Take dated photos at move-in and check the contract's restoration clause (genjo kaifuku).",
+        },
+        {
+          title: "Residence registration",
+          text: "Within 14 days of moving in, register your address at the ward office with your residence card — you'll also enrol in National Health Insurance there.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "seoul",
     name: "Seoul",
     country: "South Korea",
@@ -4583,6 +4685,7 @@ export const countryFlags: Record<string, string> = {
   Singapore: "🇸🇬",
   "Hong Kong": "🇭🇰",
   "South Korea": "🇰🇷",
+  Japan: "🇯🇵",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
