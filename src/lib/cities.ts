@@ -3149,6 +3149,112 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "istanbul",
+    name: "Istanbul",
+    country: "Türkiye",
+    aliases: ["İstanbul", "Estambul", "Istambul", "Koç University", "Koc University"],
+    rent: "TL 25,000–TL 45,000",
+    risk: "Fast-rising rents, residence-permit restrictions and a remote campus",
+    bestFor: "Koç University Graduate School of Business (CEMS), Boğaziçi & Sabancı students, the Bosphorus",
+    dashboard: {
+      description:
+        "Istanbul is home to Koç University — Türkiye's CEMS school — whose Rumelifeneri campus lies in the forests of northern Sarıyer near the Black Sea, far from the city centre. That's why about 60% of Koç students live in the university's dormitories. Off campus, students usually look in Sarıyer, Maslak or along the M2 metro in Şişli and Beşiktaş, where rents are high and rise fast.",
+      costOfLiving: "TL 45,000–70,000/month (rent, food, transport, phone)",
+      heroImage: "/cities/istanbul-hero.jpg",
+      heroCredit: {
+        text: "Alexxx1979 · CC BY-SA 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Istanbul_Bosphorus_Rumelihisar%C4%B1_(Rumelian_Castle)_IMG_7778_1920.jpg",
+      },
+      quickFacts: {
+        population: "15,754,053 (end of 2025)",
+        averageRent: "About TL 59,000/mo for a 100 m² flat in Sarıyer (2026 rent index, via press reports)",
+        languages: "Turkish; English common at Koç and in central districts",
+        transportScore: "7.6/10",
+        safetyScore: "8.2/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "July to September before the fall semester, and January for the spring semester. Koç dormitory places fill quickly, so apply as soon as housing opens.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Rumelifeneri is a long bus ride from most neighbourhoods, so living off campus is a real trade-off. Rents in Istanbul have risen sharply with inflation, and some neighbourhoods are closed to new residence-permit registrations for foreigners, which limits where international students can register.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "Koç University dormitories",
+          trustScore: 4.6,
+          audience: "Koç students, including exchange students",
+          pros: [
+            "On the Rumelifeneri campus and West Campus",
+            "About 60% of Koç students live there",
+            "No commute",
+          ],
+          cons: ["Rooms not guaranteed; places fill quickly", "Fees and deposits due by fixed dates"],
+        },
+        {
+          name: "Sahibinden",
+          trustScore: 3.9,
+          audience: "Students renting flats off campus",
+          pros: [
+            "Türkiye's largest classifieds site for rentals",
+            "Filters by district and neighbourhood",
+            "Many furnished flats",
+          ],
+          cons: ["Mostly in Turkish", "Many listings through agents"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Room shares from other students",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Never pay a deposit before seeing the flat and signing a written contract with the owner or a licensed agent. Check that the person renting it out actually has the right to do so.",
+        },
+        {
+          title: "Deposit",
+          text: "By law a deposit can be at most three months' rent. Agree in writing how and when it will be returned, and document the flat's condition at move-in.",
+        },
+        {
+          title: "Residence permit and address",
+          text: "International students need a residence permit (ikamet) and a registered address. Some Istanbul neighbourhoods are closed to new residence registrations for foreigners — check before signing a lease.",
+        },
+        {
+          title: "Rent increases",
+          text: "For existing tenancies, annual increases are capped at the 12-month average consumer price inflation. Make sure the contract states the rent clearly in Turkish lira.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "tokyo",
     name: "Tokyo",
     country: "Japan",
@@ -4686,6 +4792,7 @@ export const countryFlags: Record<string, string> = {
   "Hong Kong": "🇭🇰",
   "South Korea": "🇰🇷",
   Japan: "🇯🇵",
+  "Türkiye": "🇹🇷",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
