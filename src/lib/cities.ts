@@ -918,13 +918,13 @@ export const cities: City[] = [
     slug: "paris",
     name: "Paris",
     country: "France",
-    aliases: ["Parigi", "París"],
+    aliases: ["Parigi", "París", "HEC Paris", "Jouy-en-Josas", "Versailles"],
     rent: "€800–€1,000",
     risk: "Very high rents and illegal overpricing",
     bestFor: "Sorbonne, Sciences Po, PSL & Paris Cité students, culture, career",
     dashboard: {
       description:
-        "France's capital and its biggest student city, with about 390,000 students spread over universities and grandes écoles across the 20 arrondissements. Expect world-class culture, an excellent metro, tiny flats and some of the highest rents in Europe — but also strong student support, from CROUS residences to free rent guarantees and housing aid.",
+        "France's capital and its biggest student city, with about 390,000 students spread over universities and grandes écoles across the 20 arrondissements — and HEC Paris, where the CEMS MIM is taught, on its own campus in Jouy-en-Josas, about 20 km south-west near Versailles. Expect world-class culture, an excellent metro, tiny flats and some of the highest rents in Europe — but also strong student support, from CROUS residences to free rent guarantees and housing aid.",
       costOfLiving: "€1,300–€1,800/month (rent, food, transport, essentials)",
       heroImage: "/cities/paris-hero.jpg",
       heroCredit: {

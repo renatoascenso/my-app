@@ -1,13 +1,15 @@
 import type { Listing } from "./listings";
 
-// Paris's 20 municipal arrondissements.
-// Boundaries and populations: IGN ADMIN EXPRESS COG CARTO 2026 (Licence Ouverte 2.0),
+// Paris's 20 municipal arrondissements, plus nine communes in the south-west that link Paris to
+// HEC Paris in Jouy-en-Josas, where the CEMS MIM is taught.
+// Boundaries and populations: IGN ADMIN EXPRESS (Licence Ouverte 2.0; communes via geo.api.gouv.fr),
 // credited in ParisExplorer. Room prices are estimated ranges; scores are editorial judgments.
 
 export type ParisArrondissement = {
   slug: string;
   name: string;
   number: number;
+  badge?: string;
   population: number;
   lat: number;
   lng: number;
@@ -26,6 +28,8 @@ export type ParisArrondissement = {
 const ord = (n: number) => (n === 1 ? "1st" : n === 2 ? "2nd" : n === 3 ? "3rd" : `${n}th`);
 type Base = Omit<ParisArrondissement, "slug" | "name">;
 const a = (b: Base): ParisArrondissement => ({ ...b, slug: `paris-${b.number}`, name: `${ord(b.number)} arrondissement` });
+// Communes outside Paris have no arrondissement number (0) and carry their own badge.
+const c = (b: Omit<ParisArrondissement, "number" | "badge">): ParisArrondissement => ({ ...b, number: 0, badge: "Towards HEC Paris" });
 
 export const parisArrondissements: ParisArrondissement[] = [
   a({ number: 1, population: 15475, lat: 48.86255, lng: 2.33642,
@@ -128,6 +132,53 @@ export const parisArrondissements: ParisArrondissement[] = [
     rent: "€650–€850/mo", safety: 7.4, transport: 8.6, nightlife: 8.0, studentFit: 8.2,
     commute: "25–30 min to the Latin Quarter", bestFor: "Affordable, creative and young", caution: "Further from most campuses",
     landmarks: ["Père-Lachaise"] }),
+
+  // ── South-west towards HEC Paris (Jouy-en-Josas) ──
+  c({ slug: "boulogne-billancourt", name: "Boulogne-Billancourt", population: 119019, lat: 48.8413, lng: 2.2283,
+    description: "Large, well-off town just beyond the 16th, with the Albert-Kahn museum and gardens and the Île Seguin. HEC runs a shuttle between its campus and Pont de Sèvres.",
+    rent: "€750–€950/mo", safety: 8.6, transport: 8.6, nightlife: 5.6, studentFit: 7.6,
+    commute: "HEC: 30–45 min via the HEC shuttle from Pont de Sèvres; Latin Quarter: 30 min by metro", bestFor: "HEC students who want Paris life with a shorter trip to campus", caution: "Rents close to Paris levels",
+    landmarks: ["Pont de Sèvres", "Île Seguin", "Musée Albert-Kahn"] }),
+  c({ slug: "issy-les-moulineaux", name: "Issy-les-Moulineaux", population: 67669, lat: 48.8261, lng: 2.2618,
+    description: "Modern business town on the Seine next to the 15th, with offices, new housing and RER C and metro line 12 stations.",
+    rent: "€700–€900/mo", safety: 8.4, transport: 8.6, nightlife: 4.6, studentFit: 7.2,
+    commute: "HEC: 40–55 min by RER C and bus; Latin Quarter: 25–30 min", bestFor: "Easy RER C access to Jouy-en-Josas", caution: "Quiet in the evenings",
+    landmarks: ["Issy-les-Moulineaux station"] }),
+  c({ slug: "meudon", name: "Meudon", population: 46334, lat: 48.8097, lng: 2.2324,
+    description: "Hillside town with the Meudon observatory, the Seine-side Meudon-sur-Seine district and the large Meudon forest.",
+    rent: "€650–€850/mo", safety: 8.8, transport: 7.0, nightlife: 3.4, studentFit: 6.4,
+    commute: "HEC: 30–45 min by bus or car; Latin Quarter: 35–45 min", bestFor: "Green, quiet living between Paris and HEC", caution: "Hilly, with few late-night options",
+    landmarks: ["Observatoire de Meudon", "Meudon-sur-Seine", "Forêt de Meudon"] }),
+  c({ slug: "sevres", name: "Sèvres", population: 22303, lat: 48.8281, lng: 2.2225,
+    description: "Small town across the Seine from Boulogne, known for its porcelain manufactory and museum.",
+    rent: "€650–€850/mo", safety: 8.8, transport: 7.2, nightlife: 3.4, studentFit: 6.4,
+    commute: "HEC: 30–40 min by car or bus; Latin Quarter: 35–45 min", bestFor: "Quiet living close to Pont de Sèvres", caution: "Few student rentals",
+    landmarks: ["Cité de la céramique"] }),
+  c({ slug: "chaville", name: "Chaville", population: 20594, lat: 48.8092, lng: 2.1924,
+    description: "Residential town between the Meudon and Fausses-Reposes forests on the road to Versailles.",
+    rent: "€600–€800/mo", safety: 8.8, transport: 6.8, nightlife: 2.8, studentFit: 6.0,
+    commute: "HEC: 25–35 min by car or bus; Latin Quarter: 40–50 min", bestFor: "Calm, green and cheaper than Paris", caution: "Very quiet; you'll travel for nightlife",
+    landmarks: [] }),
+  c({ slug: "viroflay", name: "Viroflay", population: 17237, lat: 48.7997, lng: 2.1844,
+    description: "Small residential town next to Versailles with the Chaville-Vélizy station on the RER C and the T6 tram.",
+    rent: "€600–€800/mo", safety: 8.8, transport: 7.0, nightlife: 2.6, studentFit: 6.4,
+    commute: "HEC: 20–30 min by RER C and bus; Latin Quarter: 40–50 min", bestFor: "Quiet living on the RER C line to Jouy", caution: "Very quiet in the evenings",
+    landmarks: ["Gare de Chaville-Vélizy"] }),
+  c({ slug: "velizy-villacoublay", name: "Vélizy-Villacoublay", population: 23011, lat: 48.7849, lng: 2.2200,
+    description: "Business town next to Jouy-en-Josas, with the Vélizy 2 shopping centre and the T6 tram to Châtillon (metro line 13).",
+    rent: "€600–€800/mo", safety: 8.6, transport: 6.6, nightlife: 3.2, studentFit: 6.6,
+    commute: "HEC: 15–25 min by bus or car; Latin Quarter: 50–60 min", bestFor: "Shops close to HEC", caution: "Car-oriented and far from central Paris",
+    landmarks: ["Vélizy 2"] }),
+  c({ slug: "versailles", name: "Versailles", population: 84095, lat: 48.8064, lng: 2.1316,
+    description: "Royal town with the château, lively markets and three train stations. A popular choice for HEC students: it has more shops, bars and rooms than Jouy, and it's a short ride to campus.",
+    rent: "€650–€850/mo", safety: 9.0, transport: 7.8, nightlife: 5.6, studentFit: 8.2,
+    commute: "HEC: 20–30 min by bus or RER C; Latin Quarter: 40–50 min by RER C", bestFor: "Town life close to HEC", caution: "Rooms near the stations go fast before each term",
+    landmarks: ["Château de Versailles", "Marché Notre-Dame", "Versailles-Chantiers station", "Versailles Rive Gauche station"] }),
+  c({ slug: "jouy-en-josas", name: "Jouy-en-Josas", population: 7981, lat: 48.7585, lng: 2.1663,
+    description: "Village in the Bièvre valley, home to the HEC Paris campus — where the CEMS MIM is taught — with 18 on-campus residences and the Toile de Jouy museum.",
+    rent: "€600–€870/mo", safety: 9.2, transport: 5.4, nightlife: 3.0, studentFit: 8.6,
+    commute: "HEC: on campus, or 10–20 min on foot from Jouy-en-Josas station; Latin Quarter: 45–60 min by RER C", bestFor: "Living on or next to the HEC campus", caution: "Rural and quiet; the last trains back from Paris leave early",
+    landmarks: ["HEC Paris campus", "Jouy-en-Josas station", "Musée de la Toile de Jouy"] }),
 ];
 
 export type ParisArrondissementListing = Listing & { arrondissementSlug: string };
@@ -143,6 +194,8 @@ export const parisListings: ParisArrondissementListing[] = [
   { id: "pa-sample-10-room", arrondissementSlug: "paris-10", title: "Room by the Canal Saint-Martin", rent: 820, currency: "€", type: "Room", source: SAMPLE_SOURCE, lat: 48.8720, lng: 2.3640, description: "Room in a shared flat a few steps from the canal.", rooms: 1, sizeSqm: 12, availableFrom: "1 Sep 2026", amenities: ["Furnished", "Balcony"] },
   { id: "pa-sample-18-studio", arrondissementSlug: "paris-18", title: "Small studio in Montmartre", rent: 850, currency: "€", type: "Studio", source: SAMPLE_SOURCE, lat: 48.8880, lng: 2.3390, description: "Compact studio on the slopes of Montmartre, 14 m².", rooms: 1, sizeSqm: 14, availableFrom: "1 Nov 2026", amenities: ["Furnished", "Kitchenette"], riskNote: "Higher caution" },
   { id: "pa-sample-20-room", arrondissementSlug: "paris-20", title: "Room in Ménilmontant", rent: 700, currency: "€", type: "Room", source: SAMPLE_SOURCE, lat: 48.8670, lng: 2.3920, description: "Room in a creative colocation near Père-Lachaise.", rooms: 1, sizeSqm: 12, availableFrom: "15 Oct 2026", amenities: ["Furnished", "Bills included"] },
+  { id: "pa-sample-jouy-studio", arrondissementSlug: "jouy-en-josas", title: "Studio near HEC Paris", rent: 850, currency: "€", type: "Studio", source: SAMPLE_SOURCE, homeUniversityFriendly: true, lat: 48.7620, lng: 2.1650, description: "Furnished studio in a student residence between Jouy-en-Josas station and the HEC campus.", rooms: 1, sizeSqm: 18, availableFrom: "1 Sep 2026", amenities: ["Furnished", "Kitchenette", "Private bathroom"] },
+  { id: "pa-sample-versailles-room", arrondissementSlug: "versailles", title: "Room in Versailles", rent: 700, currency: "€", type: "Room", source: SAMPLE_SOURCE, lat: 48.7990, lng: 2.1330, description: "Room in a shared flat near Versailles-Chantiers station, with buses to HEC.", rooms: 1, sizeSqm: 12, availableFrom: "1 Sep 2026", amenities: ["Furnished", "Wifi included"] },
   { id: "pa-sample-7-room", arrondissementSlug: "paris-7", title: "Chambre de bonne near Sciences Po", rent: 750, currency: "€", type: "Room", source: SAMPLE_SOURCE, homeUniversityFriendly: true, lat: 48.8545, lng: 2.3250, description: "Classic 10 m² top-floor 'chambre de bonne' with shared facilities, 5 minutes from Sciences Po.", rooms: 1, sizeSqm: 10, availableFrom: "1 Sep 2026", amenities: ["Furnished", "Shared bathroom"] },
 ];
 
