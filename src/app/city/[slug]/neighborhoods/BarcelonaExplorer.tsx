@@ -19,7 +19,7 @@ import ListingDetailModal from "./ListingDetailModal";
 const quartierGeo = barcelonaBoundaries as Record<string, Geometry>;
 
 // Stable reference: a new array on every render would make the map re-fly on each click.
-const BARCELONA_CENTER: [number, number] = [41.4, 2.155];
+const BARCELONA_CENTER: [number, number] = [41.42, 2.13];
 
 const LeafletZoneMap = dynamic(() => import("./LeafletZoneMap"), {
   ssr: false,
@@ -96,11 +96,12 @@ export default function BarcelonaExplorer() {
   return (
     <div>
       <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
-        Barcelona&apos;s 10 districts
+        Barcelona&apos;s 10 districts and Sant Cugat
       </h2>
       <p className="mt-2 max-w-2xl text-base text-slate-600">
-        Compare Barcelona&apos;s districtes by room prices, safety, and commute time to the
-        Zona Universitària (UB, UPC) and the UPF campuses before choosing where to live.
+        Compare Barcelona&apos;s districtes and neighbouring Sant Cugat del Vallès by room prices, safety, and
+        commute time to the Zona Universitària (UB, UPC), the UPF campuses and Esade&apos;s Sant Cugat campus
+        before choosing where to live.
       </p>
 
       <button
@@ -119,7 +120,7 @@ export default function BarcelonaExplorer() {
         <div>
           <LeafletZoneMap
             center={BARCELONA_CENTER}
-            zoom={12}
+            zoom={11}
             zones={zones}
             selectedSlug={selectedSlug}
             onSelect={handleSelect}
@@ -128,7 +129,8 @@ export default function BarcelonaExplorer() {
           />
           <p className="mt-3 text-xs text-slate-500">
             Map data © OpenStreetMap contributors. District boundaries: Ajuntament de Barcelona,
-            Open Data BCN (CC BY 4.0), simplified for web display. Room prices are estimated
+            Open Data BCN (CC BY 4.0); Sant Cugat del Vallès: Institut Cartogràfic i Geològic de
+            Catalunya (ICGC, CC BY 4.0). Boundaries simplified for web display. Room prices are estimated
             ranges for a room in a shared flat; listings shown are samples, not real offers.
           </p>
 
@@ -150,13 +152,13 @@ export default function BarcelonaExplorer() {
           {selectedQuartier ? (
             <QuartierPanel
               quartier={selectedQuartier}
-              badge={`Districte ${selectedQuartier.number}`}
+              badge={selectedQuartier.badge ?? `Districte ${selectedQuartier.number}`}
               commuteLabel="Commute to campus"
               showListings={showListings}
               onShowListings={handleShowListings}
             />
           ) : (
-            <QuartierEmptyPanel text="Hover or click a district to see quick stats. Every district has sample listings you can browse — from Les Corts near the Zona Universitària to Poblenou near UPF." />
+            <QuartierEmptyPanel text="Hover or click a district to see quick stats. Every district has sample listings you can browse — from Les Corts near the Zona Universitària to Poblenou near UPF, plus Sant Cugat near Esade's CEMS campus." />
           )}
         </div>
       </div>

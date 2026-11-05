@@ -104,7 +104,7 @@ export const neighborhoodExplorerCopy: Record<string, { heading: string; subtitl
   barcelona: {
     heading: "Explore Barcelona's districts",
     subtitle:
-      "Compare Barcelona's 10 districts (districtes) by room prices, safety, and commute time to UB, UPC and UPF before comparing listings.",
+      "Compare Barcelona's 10 districts (districtes) and neighbouring Sant Cugat del Vallès by room prices, safety, and commute time to UB, UPC, UPF and Esade's Sant Cugat campus before comparing listings.",
   },
   milan: {
     heading: "Explore Milan's municipi",

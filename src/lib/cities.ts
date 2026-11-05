@@ -1514,13 +1514,13 @@ export const cities: City[] = [
     slug: "barcelona",
     name: "Barcelona",
     country: "Spain",
-    aliases: ["Barna", "Barcelone", "Barcellona"],
+    aliases: ["Barna", "Barcelone", "Barcellona", "Sant Cugat del Vallès", "Esade"],
     rent: "€550–€750",
     risk: "Spain's most expensive rooms and fake listings aimed at newcomers",
     bestFor: "UB, UPC, UPF & ESADE students, beach life, Erasmus",
     dashboard: {
       description:
-        "Catalonia's capital and one of Europe's favorite student cities: the Universitat de Barcelona (UB), UPC, UPF and business schools like ESADE, with the beach and the mountains both in reach. It is also Spain's most expensive city for a room — about €600 a month on average — and Catalonia now caps rents in tight markets like Barcelona, including rooms.",
+        "Catalonia's capital and one of Europe's favorite student cities: the Universitat de Barcelona (UB), UPC, UPF and business schools like ESADE — whose Sant Cugat campus, where the CEMS MIM is taught, is about 25 minutes from Plaça de Catalunya by FGC train — with the beach and the mountains both in reach. It is also Spain's most expensive city for a room — about €600 a month on average — and Catalonia now caps rents in tight markets like Barcelona, including rooms.",
       costOfLiving: "€1,050–€1,400/month (rent, food, transport, phone)",
       heroImage: "/cities/barcelona-hero.jpg",
       heroCredit: {

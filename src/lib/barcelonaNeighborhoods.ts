@@ -1,13 +1,16 @@
 import type { Listing } from "./listings";
 
-// Barcelona's 10 districts (districtes).
-// Boundaries: Ajuntament de Barcelona, Open Data BCN (CC BY 4.0), credited in BarcelonaExplorer.
+// Barcelona's 10 districts (districtes), plus the neighbouring municipality of Sant Cugat del Vallès,
+// home of Esade's Sant Cugat campus, where the CEMS MIM is taught.
+// Boundaries: Ajuntament de Barcelona, Open Data BCN (CC BY 4.0); Sant Cugat: Institut Cartogràfic i
+// Geològic de Catalunya (ICGC, CC BY 4.0). Both credited in BarcelonaExplorer.
 // Room prices are estimated ranges; scores are editorial judgments.
 
 export type BarcelonaDistricte = {
   slug: string;
   name: string;
   number: number;
+  badge?: string;
   lat: number;
   lng: number;
   description: string;
@@ -76,6 +79,11 @@ export const barcelonaDistrictes: BarcelonaDistricte[] = [
     rent: "€580–€720/mo", safety: 8.2, transport: 8.8, nightlife: 7.0, studentFit: 8.6,
     commute: "UPF campuses on site; 35 min to Zona Universitària", bestFor: "UPF students and beach life", caution: "Rising prices in Poblenou",
     landmarks: ["UPF Ciutadella campus", "UPF Poblenou campus", "Poblenou (22@)"] }),
+  d({ slug: "sant-cugat", name: "Sant Cugat del Vallès", number: 11, badge: "Neighbouring municipality", at: [41.4739, 2.0854],
+    description: "A green, well-off town on the other side of the Collserola hills, built around its Romanesque monastery. Esade's Sant Cugat campus — where the CEMS MIM is taught — is here, and FGC trains run to central Barcelona.",
+    rent: "€500–€700/mo", safety: 9.0, transport: 7.4, nightlife: 4.0, studentFit: 7.6,
+    commute: "Esade Sant Cugat: 10–15 min on foot or L8 bus from the FGC station; about 25 min by FGC from Plaça de Catalunya", bestFor: "Esade students who want to live close to the Sant Cugat campus", caution: "Quiet in the evenings; nightlife means a train ride into Barcelona",
+    landmarks: ["Esade Sant Cugat campus", "Monastery of Sant Cugat", "Sant Cugat FGC station", "Valldoreix", "Mira-sol"] }),
 ];
 
 export type BarcelonaDistricteListing = Listing & { districteSlug: string };
@@ -92,6 +100,7 @@ export const barcelonaListings: BarcelonaDistricteListing[] = [
   { id: "bc-sample-sants-room", districteSlug: "sants-montjuic", title: "Room in Sants", rent: 580, currency: "€", type: "Room", source: SAMPLE_SOURCE, lat: 41.3760, lng: 2.1380, description: "Room near Sants station with direct metro to the Diagonal.", rooms: 1, sizeSqm: 11, availableFrom: "1 Sep 2026", amenities: ["Furnished"] },
   { id: "bc-sample-horta-room", districteSlug: "horta-guinardo", title: "Room in Guinardó", rent: 520, currency: "€", type: "Room", source: SAMPLE_SOURCE, lat: 41.4200, lng: 2.1650, description: "Bright room with city views, on metro line 4.", rooms: 1, sizeSqm: 13, availableFrom: "1 Oct 2026", amenities: ["Furnished", "Terrace"] },
   { id: "bc-sample-sarria-studio", districteSlug: "sarria-sant-gervasi", title: "Studio in Sant Gervasi", rent: 950, currency: "€", type: "Studio", source: SAMPLE_SOURCE, lat: 41.3990, lng: 2.1300, description: "Small furnished studio in a calm residential street.", rooms: 1, sizeSqm: 25, availableFrom: "1 Nov 2026", amenities: ["Furnished", "Kitchenette", "Private bathroom"] },
+  { id: "bc-sample-santcugat-room", districteSlug: "sant-cugat", title: "Room near Esade Sant Cugat", rent: 620, currency: "€", type: "Room", source: SAMPLE_SOURCE, homeUniversityFriendly: true, lat: 41.4720, lng: 2.0830, description: "Room in a shared flat in the centre of Sant Cugat, near the FGC station and a short walk or bus ride from the Esade campus.", rooms: 1, sizeSqm: 12, availableFrom: "1 Sep 2026", amenities: ["Furnished", "Terrace"] },
   { id: "bc-sample-noubarris-room", districteSlug: "nou-barris", title: "Budget room in Nou Barris", rent: 460, currency: "€", type: "Room", source: SAMPLE_SOURCE, lat: 41.4420, lng: 2.1780, description: "Room in a family-run shared flat near metro line 5.", rooms: 1, sizeSqm: 10, availableFrom: "1 Sep 2026", amenities: ["Furnished", "Bills included"] },
 ];
 
