@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { citiesByCountry, countryFlags, findCityByQuery, searchCities, slugify } from "@/lib/cities";
+import { countriesByContinent, countryFlags, findCityByQuery, searchCities, slugify } from "@/lib/cities";
 
 const valueProps = [
   {
@@ -31,11 +31,18 @@ export default function Home() {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const countries = citiesByCountry();
+  const continentGroups = countriesByContinent();
+  const [selectedContinent, setSelectedContinent] = useState(continentGroups[0]?.continent);
+  const countries = continentGroups.find((g) => g.continent === selectedContinent)?.countries ?? [];
   const [selectedCountry, setSelectedCountry] = useState(
     countries.find((c) => c.country === "Switzerland")?.country ?? countries[0]?.country
   );
   const visibleCities = countries.find((c) => c.country === selectedCountry)?.cities ?? [];
+
+  function selectContinent(continent: typeof selectedContinent) {
+    setSelectedContinent(continent);
+    setSelectedCountry(continentGroups.find((g) => g.continent === continent)?.countries[0]?.country ?? "");
+  }
 
   const suggestions = searchCities(query);
 
@@ -164,6 +171,32 @@ export default function Home() {
           <p className="mt-3 text-base text-slate-600">
             A preview of the city-level insight HousingAtlas provides.
           </p>
+        </div>
+
+        <div
+          role="tablist"
+          aria-label="Continents"
+          className="mx-auto mb-6 flex w-fit max-w-full flex-wrap justify-center gap-1 rounded-2xl bg-slate-100 p-1"
+        >
+          {continentGroups.map(({ continent, countries: continentCountries }) => {
+            const selected = continent === selectedContinent;
+            const cityCount = continentCountries.reduce((sum, c) => sum + c.cities.length, 0);
+            return (
+              <button
+                key={continent}
+                type="button"
+                role="tab"
+                aria-selected={selected}
+                onClick={() => selectContinent(continent)}
+                className={`flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition ${
+                  selected ? "bg-white text-slate-900 shadow-sm" : "text-slate-600 hover:text-slate-900"
+                }`}
+              >
+                {continent}
+                <span className={`text-xs ${selected ? "text-blue-600" : "text-slate-400"}`}>{cityCount}</span>
+              </button>
+            );
+          })}
         </div>
 
         <div
