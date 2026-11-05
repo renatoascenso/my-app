@@ -4,9 +4,9 @@ Goal: every city with a CEMS member school has a HousingAtlas city guide and dis
 Source: CEMS member list (33 schools), checked 2026-11-03. "Live" means the school's CEMS campus
 lies inside a live city map.
 
-**Status: 30 covered · 2 partly covered · 1 missing**
+**Status: 31 covered · 2 partly covered · 0 missing**
 
-## Covered (30)
+## Covered (31)
 
 | School | Country | CEMS campus | HousingAtlas city | Map area |
 |---|---|---|---|---|
@@ -17,6 +17,7 @@ lies inside a live city map.
 | Corvinus University of Budapest | Hungary | Budapest | Budapest | — |
 | Escola de Administração de Empresas de São Paulo – FGV | Brazil | Avenida Nove de Julho, Bela Vista | São Paulo | Bela Vista |
 | HKUST Business School | Hong Kong (China) | Clear Water Bay campus | Hong Kong | Sai Kung |
+| Indian Institute of Management Calcutta | India | Joka campus | Kolkata | Joka & Thakurpukur (Borough XVI) |
 | Ivey Business School | Canada | Western University, London, Ontario | London, Ontario | Medway |
 | Keio University | Japan | Mita campus, Minato (Hiyoshi campus in Yokohama is outside the map) | Tokyo | Minato |
 | Koç University Graduate School of Business | Türkiye | Rumelifeneri campus, Sarıyer | Istanbul | Sarıyer |
@@ -48,8 +49,8 @@ lies inside a live city map.
 | Esade | Spain | Sant Cugat del Vallès (CEMS MIM taught there) | Barcelona | Sant Cugat is ~15–20 km outside Barcelona's 10 districts |
 | HEC Paris | France | Jouy-en-Josas | Paris | Campus is ~20 km south-west of Paris's 20 arrondissements |
 
-## Missing (1)
+## Missing (0)
 
 | School | Country | City to build | Notes |
 |---|---|---|---|
-| Indian Institute of Management Calcutta | India | Kolkata | Joka campus |
+| — | | | All CEMS cities have a map. |
