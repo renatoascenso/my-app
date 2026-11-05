@@ -79,7 +79,7 @@ export const neighborhoodExplorerCopy: Record<string, { heading: string; subtitl
   paris: {
     heading: "Explore Paris's arrondissements",
     subtitle:
-      "Compare the 20 arrondissements of Paris by room prices, safety, and commute time to the Latin Quarter before comparing listings.",
+      "Compare the 20 arrondissements of Paris and nine communes towards Versailles and Jouy-en-Josas by room prices, safety, and commute time to the Latin Quarter or HEC Paris before comparing listings.",
   },
   lyon: {
     heading: "Explore Lyon's arrondissements",

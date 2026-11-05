@@ -19,7 +19,7 @@ import ListingDetailModal from "./ListingDetailModal";
 const quartierGeo = parisBoundaries as Record<string, Geometry>;
 
 // Stable reference: a new array on every render would make the map re-fly on each click.
-const PARIS_CENTER: [number, number] = [48.8585, 2.3425];
+const PARIS_CENTER: [number, number] = [48.82, 2.27];
 
 const LeafletZoneMap = dynamic(() => import("./LeafletZoneMap"), {
   ssr: false,
@@ -30,16 +30,21 @@ const LeafletZoneMap = dynamic(() => import("./LeafletZoneMap"), {
   ),
 });
 
-type Bank = "left" | "right";
+type Bank = "left" | "right" | "southwest";
 // The Seine splits Paris: arrondissements 5, 6, 7, 13, 14 and 15 are on the Left Bank.
 const LEFT_BANK = new Set([5, 6, 7, 13, 14, 15]);
-const bankOf = (n: number): Bank => (LEFT_BANK.has(n) ? "left" : "right");
-const bankLabel: Record<Bank, string> = { left: "Left Bank (Rive gauche)", right: "Right Bank (Rive droite)" };
+const bankOf = (n: number): Bank => (n === 0 ? "southwest" : LEFT_BANK.has(n) ? "left" : "right");
+const bankLabel: Record<Bank, string> = {
+  left: "Left Bank (Rive gauche)",
+  right: "Right Bank (Rive droite)",
+  southwest: "South-west towards HEC",
+};
 
 const bankFilters: { value: Bank | "all"; label: string }[] = [
-  { value: "all", label: "All of Paris" },
+  { value: "all", label: "All areas" },
   { value: "left", label: bankLabel.left },
   { value: "right", label: bankLabel.right },
+  { value: "southwest", label: bankLabel.southwest },
 ];
 
 export default function ParisExplorer() {
@@ -127,11 +132,12 @@ export default function ParisExplorer() {
       </div>
 
       <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
-        Paris&apos;s 20 arrondissements
+        Paris&apos;s 20 arrondissements and the road to HEC
       </h2>
       <p className="mt-2 max-w-2xl text-base text-slate-600">
-        Compare the 20 arrondissements by room prices, safety, and commute time to the
-        Latin Quarter before choosing where to live.
+        Compare the 20 arrondissements and nine south-western communes from Boulogne-Billancourt to
+        Versailles and Jouy-en-Josas by room prices, safety, and commute time to the Latin Quarter or the
+        HEC Paris campus before choosing where to live.
       </p>
 
       <button
@@ -150,7 +156,7 @@ export default function ParisExplorer() {
         <div>
           <LeafletZoneMap
             center={PARIS_CENTER}
-            zoom={12}
+            zoom={11}
             zones={zones}
             selectedSlug={selectedSlug}
             onSelect={handleSelect}
@@ -158,8 +164,9 @@ export default function ParisExplorer() {
             onSelectPin={setSelectedListingId}
           />
           <p className="mt-3 text-xs text-slate-500">
-            Map data © OpenStreetMap contributors. Arrondissement boundaries and populations:
-            IGN ADMIN EXPRESS (Licence Ouverte 2.0). Room prices are estimated ranges; listings
+            Map data © OpenStreetMap contributors. Arrondissement and commune boundaries and
+            populations: IGN ADMIN EXPRESS (Licence Ouverte 2.0), communes via geo.api.gouv.fr;
+            boundaries simplified for web display. Room prices are estimated ranges; listings
             shown are samples, not real offers.
           </p>
 
@@ -181,13 +188,13 @@ export default function ParisExplorer() {
           {selectedQuartier ? (
             <QuartierPanel
               quartier={selectedQuartier}
-              badge={`${bankLabel[bankOf(selectedQuartier.number)]} · ${selectedQuartier.population.toLocaleString("en-US")} residents`}
-              commuteLabel="Commute to the Latin Quarter"
+              badge={`${selectedQuartier.badge ?? bankLabel[bankOf(selectedQuartier.number)]} · ${selectedQuartier.population.toLocaleString("en-US")} residents`}
+              commuteLabel={selectedQuartier.badge ? "Commute to HEC and Paris" : "Commute to the Latin Quarter"}
               showListings={showListings}
               onShowListings={handleShowListings}
             />
           ) : (
-            <QuartierEmptyPanel text="Hover or click an arrondissement to see quick stats. The 5th, 13th, 14th, 11th and several others have sample listings you can browse." />
+            <QuartierEmptyPanel text="Hover or click an arrondissement to see quick stats. The 5th, 13th, 14th, 11th and several others have sample listings you can browse, as do Versailles and Jouy-en-Josas next to HEC Paris." />
           )}
         </div>
       </div>
