@@ -5671,6 +5671,46 @@ export const countryFlags: Record<string, string> = {
   India: "🇮🇳",
 };
 
+export const continents = ["Europe", "Asia", "North America", "South America", "Africa", "Oceania"] as const;
+export type Continent = (typeof continents)[number];
+
+// Türkiye is listed under Europe because its campus city, Istanbul, straddles the Bosphorus.
+export const countryContinents: Record<string, Continent> = {
+  Switzerland: "Europe",
+  Portugal: "Europe",
+  Denmark: "Europe",
+  France: "Europe",
+  Germany: "Europe",
+  Spain: "Europe",
+  Italy: "Europe",
+  Netherlands: "Europe",
+  "United Kingdom": "Europe",
+  Sweden: "Europe",
+  Austria: "Europe",
+  "Czech Republic": "Europe",
+  Belgium: "Europe",
+  Ireland: "Europe",
+  Poland: "Europe",
+  Hungary: "Europe",
+  Finland: "Europe",
+  Norway: "Europe",
+  "Türkiye": "Europe",
+  "United States": "North America",
+  Canada: "North America",
+  Brazil: "South America",
+  Chile: "South America",
+  Colombia: "South America",
+  Singapore: "Asia",
+  "Hong Kong": "Asia",
+  "South Korea": "Asia",
+  Japan: "Asia",
+  China: "Asia",
+  India: "Asia",
+  "South Africa": "Africa",
+  Egypt: "Africa",
+  Australia: "Oceania",
+};
+
 /** Countries with their cities, most cities first, then alphabetically. */
 export function citiesByCountry(): { country: string; cities: City[] }[] {
   const groups = new Map<string, City[]>();
@@ -5686,4 +5726,15 @@ export function slugify(text: string): string {
   return normalize(text)
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
+}
+
+/** Continents (in the fixed order above) with their countries; continents without cities are left out. */
+export function countriesByContinent(): { continent: Continent; countries: { country: string; cities: City[] }[] }[] {
+  const countries = citiesByCountry();
+  return continents
+    .map((continent) => ({
+      continent,
+      countries: countries.filter(({ country }) => (countryContinents[country] ?? "Europe") === continent),
+    }))
+    .filter((group) => group.countries.length > 0);
 }
