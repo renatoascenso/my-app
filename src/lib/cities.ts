@@ -3149,6 +3149,112 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "cairo",
+    name: "Cairo",
+    country: "Egypt",
+    aliases: ["Al-Qahira", "New Cairo", "American University in Cairo", "AUC"],
+    rent: "EGP 8,000–EGP 15,000",
+    risk: "Broker fees, long commutes and contracts in foreign currency",
+    bestFor: "American University in Cairo School of Business (CEMS), New Cairo, Maadi and Zamalek",
+    dashboard: {
+      description:
+        "Cairo is home to the American University in Cairo — Egypt's CEMS school — whose main campus lies in New Cairo, about 25 km east of Downtown. AUC has furnished residence halls on and near the campus, and AUC buses link the campus with Maadi, Heliopolis, Nasr City, Zamalek, Dokki, Rehab and other districts. Off campus, students rent in the Fifth Settlement and Rehab to stay close to class, or in Maadi, Heliopolis and Zamalek for city life with a longer bus ride.",
+      costOfLiving: "EGP 20,000–35,000/month (rent, food, transport, phone)",
+      heroImage: "/cities/cairo-hero.jpg",
+      heroCredit: {
+        text: "Vyacheslav Argenberg · CC BY 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Cairo_skyline,_Panoramic_view,_Egypt.jpg",
+      },
+      quickFacts: {
+        population: "About 10.5 million in Cairo Governorate (CAPMAS estimate, 2026)",
+        averageRent: "Apartments in Maadi, New Cairo and Zamalek average roughly EGP 23,000–35,000/mo (2026 market estimates)",
+        languages: "Arabic; English is used at AUC and widely in Zamalek, Maadi and New Cairo",
+        transportScore: "4.8/10",
+        safetyScore: "6.8/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "July to August before the fall semester and December to January before spring. Furnished flats near AUC and on the AUC bus routes go first.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "New Cairo is spread out and car-dependent, and traffic makes the trip from central Cairo slow — so where you live decides how long you spend on the road. Many flats are found through brokers (simsars) who charge a commission, and some landlords quote rent in US dollars.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "AUC residences",
+          trustScore: 4.5,
+          audience: "AUC students, including international students",
+          pros: [
+            "Furnished rooms and apartments with linens",
+            "On-campus halls a few minutes' walk from class",
+            "Free shuttle from the near-campus halls",
+          ],
+          cons: ["Limited places", "Far from central Cairo"],
+        },
+        {
+          name: "Property Finder and Aqarmap",
+          trustScore: 3.9,
+          audience: "Students renting a flat",
+          pros: [
+            "Egypt's largest property portals",
+            "Filters by area, price and furnishing",
+            "Many furnished flats in New Cairo and Maadi",
+          ],
+          cons: ["Many listings come from brokers", "Prices and photos aren't always current"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Rooms in shared flats and sublets",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams and brokers",
+          text: "Never pay before seeing the flat and signing a contract. Check that the person renting it out is the owner or acting for them, and agree on any broker commission before the viewing.",
+        },
+        {
+          title: "Deposit and contract",
+          text: "A deposit of one or two months' rent is common. Get a written contract that states the rent, the currency, what's included and how the deposit is returned, and photograph the flat at move-in.",
+        },
+        {
+          title: "Rent and currency",
+          text: "New leases are freely agreed between landlord and tenant, so increases depend on what the contract says. The Egyptian pound has lost value sharply in recent years — make sure the contract fixes the rent and its currency for your whole stay.",
+        },
+        {
+          title: "Safety",
+          text: "Violent crime against foreigners is relatively rare, but pickpocketing and harassment happen. Prefer buildings with a doorman (bawab) or compound security, and use ride-hailing apps rather than unmarked taxis.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "cape-town",
     name: "Cape Town",
     country: "South Africa",
@@ -5324,6 +5430,7 @@ export const countryFlags: Record<string, string> = {
   Chile: "🇨🇱",
   Colombia: "🇨🇴",
   "South Africa": "🇿🇦",
+  Egypt: "🇪🇬",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
