@@ -4,9 +4,9 @@ Goal: every city with a CEMS member school has a HousingAtlas city guide and dis
 Source: CEMS member list (33 schools), checked 2026-11-03. "Live" means the school's CEMS campus
 lies inside a live city map.
 
-**Status: 31 covered · 2 partly covered · 0 missing**
+**Status: 32 covered · 1 partly covered · 0 missing**
 
-## Covered (31)
+## Covered (32)
 
 | School | Country | CEMS campus | HousingAtlas city | Map area |
 |---|---|---|---|---|
@@ -15,6 +15,7 @@ lies inside a live city map.
 | Copenhagen Business School | Denmark | Frederiksberg | Copenhagen | Frederiksberg |
 | Cornell SC Johnson College of Business | United States | Ithaca, NY (Dyson School, Warren Hall) | Ithaca | Cornell central campus |
 | Corvinus University of Budapest | Hungary | Budapest | Budapest | — |
+| Esade | Spain | Sant Cugat del Vallès (CEMS MIM taught there) | Barcelona | Sant Cugat del Vallès |
 | Escola de Administração de Empresas de São Paulo – FGV | Brazil | Avenida Nove de Julho, Bela Vista | São Paulo | Bela Vista |
 | HKUST Business School | Hong Kong (China) | Clear Water Bay campus | Hong Kong | Sai Kung |
 | Indian Institute of Management Calcutta | India | Joka campus | Kolkata | Joka & Thakurpukur (Borough XVI) |
@@ -42,11 +43,10 @@ lies inside a live city map.
 | University of St.Gallen | Switzerland | St. Gallen | St. Gallen | — |
 | WU Vienna | Austria | Vienna | Vienna | — |
 
-## Partly covered (2) — city live, but the CEMS campus is outside the map
+## Partly covered (1) — city live, but the CEMS campus is outside the map
 
 | School | Country | CEMS campus | Live city | Gap |
 |---|---|---|---|---|
-| Esade | Spain | Sant Cugat del Vallès (CEMS MIM taught there) | Barcelona | Sant Cugat is ~15–20 km outside Barcelona's 10 districts |
 | HEC Paris | France | Jouy-en-Josas | Paris | Campus is ~20 km south-west of Paris's 20 arrondissements |
 
 ## Missing (0)
