@@ -240,7 +240,7 @@ export const neighborhoodExplorerCopy: Record<string, { heading: string; subtitl
   stockholm: {
     heading: "Explore Stockholm's districts",
     subtitle:
-      "Compare Stockholm's 11 district areas (stadsdelsområden) by room prices, safety, and commute time to KTH and Stockholm University before comparing listings.",
+      "Compare Stockholm's districts and the neighbouring towns of Solna, Sundbyberg, Lidingö, Danderyd, Nacka and Huddinge by room prices, safety, and commute time to KTH, Stockholm University and Karolinska Institutet before comparing listings.",
   },
   vienna: {
     heading: "Explore Vienna's districts",
