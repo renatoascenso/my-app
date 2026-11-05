@@ -4,9 +4,9 @@ Goal: every city with a CEMS member school has a HousingAtlas city guide and dis
 Source: CEMS member list (33 schools), checked 2026-11-03. "Live" means the school's CEMS campus
 lies inside a live city map.
 
-**Status: 29 covered · 2 partly covered · 2 missing**
+**Status: 30 covered · 2 partly covered · 1 missing**
 
-## Covered (29)
+## Covered (30)
 
 | School | Country | CEMS campus | HousingAtlas city | Map area |
 |---|---|---|---|---|
@@ -25,6 +25,7 @@ lies inside a live city map.
 | National University of Singapore | Singapore | Kent Ridge campus (NUS Business School) | Singapore | Queenstown |
 | Norwegian School of Economics (NHH) | Norway | Helleveien, Sandviken, Bergen | Bergen | Bergenhus |
 | Nova School of Business and Economics | Portugal | Carcavelos (Cascais) | Lisbon (region map) | Cascais |
+| Onsi Sawiris School of Business, American University in Cairo | Egypt | New Cairo campus | Cairo | New Cairo 1 (Fifth Settlement & Rehab) |
 | Prague University of Economics and Business | Czech Republic | Prague | Prague | — |
 | Rotterdam School of Management, Erasmus University | Netherlands | Woudestein, Rotterdam | Rotterdam | — |
 | SGH Warsaw School of Economics | Poland | Warsaw | Warsaw | — |
@@ -47,9 +48,8 @@ lies inside a live city map.
 | Esade | Spain | Sant Cugat del Vallès (CEMS MIM taught there) | Barcelona | Sant Cugat is ~15–20 km outside Barcelona's 10 districts |
 | HEC Paris | France | Jouy-en-Josas | Paris | Campus is ~20 km south-west of Paris's 20 arrondissements |
 
-## Missing (2)
+## Missing (1)
 
 | School | Country | City to build | Notes |
 |---|---|---|---|
 | Indian Institute of Management Calcutta | India | Kolkata | Joka campus |
-| Onsi Sawiris School of Business, American University in Cairo | Egypt | Cairo | New Cairo campus |
