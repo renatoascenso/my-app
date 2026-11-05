@@ -3149,6 +3149,112 @@ export const cities: City[] = [
     },
   },
   {
+    slug: "kolkata",
+    name: "Kolkata",
+    country: "India",
+    aliases: ["Calcutta", "IIM Calcutta", "IIMC", "Indian Institute of Management Calcutta", "Joka"],
+    rent: "₹7,000–₹12,000",
+    risk: "Broker fees, deposits and long trips from Joka to the city",
+    bestFor: "IIM Calcutta (CEMS), Joka, Behala and south Kolkata",
+    dashboard: {
+      description:
+        "Kolkata is home to IIM Calcutta — India's CEMS school — whose green, lakeside campus lies at Joka on the south-western edge of the city. IIM Calcutta houses its students, including exchange students, in campus hostels; the CEMS fact sheet lists accommodation at about €300 for the whole term. Students who live off campus look in Joka and Behala, close to the campus and the Purple Line metro, or in south Kolkata around Jadavpur, Ballygunge and Gariahat for city life with a longer trip.",
+      costOfLiving: "₹20,000–35,000/month off campus (rent, food, transport, phone)",
+      heroImage: "/cities/kolkata-hero.jpg",
+      heroCredit: {
+        text: "Vyacheslav Argenberg · CC BY 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Victoria_Memorial_and_Gardens,_Kolkata,_India.jpg",
+      },
+      quickFacts: {
+        population: "4,496,694 in the Kolkata Municipal Corporation (2011 census, the latest)",
+        averageRent: "One-bedroom flats in mid-range areas often ₹8,000–15,000/mo (2026 relocation guides)",
+        languages: "Bengali, Hindi and English; English is used at IIM Calcutta",
+        transportScore: "6.4/10",
+        safetyScore: "7.2/10",
+      },
+      marketOverview: {
+        peakDemand: {
+          title: "Peak demand periods",
+          text: "June to July, when Indian universities start their academic year, and around the start of each IIM Calcutta term. Furnished rooms and PG homes near metro stations go first.",
+        },
+        mainChallenges: {
+          title: "Main challenges",
+          text: "Joka is far from central Kolkata, and roads into the city are congested, so most exchange students stay on campus and travel in for weekends. Off campus, landlords often ask for several months' deposit and a local reference, and many flats are let through brokers who charge a fee.",
+        },
+      },
+      platforms: [
+        {
+          name: "HousingAtlas",
+          trustScore: 4.8,
+          audience: "Students who want one trusted starting point",
+          pros: [
+            "Curated & verified listings",
+            "Built-in scam and risk warnings",
+            "Free to use",
+          ],
+          cons: ["Smaller inventory while we're in early access"],
+          featured: true,
+        },
+        {
+          name: "IIM Calcutta campus hostels",
+          trustScore: 4.7,
+          audience: "IIM Calcutta students, including CEMS exchange students",
+          pros: [
+            "On campus, next to classes",
+            "Single rooms for exchange students",
+            "Low cost for the whole term",
+          ],
+          cons: ["Simple rooms", "Far from central Kolkata"],
+        },
+        {
+          name: "NoBroker, MagicBricks and 99acres",
+          trustScore: 3.9,
+          audience: "Students renting a flat or PG room",
+          pros: [
+            "India's largest property portals",
+            "Filters by area, price and furnishing",
+            "NoBroker lists flats without a broker fee",
+          ],
+          cons: ["Long-term leases are the norm", "Listings aren't always current"],
+        },
+        {
+          name: "Facebook groups",
+          trustScore: 3.0,
+          audience: "International and exchange students",
+          pros: [
+            "Free to use",
+            "Rooms in shared flats and sublets",
+            "English-language offers",
+          ],
+          cons: [
+            "No listing verification",
+            "Scam posts",
+            "No dispute resolution",
+          ],
+        },
+      ],
+      risks: [
+        {
+          title: "Scams",
+          text: "Never pay a token amount or deposit before seeing the flat and meeting the owner. Be wary of 'owners' who send a QR code to pay a booking fee, and check that the person renting it out is the owner or a known broker.",
+        },
+        {
+          title: "Deposit and agreement",
+          text: "Deposits of one to three months' rent are common. Insist on a written rent agreement that states the rent, the deposit, the notice period and what's included, and photograph the flat at move-in.",
+        },
+        {
+          title: "Utilities",
+          text: "Electricity is often billed separately by meter, and power cuts and monsoon waterlogging affect some areas. Ask about power backup, water supply and whether the street floods.",
+        },
+        {
+          title: "Safety",
+          text: "Kolkata is considered one of India's safer big cities, but pickpocketing happens in crowded areas. Use app-based cabs late at night and prefer buildings with a caretaker or security.",
+        },
+      ],
+      studentQuotes: [],
+    },
+  },
+  {
     slug: "cairo",
     name: "Cairo",
     country: "Egypt",
@@ -5431,6 +5537,7 @@ export const countryFlags: Record<string, string> = {
   Colombia: "🇨🇴",
   "South Africa": "🇿🇦",
   Egypt: "🇪🇬",
+  India: "🇮🇳",
 };
 
 /** Countries with their cities, most cities first, then alphabetically. */
