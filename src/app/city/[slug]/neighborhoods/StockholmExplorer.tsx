@@ -19,7 +19,7 @@ import ListingDetailModal from "./ListingDetailModal";
 const quartierGeo = stockholmBoundaries as Record<string, Geometry>;
 
 // Stable reference: a new array on every render would make the map re-fly on each click.
-const STOCKHOLM_CENTER: [number, number] = [59.325, 17.99];
+const STOCKHOLM_CENTER: [number, number] = [59.32, 18.04];
 
 const LeafletZoneMap = dynamic(() => import("./LeafletZoneMap"), {
   ssr: false,
@@ -96,11 +96,11 @@ export default function StockholmExplorer() {
   return (
     <div>
       <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
-        Stockholm&apos;s 11 district areas
+        Stockholm&apos;s districts and neighbouring towns
       </h2>
       <p className="mt-2 max-w-2xl text-base text-slate-600">
-        Compare Stockholm&apos;s stadsdelsområden by room prices, safety, and commute time to
-        KTH and Stockholm University before choosing where to live.
+        Compare Stockholm&apos;s districts and the neighbouring towns by room prices, safety, and commute
+        time to KTH, Stockholm University and Karolinska Institutet before choosing where to live.
       </p>
 
       <button
@@ -151,12 +151,12 @@ export default function StockholmExplorer() {
             <QuartierPanel
               quartier={selectedQuartier}
               badge={selectedQuartier.badge}
-              commuteLabel="Commute to KTH/SU"
+              commuteLabel="Commute to campus"
               showListings={showListings}
               onShowListings={handleShowListings}
             />
           ) : (
-            <QuartierEmptyPanel text="Hover or click a district to see quick stats. Norra innerstaden near KTH and SU, Södermalm, Kungsholmen, Kista and others have sample listings you can browse." />
+            <QuartierEmptyPanel text="Hover or click a district to see quick stats. Norra Djurgården (KTH and SU), Vasastan, Södermalm, Solna (KI), Kista and others have sample listings you can browse." />
           )}
         </div>
       </div>
