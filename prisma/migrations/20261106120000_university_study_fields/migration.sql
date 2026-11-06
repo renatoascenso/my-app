@@ -1,0 +1,7 @@
+-- CreateEnum
+CREATE TYPE "StudyField" AS ENUM ('BUSINESS', 'ECONOMICS', 'COMPUTER_SCIENCE', 'ENGINEERING', 'LAW', 'MEDICINE', 'NATURAL_SCIENCES', 'SOCIAL_SCIENCES', 'HUMANITIES', 'ARTS_DESIGN', 'ARCHITECTURE');
+
+-- AlterTable
+ALTER TABLE "University" ADD COLUMN     "fields" "StudyField"[],
+ADD COLUMN     "parentUniversity" TEXT;
+
