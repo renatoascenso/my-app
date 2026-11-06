@@ -109,11 +109,29 @@ enum StudyLevel {
   ALL
 }
 
+// What a school mainly teaches; used to filter schools on city pages.
+// Keep this list short and broad so the filter stays useful.
+enum StudyField {
+  BUSINESS
+  ECONOMICS
+  COMPUTER_SCIENCE
+  ENGINEERING
+  LAW
+  MEDICINE
+  NATURAL_SCIENCES
+  SOCIAL_SCIENCES
+  HUMANITIES
+  ARTS_DESIGN
+  ARCHITECTURE
+}
+
 model University {
   id               String                      @id @default(cuid())
   citySlug         String // matches a city slug in src/lib/cities.ts, e.g. "zurich"
   name             String
   shortName        String?
+  parentUniversity String? // e.g. "Universidade Nova de Lisboa" for NOVA SBE; null if the school is the university
+  fields           StudyField[] // what the school mainly teaches; empty = not set
   website          String?
   housingPageUrl   String? // the university's own accommodation page
   offersHousing    HousingAvailability         @default(UNKNOWN)

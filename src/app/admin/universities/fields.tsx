@@ -60,6 +60,8 @@ export const studyLevelLabels: Record<StudyLevel, string> = {
   ALL: "Everyone",
 };
 
+export { studyFieldLabels } from "@/lib/studyFields";
+
 export function Card({ title, description, children }: { title: string; description?: string; children: React.ReactNode }) {
   return (
     <section className="mt-8 rounded-xl border border-slate-200 bg-white p-5 sm:p-6">

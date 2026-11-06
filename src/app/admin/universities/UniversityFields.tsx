@@ -1,7 +1,7 @@
-import type { University } from "@/generated/prisma/client";
+import type { StudyField, University } from "@/generated/prisma/client";
 import { cities } from "@/lib/cities";
 import { isoDate } from "@/lib/admin/formFields";
-import { availabilityLabels, Checkbox, Field, Input, Select, TextArea } from "./fields";
+import { availabilityLabels, Checkbox, Field, Input, Select, studyFieldLabels, TextArea } from "./fields";
 
 export function UniversityFields({ university, defaultCity }: { university?: University; defaultCity?: string }) {
   const sortedCities = [...cities].sort((a, b) => a.name.localeCompare(b.name));
@@ -25,6 +25,29 @@ export function UniversityFields({ university, defaultCity }: { university?: Uni
       <Field label="Short name" hint="Optional, e.g. “UZH”.">
         <Input name="shortName" defaultValue={university?.shortName ?? ""} />
       </Field>
+      <Field label="Part of" hint="Optional parent university, e.g. “Universidade Nova de Lisboa” for NOVA SBE.">
+        <Input name="parentUniversity" defaultValue={university?.parentUniversity ?? ""} />
+      </Field>
+      <fieldset className="sm:col-span-2">
+        <legend className="text-sm font-medium text-slate-800">Main fields of study</legend>
+        <span className="mt-1 block text-xs text-slate-500">
+          Used for the filter on the city page. Tick only what the school is known for, not every course it offers.
+        </span>
+        <div className="mt-2 flex flex-wrap gap-4">
+          {Object.entries(studyFieldLabels).map(([value, label]) => (
+            <label key={value} className="flex items-center gap-2 text-sm">
+              <input
+                type="checkbox"
+                name="fields"
+                value={value}
+                defaultChecked={university?.fields.includes(value as StudyField)}
+                className="h-4 w-4 rounded border-slate-300"
+              />
+              {label}
+            </label>
+          ))}
+        </div>
+      </fieldset>
       <Field label="Website">
         <Input name="website" type="url" placeholder="https://" defaultValue={university?.website ?? ""} />
       </Field>

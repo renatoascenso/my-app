@@ -2,6 +2,9 @@ import Link from "next/link";
 import { getCityBySlug } from "@/lib/cities";
 import CityDashboard from "./CityDashboard";
 import ExchangeReportsQA from "./ExchangeReportsQA";
+import UniversitiesSection from "./UniversitiesSection";
+import { CampusPinsProvider, type CampusPin } from "./CampusPins";
+import { getPublishedUniversities } from "@/lib/universities";
 import { lisbonExchangeReports } from "@/lib/lisbonExchangeReports";
 import { copenhagenExchangeReports } from "@/lib/copenhagenExchangeReports";
 import type { ExchangeReportsData } from "@/lib/exchangeReports";
@@ -22,6 +25,16 @@ export default async function CityPage({
 }) {
   const { slug } = await params;
   const city = getCityBySlug(slug);
+  const universities = city?.dashboard ? await getPublishedUniversities(city.slug) : [];
+  const campusPins: CampusPin[] = universities.flatMap((u) =>
+    u.campuses.map((c) => ({
+      id: c.id,
+      lat: c.lat,
+      lng: c.lng,
+      label: u.shortName ?? u.name,
+      title: u.campuses.length > 1 ? `${u.name} – ${c.name}` : u.name,
+    })),
+  );
 
   if (!city) {
     return (
@@ -68,7 +81,7 @@ export default async function CityPage({
       </header>
 
       {city.dashboard ? (
-        <>
+        <CampusPinsProvider pins={campusPins}>
           <CityDashboard
             name={city.name}
             country={city.country}
@@ -76,11 +89,16 @@ export default async function CityPage({
             dashboard={city.dashboard}
             neighborhoodExplorer={neighborhoodExplorersBySlug[city.slug]?.()}
             neighborhoodExplorerCopy={neighborhoodExplorerCopy[city.slug]}
+            universitiesSection={
+              universities.length > 0 ? (
+                <UniversitiesSection cityName={city.name} universities={universities} />
+              ) : undefined
+            }
           />
           {exchangeReportsBySlug[city.slug] && (
             <ExchangeReportsQA data={exchangeReportsBySlug[city.slug]} />
           )}
-        </>
+        </CampusPinsProvider>
       ) : (
         <>
           <section className="bg-gradient-to-b from-blue-50 to-white">

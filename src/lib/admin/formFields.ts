@@ -1,5 +1,5 @@
 import "server-only";
-import { HousingAvailability, StudyLevel } from "@/generated/prisma/client";
+import { HousingAvailability, StudyField, StudyLevel } from "@/generated/prisma/client";
 import { cities } from "@/lib/cities";
 
 /** Thrown for invalid form input; the message is shown to the cofounder as-is. */
@@ -110,3 +110,10 @@ export const checkbox = (form: FormData, name: string) => form.get(name) === "on
 /** Today's date as "YYYY-MM-DD" for date inputs. */
 export const todayIso = () => new Date().toISOString().slice(0, 10);
 export const isoDate = (d: Date | null | undefined) => (d ? d.toISOString().slice(0, 10) : "");
+
+export function studyFields(form: FormData, name: string): StudyField[] {
+  return form
+    .getAll(name)
+    .map(String)
+    .filter((v): v is StudyField => v in StudyField);
+}

@@ -143,6 +143,7 @@ export default function CityDashboard({
   dashboard,
   neighborhoodExplorer,
   neighborhoodExplorerCopy,
+  universitiesSection,
 }: {
   name: string;
   country: string;
@@ -150,6 +151,7 @@ export default function CityDashboard({
   dashboard: CityDashboardData;
   neighborhoodExplorer?: React.ReactNode;
   neighborhoodExplorerCopy?: { heading: string; subtitle: string };
+  universitiesSection?: React.ReactNode;
 }) {
   const quickFacts = [
     { label: "Population", value: dashboard.quickFacts.population, icon: icons.population },
@@ -326,7 +328,7 @@ export default function CityDashboard({
 
       {/* Neighborhood explorer */}
       {neighborhoodExplorer && (
-        <section className="py-16">
+        <section id="neighborhood-explorer" className="scroll-mt-4 py-16">
           <div className="mx-auto max-w-6xl px-6">
             <span className="text-xs font-semibold uppercase tracking-wide text-blue-600">
               Neighborhood explorer
@@ -339,6 +341,8 @@ export default function CityDashboard({
           </div>
         </section>
       )}
+
+      {universitiesSection}
 
       {/* Main housing channels */}
       <section id="platforms" className="mx-auto max-w-6xl px-6 py-16">
