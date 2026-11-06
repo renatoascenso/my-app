@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getCityBySlug } from "@/lib/cities";
 import {
   neighborhoodExplorerCopy as explorerCopy,
   neighborhoodExplorersBySlug as explorersBySlug,
 } from "../neighborhoodExplorers";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const city = getCityBySlug((await params).slug);
+  return { title: city ? `Neighbourhoods in ${city.name}` : "City not found" };
+}
 
 export default async function NeighborhoodsPage({
   params,

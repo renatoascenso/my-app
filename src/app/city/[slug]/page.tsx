@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getCityBySlug } from "@/lib/cities";
 import CityDashboard from "./CityDashboard";
@@ -17,6 +18,15 @@ const exchangeReportsBySlug: Record<string, ExchangeReportsData> = {
   lisbon: lisbonExchangeReports,
   copenhagen: copenhagenExchangeReports,
 };
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const city = getCityBySlug((await params).slug);
+  if (!city) return { title: "City not found" };
+  return {
+    title: `Student housing in ${city.name}`,
+    description: `Where to live as a student in ${city.name}, ${city.country}: neighbourhoods, rents, university housing and the platforms worth using.`,
+  };
+}
 
 export default async function CityPage({
   params,
