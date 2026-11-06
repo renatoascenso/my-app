@@ -1,4 +1,4 @@
-import type { HousingAvailability, StudyField, StudyLevel } from "@/generated/prisma/client";
+import type { HousingAvailability, StudyLevel } from "@/generated/prisma/client";
 
 const inputClass =
   "mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100";
@@ -60,19 +60,7 @@ export const studyLevelLabels: Record<StudyLevel, string> = {
   ALL: "Everyone",
 };
 
-export const studyFieldLabels: Record<StudyField, string> = {
-  BUSINESS: "Business",
-  ECONOMICS: "Economics",
-  COMPUTER_SCIENCE: "Computer science",
-  ENGINEERING: "Engineering",
-  LAW: "Law",
-  MEDICINE: "Medicine",
-  NATURAL_SCIENCES: "Natural sciences",
-  SOCIAL_SCIENCES: "Social sciences",
-  HUMANITIES: "Humanities",
-  ARTS_DESIGN: "Arts & design",
-  ARCHITECTURE: "Architecture",
-};
+export { studyFieldLabels } from "@/lib/studyFields";
 
 export function Card({ title, description, children }: { title: string; description?: string; children: React.ReactNode }) {
   return (
