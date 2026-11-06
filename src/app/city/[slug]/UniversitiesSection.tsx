@@ -26,11 +26,14 @@ const levelLabels: Record<StudyLevel, string> = {
 const dateFormat = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
 const fmt = (iso: string) => dateFormat.format(new Date(iso));
 
+const num = (n: number) => n.toLocaleString("en-GB");
+
 function price(h: PublicHousing) {
   const cur = h.currency ?? "";
-  if (h.priceMin !== null && h.priceMax !== null && h.priceMin !== h.priceMax) return `${cur}${h.priceMin}–${h.priceMax} / month`;
-  const one = h.priceMin ?? h.priceMax;
-  return one !== null ? `${h.priceMin !== null ? "from " : "up to "}${cur}${one} / month` : null;
+  const { priceMin: min, priceMax: max } = h;
+  if (min !== null && max !== null) return min === max ? `${cur}${num(min)} / month` : `${cur}${num(min)}–${num(max)} / month`;
+  if (min !== null) return `from ${cur}${num(min)} / month`;
+  return max !== null ? `up to ${cur}${num(max)} / month` : null;
 }
 
 function DeadlineLine({ d }: { d: PublicDeadline }) {
